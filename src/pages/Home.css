@@ -1,0 +1,19 @@
+.Home {
+    text-align: center;
+    padding-bottom: 50rem;
+}
+  
+.logolargo {
+    max-height: 173px;
+    max-block-size: none;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: top;
+    padding-bottom: 25px;
+}
+
+
+.Home-link {
+    color: #61dafb;
+}

@@ -1,0 +1,51 @@
+
+.containerr {
+  position: absolute;
+  padding: 0px;
+  top: 110%;
+  left: 50%;
+  margin-bottom: 20rem;
+  max-height: 600px;
+  overflow-y: scroll;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+}
+
+table {
+  width: 800px;
+  height: 800px;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px #000000d2;
+  border: 1;
+  border-color: black;
+}
+th,
+td {
+  padding: 8px;
+  background-color: #ffffff71;
+  color: rgb(0, 0, 0);
+}
+th {
+  text-align: left;
+}
+thead th {
+  background-color: #0090C3;
+}
+tbody tr:hover {
+  background-color: #FED216;
+}
+tbody td {
+  position: relative;
+}
+tbody td:hover:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  z-index: -1;
+  background-color: #adadad;
+}
