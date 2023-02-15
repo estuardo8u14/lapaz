@@ -16,7 +16,7 @@ import UserInfoIcon from '@rsuite/icons/UserInfo';
 import BranchIcon from '@rsuite/icons/Branch';
 import MoreIcon from '@rsuite/icons/More';
 import ReviewIcon from '@rsuite/icons/Review';
-import EditIcon from '@rsuite/icons/Edit';
+//import EditIcon from '@rsuite/icons/Edit';
 
 import { Link } from "react-router-dom";
   

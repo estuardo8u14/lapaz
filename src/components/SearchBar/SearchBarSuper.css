@@ -1,0 +1,264 @@
+.search {
+    position: relative;
+    padding-top: -100px;
+    display: inline-block;
+}
+.searchbar {
+    border: 1rem;
+}
+.barritacontenedor {
+    position: absolute;
+    padding-left: 5%;
+}
+
+.barritacontenedor .contenedorResultados{
+    position: absolute;
+}
+
+.contenedorResultados {
+    display: inline-block;
+    position: relative;
+    margin-top: inherit;
+    padding-left: 20px;
+    width: 52vw;
+    height: 26.5vw;
+    border-radius: 10px;
+    box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+    background-color: rgb(233, 233, 233);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none !important;
+}
+
+.hr-lines{
+    position: relative;
+    text-align: start;
+}
+
+.hr-lines:before{
+    content:" ";
+    display: block;
+    height: 2px;
+    width: 50vw;
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    background: rgb(180, 180, 180);
+}
+
+.hr-lines2{
+    position: relative;
+    text-align: start;
+}
+
+.hr-lines2:before{
+    content:" ";
+    display: block;
+    height: 2px;
+    width: 43vw;
+    position: absolute;
+    top: 50%;
+    left: 32%;
+    background: rgb(180, 180, 180);
+}
+@media (max-width: 576px){
+    .hr-lines2::before {
+        left: 75%;
+        width: 20vw;
+    }
+}
+
+@media (max-width: 1199px){
+    .hr-lines2::before {
+        left: 37%;
+        width: 39vw;
+    }
+}
+
+.hr-lines3{
+    position: relative;
+    text-align: start;
+}
+
+.hr-lines3:before{
+    content:" ";
+    display: block;
+    height: 2px;
+    width: 49vw;
+    position: absolute;
+    top: 50%;
+    left: 22%;
+    background: rgb(180, 180, 180);
+}
+
+@media (max-width: 576px){
+    .hr-lines3::before {
+        left: 45%;
+        width: 50%;
+    }
+}
+
+.hr-lines4{
+    position: relative;
+    text-align: start;
+}
+
+.hr-lines4:before{
+    content:" ";
+    display: block;
+    height: 2px;
+    width: 44.5vw;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    background: rgb(180, 180, 180);
+}
+@media (max-width: 576px){
+    .hr-lines4::before {
+        left: 62%;
+        width: 35%;
+    }
+}
+
+.hr-lines5{
+    position: relative;
+    text-align: start;
+}
+
+.hr-lines5:before{
+    content:" ";
+    display: block;
+    height: 2px;
+    width: 120%;
+    position: absolute;
+    top: 50%;
+    left: 39%;
+    background: rgb(180, 180, 180);
+}
+@media (max-width: 576px){
+    .hr-lines5::before {
+        left: 58%;
+        width: 39%;
+    }
+}
+@media (max-width: 1199px){
+    .hr-lines5::before {
+        left: 27%;
+        width: 52vw;
+    }
+}
+
+
+.hr-lines6{
+    position: relative;
+    text-align: start;
+}
+
+.hr-lines6:before{
+    content:" ";
+    display: block;
+    height: 2px;
+    width: 72%;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    background: rgb(180, 180, 180);
+}
+@media (max-width: 576px){
+    .hr-lines6::before {
+        left: 33%;
+        width: 65%;
+    }
+}
+@media (max-width: 1199px){
+    .hr-lines6::before {
+        left: 45%;
+        width: 52%;
+    }
+}
+
+.hr-lines7{
+    position: relative;
+    text-align: start;
+}
+
+.hr-lines7:before{
+    content:" ";
+    display: block;
+    height: 2px;
+    width: 85%;
+    position: absolute;
+    top: 50%;
+    left: 22%;
+    background: rgb(180, 180, 180);
+}
+@media (max-width: 576px){
+    .hr-lines7::before {
+        left: 50%;
+        width: 48%;
+    }
+}
+
+@media (max-width: 1199px){
+    .hr-lines7::before {
+        left: 25%;
+        width: 72%;
+    }
+}
+
+.hr-lines8{
+    position: relative;
+    text-align: start;
+}
+
+.hr-lines8:before{
+    content:" ";
+    display: block;
+    height: 2px;
+    width: 75%;
+    position: absolute;
+    top: 50%;
+    left: 32%;
+    background: rgb(180, 180, 180);
+}
+@media (max-width: 576px){
+    .hr-lines8::before {
+        left: 76%;
+        width: 20%;
+    }
+}
+@media (max-width: 1199px){
+    .hr-lines8::before {
+        left: 37%;
+        width: 60%;
+    }
+}
+
+
+
+
+.filtros {
+    text-align: center;
+}
+
+.containerrrr {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+.contenedorResultados .dataItem {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: left;
+    color: black;
+    overflow-y: hidden;
+}
+  

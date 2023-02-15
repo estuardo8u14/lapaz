@@ -29,20 +29,13 @@ export default class Medico extends Component {
               <div className="middle-sidebar-bottom">
                   <div className="middle-sidebar-left pe-0" >
                       <div className="row">
-                          <div className="col-xl-12 cart-wrapper mb-4">
-                              <div className="row">
-                                  <div className="col-lg-12 mb-3">
-                                      <div className="card p-md-5 p-4 bg-gold-gradiant rounded-3 shadow-xss bg-pattern border-0 overflow-hidden">
-                                          <div className="bg-pattern-div"></div>
-                                          <h2 className="display2-size display2-md-size fw-700 text-white mb-0 mt-0">Médico <span className="fw-700 ls-3 text-black-500 font-xsssss mt-2 d-block">Código del paciente: 319743890101</span></h2>
-                                      </div>
-                                  </div>
-                              </div>
+                          <div className="col-xl-12 cart-wrapper mt-4">
+                              
 
                               <div class="row">
                                   <div class="col-sm-12">
                                       <div class="card bg-greyblue border-0 p-4 mb-5">
-                                          <p class="mb-0 mont-font font-xssss text-uppercase fw-600 text-grey-500"><i class="fa fa-exclamation-circle"></i> Signos vitales</p>
+                                          <p class="mb-0 mont-font font-xssss text-uppercase fw-600 text-grey-500"><i class="fa fa-exclamation-circle"></i> Notas médicas</p>
                                       </div>
                                   </div>
 

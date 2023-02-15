@@ -1,5 +1,5 @@
 import React, { Component , Fragment } from "react";
-import HeaderPerfil from "../../components/Header/HeaderPerfil";
+import HeaderAdmision from "../../components/Header/HeaderAdmision";
 
 
 //componentes
@@ -11,7 +11,7 @@ class Perfil extends Component {
     render() {
         return (
             <Fragment> 
-                <HeaderPerfil />
+                <HeaderAdmision />
                 <div className="main-content right-chat-active">
                     <div className="middle-sidebar-bottom">
                         <div className="middle-sidebar-left pe-0">

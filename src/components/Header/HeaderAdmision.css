@@ -1,0 +1,60 @@
+.heart {
+    position: relative;
+
+    transform: rotate(0deg);
+
+    box-shadow: -10px 10px 90px rgb(136, 136, 136);
+
+    animation: heart 2.5s linear infinite;
+
+  }
+
+  @keyframes heart {
+
+    0% {
+
+      transform: rotate(0deg) scale(1.00);
+
+    }
+
+    80% {
+
+      transform: rotate(0deg) scale(0.98);
+
+    }
+
+    100% {
+
+      transform: rotate(0deg) scale(1.00);
+
+    }
+
+  }
+
+  .heart::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -55%;
+
+    border-radius: 100px;
+
+    box-shadow: -10px 10px 90px rgb(0, 0, 0);
+
+  }
+
+  .heart::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: -55%;
+
+    border-radius: 50px;
+
+    box-shadow: -10px 10px 90px rgb(0, 0, 0);
+
+  }

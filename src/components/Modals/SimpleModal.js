@@ -2,7 +2,8 @@ import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { Button, Typography, Card, CardContent, CardMedia, CardActionArea } from '@material-ui/core';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import ModalCodigoPaciente from "./ModalCodigoPaciente";
 
 function rand() {
     return Math.round(Math.random() * 20) - 10;
@@ -52,14 +53,13 @@ export default function SimpleModal() {
                 onClose={handleClose}
             >
                 <div style={modalStyle} className={classes.paper}> 
-                    <Card sx={{ maxWidth: 340 }}>
+                    <Card sx={{ maxWidth: 300, display:'flex', justifyContent:'center' }}>
                         <CardActionArea>
                             <CardMedia
-                            component="video"
-                            height="130"
-                            image="/assets/videos/finger.mp4"
-                            alt="fingerprint"
-                            autoPlay
+                            component="img"
+                            height="auto"
+                            image="/assets/videos/fingerprint.png"
+                            alt="fingerprint"                            
                             />
                             <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
@@ -68,7 +68,7 @@ export default function SimpleModal() {
                             <Typography variant="body2" color="text.secondary">
                             Ingresa tu huella
                             </Typography>
-                            <Link to="/Perfil"><Button variant="contained">Finalizar</Button></Link>
+                            <span class="text-right text-grey-700 font-xsss fw-700 order-total-ammount"><ModalCodigoPaciente/></span>
                             </CardContent>
                         </CardActionArea>
                     </Card>

@@ -1,0 +1,11 @@
+.react-datepicker-wrapper {
+	display: block !important;
+}
+.react-datepicker-wrapper ~ .invalid-feedback {
+	display: block !important;
+}
+
+.butn {
+	color: rgb(255, 255, 255);
+	background-color: #3074af;
+}

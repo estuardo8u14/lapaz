@@ -1,0 +1,21 @@
+.react-kanban-column {
+    background-color: rgb(221, 221, 221);
+  }
+  
+  .react-kanban-card {
+    background-color: rgb(107, 129, 155);
+    color: rgb(0, 0, 0);
+  }
+  
+  .react-kanban-card__title {
+    font-size: large;
+    text-decoration: underline;
+    font-style: italic;
+  }
+  
+  .react-kanban-card--dragging {
+    transform: rotate(90deg);
+    background-color: yellow;
+    color: purple;
+  }
+  

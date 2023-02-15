@@ -1,5 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
+.searchbar {
+  border: 1rem;
+}
+.contenedorResultados {
+  display: inline-block;
+  position: inherit;
+  margin-top: inherit;
+  padding-left: 20px;
+  width: 50vw;
+  height: 23vw;
+  border-radius: 10px;
+  box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.hr-lines{
+  position: relative;
+  text-align: start;
+}
+
+.hr-lines:before{
+  content:" ";
+  display: block;
+  height: 2px;
+  width: 50vw;
+  position: absolute;
+  top: 50%;
+  left: 100px;
+  background: rgb(0, 0, 0);
+}
+.filtros {
+  text-align: center;
+}
+
+.contenedorResultados .dataItem {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  color: black;
+}
+
 .containerrr {
   width: 100vw;
   height: 15vh;
@@ -21,7 +67,7 @@
   align-items: center;
   padding: 0 1rem 0 1rem;
   border-radius: 0.8rem;
-  background: #2596be;
+  background: #b8b8b8;
   box-sizing: border-box;
 }
 
@@ -36,7 +82,7 @@
   width: 100%;
   height: 100%;
   padding: 0 0 0 1rem;
-  background: #2596be;
+  background: #b8b8b8;
   border: none;
   outline: none;
 }
@@ -138,16 +184,36 @@
 }
 
   .dataResult {
-    z-index: 999;
     display: inline-block;
-    margin-top: 5px;
-    width: 60rem;
-    height: 5rem;
+    margin-top: -20px;
+    width: 50vw;
+    height: 23vw;
+    border-radius: 10px;
+    box-shadow: rgba(0,0,0,0.8) 0 0 10px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     overflow: hidden;
     overflow-y: auto;
   }
+  
+.hr-lines{
+  position: relative;
+  text-align: start;
+}
+
+.hr-lines:before{
+  content:" ";
+  display: block;
+  height: 2px;
+  width: 50vw;
+  position: absolute;
+  top: 50%;
+  left: 100px;
+  background: rgb(0, 0, 0);
+}
+.filtros {
+  text-align: center;
+}
   
   .dataResult::-webkit-scrollbar {
     display: none;
@@ -155,10 +221,11 @@
   
   .dataResult .dataItem {
     width: 100%;
-    height: 2rem;
+    height: 3rem;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    align-items: left;
+    justify-content: left;
     color: black;
   }
   
@@ -176,3 +243,5 @@
   #clearBtn {
     cursor: pointer;
   }
+
+  

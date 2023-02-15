@@ -110,6 +110,37 @@
   height: 100%;
 }
 
+
+.settings {
+  color: rgb(0, 0, 0);
+} 
+.change-color {
+  color: rgb(27, 27, 180);
+}
+
+.linea {
+  content:" ";
+  display: inline-block;
+  height: 2px;
+  width: 60%;
+  position: absolute;
+  top: auto;
+  left: auto;
+  background: rgb(182, 182, 182);
+}
+@media (max-width: 576px){
+  .linea {
+      width: 90% !important;
+  }
+}
+
+
+@media (max-width: 1199px){
+  .linea {
+      width: 70%;
+  }
+}
+
 .theme-dark {
   background-color: #1a2236;
 }
@@ -678,6 +709,9 @@
 
 .w400 {
   width: 400px !important;
+}
+.w750 {
+  width: 750px !important;
 }
 
 .w__12 {
@@ -1374,7 +1408,9 @@
 .pl-15 {
   padding-left: 150px !important;
 }
-
+.pr-7 {
+  padding-right: 70px !important;
+}
 .pr-15 {
   padding-right: 150px !important;
 }
@@ -2159,7 +2195,6 @@ progress {
 .container-lg,
 .container-md,
 .container-sm {
-  overflow-y: hidden;
   width: 100%;
   padding-right: var(--bs-gutter-x, 15px);
   padding-left: var(--bs-gutter-x, 15px);
@@ -2942,6 +2977,11 @@ progress {
   .col-lg-12 {
     flex: 0 0 auto;
     width: 100%;
+  }
+
+  .col-lg-13 {
+    flex: 0 0 auto;
+    width: 110%;
   }
 
   .offset-lg-0 {
@@ -5507,7 +5547,7 @@ textarea.form-control-lg {
 
 .navbar-nav-scroll {
   max-height: var(--bs-scroll-height, 75vh);
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 @media (min-width: 576px) {
@@ -8341,6 +8381,11 @@ textarea.form-control-lg {
   margin-left: 3rem !important;
 }
 
+.mx-6 {
+  margin-right: 3.8rem !important;
+  margin-left: 3.8rem !important;
+}
+
 .mx-auto {
   margin-right: auto !important;
   margin-left: auto !important;
@@ -8433,6 +8478,20 @@ textarea.form-control-lg {
   margin-right: 3rem !important;
 }
 
+.me-10 {
+  margin-right: 10rem !important;
+}
+.me-20 {
+  margin-right: 20rem !important;
+}
+.me-30 {
+  margin-right: 30rem !important;
+}
+.me-40 {
+  margin-right: 35rem !important;
+}
+
+
 .me-auto {
   margin-right: auto !important;
 }
@@ -8489,6 +8548,9 @@ textarea.form-control-lg {
   margin-left: 3rem !important;
 }
 
+.ms-6 {
+  margin-left: 6rem !important;
+}
 .ms-auto {
   margin-left: auto !important;
 }
@@ -8623,6 +8685,10 @@ textarea.form-control-lg {
 
 .pe-5 {
   padding-right: 3rem !important;
+}
+
+.pe-10 {
+  padding-right: 10rem !important;
 }
 
 .pb-0 {
@@ -8900,6 +8966,9 @@ textarea.form-control-lg {
   background-image: var(--bs-gradient) !important;
 }
 
+.bg-black-gradient {
+  background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+}
 .user-select-all {
   user-select: all !important;
 }
@@ -12570,7 +12639,7 @@ strong,
   }
 }
 .nav-header .nav-top a {
-  line-height: 100px;
+  line-height: 90px;
   width: 280px;
   text-align: left;
   padding-left: 10px;
@@ -12690,12 +12759,13 @@ strong,
 
 .navigation {
   position: fixed;
+  top: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  width: 20rem;
+  width: 280px;
   height: 100vh;
-  overflow: hidden;
   overflow-y: hidden;
+  overflow-x: hidden;
   background: transparent;
   -webkit-transition: width 0.25s;
   -o-transition: width 0.25s;
@@ -12751,7 +12821,6 @@ strong,
   .navigation {
     position: fixed;
     top: 0;
-    overflow-y: hidden;
     left: -320px;
     background-color: #fff !important;
     z-index: 1000;
@@ -12820,12 +12889,9 @@ strong,
 }
 .navigation .nav-content {
   width: 280px;
-  height: 100%;
   transition: all 0.2s ease;
   padding-left: 15px;
   padding-right: 15px;
-  padding-top: 350px;
-  padding-bottom: 320px;
 }
 @media (max-width: 767.98px) {
   .navigation .nav-content {
@@ -14964,7 +15030,6 @@ body:not(.theme-full) .main-content .middle-sidebar-bottom.header-padding {
   height: 5px;
   margin-top: 7px;
   width: 100%;
-  height: 100%;
   float: left;
 }
 
@@ -16196,7 +16261,7 @@ select.sort {
 }
 .right-scroll-bar {
   margin-left: 0px;
-  overflow-y: hidden;
+  overflow-y: scroll;
 }
 
 .right-scroll-bar::-webkit-scrollbar-track {
@@ -16213,8 +16278,10 @@ select.sort {
 }
 
 .scroll-bar {
+  background: transparent;
   margin-left: 0px;
-  overflow-y: hidden;
+  overflow-y: auto;
+  scrollbar-width: none !important;
 }
 
 .scroll-bar::-webkit-scrollbar-track {
