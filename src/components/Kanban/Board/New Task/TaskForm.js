@@ -8,19 +8,22 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const validationSchema = Yup.object().shape({
-	title: Yup.string().required('Title is required'),
-	description: Yup.string().required('Description is required'),
-	startDate: Yup.date().nullable().required('Start Date is required'),
+	title: Yup.string().required('Titulo requerido'),
+	description: Yup.string().required('Descripción requerida'),
+	startDate: Yup.date().nullable().required('Fecha de inicio requerida'),
 	//endDate: Yup.date().nullable().required("End Date is required"),
 	endDate: Yup.date()
 		.when(
 			'startDate',
 			(startDate, schema) =>
 				startDate &&
-				schema.min(startDate, 'End date must be after the start date.'),
+				schema.min(
+					startDate,
+					'Fecha de terminación debe ser después de la fecha de inicio.',
+				),
 		)
 		.nullable()
-		.required('End Date is required'),
+		.required('Fecha de terminación requerida'),
 });
 
 function TaskForm(props) {

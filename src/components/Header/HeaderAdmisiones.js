@@ -96,6 +96,14 @@ class HeaderAdmisiones extends Component {
 											<span>Ordenes Médicas</span>
 										</Link>
 									</li>
+									{/* <li>
+										<Link
+											to='/COEX'
+											className='nav-content-bttn open-font'>
+											<i className='feather-clipboard btn-round-md bg-blue-gradiant me-3'></i>
+											<span>COEX</span>
+										</Link>
+									</li> */}
 									{/* <li><Link to="/Medico" className="nav-content-bttn open-font"><i className="feather-file-text btn-round-md bg-blue-gradiant me-3"></i><span>Notas de Evolución</span></Link></li>
                                     <li><Link to="/" className="nav-content-bttn open-font"><i className="feather-git-branch btn-round-md bg-blue-gradiant me-3"></i><span>Laboratorio</span></Link></li>
                                     <li><Link to="/" className="nav-content-bttn open-font"><i className="feather-eye btn-round-md bg-blue-gradiant me-3"></i><span>Diagnosticos</span></Link></li>
@@ -126,25 +134,14 @@ class HeaderAdmisiones extends Component {
 
 				<div className={`app-header-search ${searchClass}`}>
 					<form className='search-form'>
-						<div className='form-group searchbox mb-0 border-0 p-1'>
-							<input
-								type='text'
-								className='form-control border-0'
-								placeholder='Buscar...'
-							/>
-							<i className='input-icon'>
-								<ion-icon
-									name='search-outline'
-									role='img'
-									className='md hydrated'
-									aria-label='search outline'></ion-icon>
-							</i>
-							<span className='ms-1 mt-1 d-inline-block close searchbox-close'>
-								<i
-									className='ti-close font-xs'
-									onClick={this.toggleActive}></i>
-							</span>
-						</div>
+						<SearchBarSuper
+							className='w-100'
+							data={fakeData1}
+						/>
+						{/* <div className="form-group mb-0 icon-input">
+							<i className="feather-search font-sm text-grey-400"></i>
+							<input type="text" placeholder="Escribe para buscar en todas partes ..." className="bg-grey border-0 lh-32 pt-2 pb-2 ps-5 pe-3 font-xssss fw-500 rounded-xl w750 theme-dark-bg" />
+						</div> */}
 					</form>
 				</div>
 			</div>

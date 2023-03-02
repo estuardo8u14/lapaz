@@ -86,10 +86,10 @@ export default function Admision() {
 											</div>
 										</div>
 									</div>
-									<h4 class='mont-font fw-600 font-md pt-3'>Admisión</h4>
+									<h4 class='mont-font fw-600 font-md pt-3 pb-3'>Admisión</h4>
 									<div class='col-xl-12 col-lg-12'>
 										<div class='page-title'>
-											<div class='col-xl-10 offset-xl-1 col-lg-8 pt-3'>
+											<div class='col-xl-10 offset-xl-1 col-lg-8 pt-0'>
 												<div class='order-details'>
 													<div class='table-content table-responsive mb-5 card border-1 bg-lightgrey p-lg-3 p-4'>
 														<table class='table order-table bg-lightgrey order-table-2 mb-0'>
@@ -97,13 +97,23 @@ export default function Admision() {
 																<tr>
 																	<th class='border-0'>Detalles</th>
 																</tr>
+																<tr>
+																	<Link to='/PdfConsultaMedica'>
+																		<th className=''>
+																			<i className='feather-file-text'>
+																				{' '}
+																				Imprimir
+																			</i>
+																		</th>
+																	</Link>
+																</tr>
 															</thead>
 															<tbody>
 																<tr>
 																	<th class='text-grey-700 fw-500 font-xsss'>
 																		Nombre
 																		<strong>
-																			<span>:</span> Juan Pérez
+																			<span>:</span> Juan Alberto Pérez García
 																		</strong>
 																	</th>
 																	<th class='text-grey-700 fw-500 font-xsss'>
@@ -135,9 +145,9 @@ export default function Admision() {
 																		</strong>
 																	</th>
 																	<th class='text-grey-700 fw-500 font-xsss'>
-																		Afilación IGSS
+																		Email
 																		<strong>
-																			<span>:</span> Sí
+																			<span>:</span> noseque@gmail.com
 																		</strong>
 																	</th>
 																</tr>
@@ -149,9 +159,9 @@ export default function Admision() {
 																		</strong>
 																	</th>
 																	<th class='text-grey-700 fw-500 font-xsss'>
-																		Estado civil
+																		NIT
 																		<strong>
-																			<span>:</span> Soltero
+																			<span>:</span> 15443528-5
 																		</strong>
 																	</th>
 																</tr>
@@ -170,6 +180,7 @@ export default function Admision() {
 													</div>
 												</div>
 											</div>
+
 											<div class='clearfix'></div>
 
 											<div class='row'>

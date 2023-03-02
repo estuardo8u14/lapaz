@@ -17,7 +17,7 @@ function BoardLanes(props) {
 	}, []);
 
 	return (
-		<div className='column-wrapper'>
+		<div className='column-wrapper m-0'>
 			<div style={{ width: divWidth }}>
 				{props.stages.map((stage, index) => (
 					<>

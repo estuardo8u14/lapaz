@@ -25,7 +25,7 @@
 .column-wrapper {
 	margin: 0px 20px;
 	padding: 0px 20px;
-	overflow-x: hidden;
+	overflow-x: auto;
 }
 
 .inner-column-wrapper {
@@ -39,4 +39,23 @@
 }
 .card-column:first-of-type {
 	margin-left: 0;
+}
+
+@media (max-width: 850px) {
+	.card-column {
+		float: left;
+		margin-left: 20px;
+		width: 240px;
+	}
+}
+
+@media (max-width: 850px) {
+	.card-task {
+		margin-bottom: 25px;
+		width: 200px;
+		color: #000000;
+		background-color: #bdbdbd !important;
+		border-color: #0088ff !important;
+		cursor: move;
+	}
 }

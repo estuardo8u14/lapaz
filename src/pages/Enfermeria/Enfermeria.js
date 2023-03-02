@@ -8,9 +8,10 @@ import React, { Fragment } from 'react';
 //import Board from "@lourenci/react-kanban";
 import '@lourenci/react-kanban/dist/styles.css';
 import './Enfermeria.css';
-import HeaderAdmisiones from '../../components/Header/HeaderAdmisiones';
+// import HeaderAdmisiones from '../../components/Header/HeaderAdmisiones';
 //import KanbanOrdenes from '../../components/Kanban/KanbanOrdenes';
 import Board from '../../components/Kanban/Board/Board';
+import HeaderEnfermeria from '../../components/Header/HeaderEnfermeria';
 
 // const board = {
 //     columns: [
@@ -88,7 +89,7 @@ import Board from '../../components/Kanban/Board/Board';
 export default function Enfermeria() {
 	return (
 		<Fragment>
-			<HeaderAdmisiones />
+			<HeaderEnfermeria />
 			<div className='main-content right-chat-inactive bg-white'>
 				<div className='middle-sidebar-bottom'>
 					<div className='middle-sidebar-left pe-0'>
@@ -106,7 +107,7 @@ export default function Enfermeria() {
 									<div class='col-xl-12'>
 										<div class='page-title'>
 											<h4 class='mont-font fw-600 font-md mb-lg-2 mb-0'>
-												Ordenes médicas
+												Ordenes médicas (General)
 											</h4>
 											{/* <UncontrolledBoard /> */}
 										</div>

@@ -13,24 +13,24 @@ const taskData = [
 		title: 'Orden Juan Pérez',
 		description: 'Sulfato de magnesio 5 g',
 		stage: 1,
-		startDate: new Date(2020, 3, 1),
-		endDate: new Date(2020, 3, 20),
+		startDate: new Date(2023, 3, 1),
+		endDate: new Date(2023, 3, 20),
 	},
 	{
 		id: 2,
 		title: 'Orden Maria Gonzáles',
 		description: 'Laxis, I Ampolla IV cada doce horas.',
 		stage: 1,
-		startDate: new Date(2020, 2, 25),
-		endDate: new Date(2020, 3, 25),
+		startDate: new Date(2023, 2, 25),
+		endDate: new Date(2023, 3, 25),
 	},
 	{
 		id: 3,
 		title: 'Orden Julio Madriz',
 		description: 'Riesgo de déficit de líquidos',
 		stage: 2,
-		startDate: new Date(2020, 1, 1),
-		endDate: new Date(2020, 1, 25),
+		startDate: new Date(2023, 1, 1),
+		endDate: new Date(2023, 1, 25),
 	},
 	{
 		id: 4,
@@ -38,24 +38,24 @@ const taskData = [
 		description:
 			'Valorar reflejos del paciente, diuresis y frecuencia respiratoria',
 		stage: 3,
-		startDate: new Date(2020, 0, 5),
-		endDate: new Date(2020, 1, 15),
+		startDate: new Date(2023, 0, 5),
+		endDate: new Date(2023, 1, 15),
 	},
 	{
 		id: 5,
 		title: 'Orden Javier Givarra',
 		description: 'Administración de oxígeno',
 		stage: 3,
-		startDate: new Date(2020, 2, 5),
-		endDate: new Date(2020, 3, 12),
+		startDate: new Date(2023, 2, 5),
+		endDate: new Date(2023, 3, 12),
 	},
 	{
 		id: 6,
 		title: 'Orden Diego Ruíz',
 		description: 'Conectar monitor cardíaco',
 		stage: 3,
-		startDate: new Date(2020, 2, 5),
-		endDate: new Date(2020, 3, 12),
+		startDate: new Date(2023, 2, 5),
+		endDate: new Date(2023, 3, 12),
 	},
 ];
 
@@ -97,6 +97,7 @@ function Board() {
 		};
 		event.dataTransfer.setData('text/plain', JSON.stringify(data));
 		event.dataTransfer.effectAllowed = 'move';
+		event.dataTransfer.dropEffect = 'none';
 		//event.dataTransfer.setData("taskName", taskName);
 	};
 
@@ -124,6 +125,8 @@ function Board() {
 		if (event.dataTransfer && event.dataTransfer.types[0] === 'text/plain') {
 			event.preventDefault();
 		}
+		event = event || event;
+		event.preventDefault();
 	};
 
 	const onDropHandler = (event, droppedStageId) => {
@@ -132,6 +135,8 @@ function Board() {
 		const filterTask = taskState.filter((x) => x.id === droppedData.taskId);
 		filterTask[0].stage = droppedStageId;
 		dispatch({ type: 'ON_DROP', payload: filterTask[0] });
+		event = event || event;
+		event.preventDefault();
 	};
 
 	const onAddingNewTask = (dataFromChild) => {

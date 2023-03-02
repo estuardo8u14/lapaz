@@ -5,7 +5,7 @@ import HeaderAdmision from '../../components/Header/HeaderAdmision';
 
 function TablasPaciente() {
 	useEffect(() => {
-		window.scrollTo(0, 0);
+		window.scrollTo(0, 1000);
 	}, []);
 	return (
 		<Fragment>
@@ -58,13 +58,20 @@ function TablasPaciente() {
 														<tr>
 															<th class='border-0'>Detalles</th>
 														</tr>
+														<tr>
+															<Link to='/PdfConsultaMedica'>
+																<th className=''>
+																	<i className='feather-file-text'> Imprimir</i>
+																</th>
+															</Link>
+														</tr>
 													</thead>
 													<tbody>
 														<tr>
 															<th class='text-grey-700 fw-500 font-xsss'>
 																Nombre
 																<strong>
-																	<span>:</span> Juan Pérez
+																	<span>:</span> Juan Alberto Pérez García
 																</strong>
 															</th>
 															<th class='text-grey-700 fw-500 font-xsss'>
@@ -96,9 +103,9 @@ function TablasPaciente() {
 																</strong>
 															</th>
 															<th class='text-grey-700 fw-500 font-xsss'>
-																Afilación IGSS
+																Email
 																<strong>
-																	<span>:</span> Sí
+																	<span>:</span> noseque@gmail.com
 																</strong>
 															</th>
 														</tr>
@@ -110,9 +117,9 @@ function TablasPaciente() {
 																</strong>
 															</th>
 															<th class='text-grey-700 fw-500 font-xsss'>
-																Estado civil
+																NIT
 																<strong>
-																	<span>:</span> Soltero
+																	<span>:</span> 15443528-5
 																</strong>
 															</th>
 														</tr>
@@ -157,12 +164,15 @@ function TablasPaciente() {
 													</thead>
 													<tbody>
 														<tr>
-															<td>CL-346202023</td>
+															<td>
+																CL-3462023{' '}
+																<p className='text-pinterest'>[ACTIVA]</p>
+															</td>
 															<td>Emergencia</td>
 															<td>01/06/2023</td>
 															<td>01/06/2023</td>
-															<Link to={'/Admision'}>
-																<td className='feather-edit'></td>
+															<Link to={'/Anamnesis'}>
+																<td className='feather-edit text-pinterest'></td>
 															</Link>
 														</tr>
 														<tr>
@@ -170,8 +180,10 @@ function TablasPaciente() {
 															<td>Cirugía</td>
 															<td>02/12/2021</td>
 															<td>06/12/2021</td>
-															<Link to={'/Admision'}>
-																<td className='feather-edit'></td>
+															<Link
+																to={'/Admision'}
+																style={{ pointerEvents: 'none' }}>
+																<td className='feather-edit '></td>
 															</Link>
 														</tr>
 													</tbody>
@@ -210,7 +222,9 @@ function TablasPaciente() {
 															<td>Hemograma</td>
 															<td>01/06/2023</td>
 															<td>01/06/2023</td>
-															<Link to={'/Admision'}>
+															<Link
+																to={'/Admision'}
+																style={{ pointerEvents: 'none' }}>
 																<td className='feather-edit'></td>
 															</Link>
 														</tr>
@@ -219,7 +233,9 @@ function TablasPaciente() {
 															<td>Panel básico metabólico</td>
 															<td>02/12/2021</td>
 															<td>03/12/2021</td>
-															<Link to={'/Admision'}>
+															<Link
+																to={'/Admision'}
+																style={{ pointerEvents: 'none' }}>
 																<td className='feather-edit'></td>
 															</Link>
 														</tr>
@@ -228,7 +244,9 @@ function TablasPaciente() {
 															<td>Heces por parásito</td>
 															<td>20/08/2021</td>
 															<td>22/08/2021</td>
-															<Link to={'/Admision'}>
+															<Link
+																to={'/Admision'}
+																style={{ pointerEvents: 'none' }}>
 																<td className='feather-edit'></td>
 															</Link>
 														</tr>
@@ -237,7 +255,9 @@ function TablasPaciente() {
 															<td>Perfil Renal</td>
 															<td>07/11/2021</td>
 															<td>07/11/2021</td>
-															<Link to={'/Admision'}>
+															<Link
+																to={'/Admision'}
+																style={{ pointerEvents: 'none' }}>
 																<td className='feather-edit'></td>
 															</Link>
 														</tr>
@@ -278,7 +298,9 @@ function TablasPaciente() {
 															<td>Electrocardiograma</td>
 															<td>01/06/2023</td>
 															<td>01/06/2023</td>
-															<Link to={'/Admision'}>
+															<Link
+																to={'/Admision'}
+																style={{ pointerEvents: 'none' }}>
 																<td className='feather-edit'></td>
 															</Link>
 														</tr>
@@ -287,7 +309,9 @@ function TablasPaciente() {
 															<td>Rayos X</td>
 															<td>02/12/2021</td>
 															<td>03/12/2021</td>
-															<Link to={'/Admision'}>
+															<Link
+																to={'/Admision'}
+																style={{ pointerEvents: 'none' }}>
 																<td className='feather-edit'></td>
 															</Link>
 														</tr>
@@ -296,7 +320,9 @@ function TablasPaciente() {
 															<td>Rayos X</td>
 															<td>20/08/2021</td>
 															<td>22/08/2021</td>
-															<Link to={'/Admision'}>
+															<Link
+																to={'/Admision'}
+																style={{ pointerEvents: 'none' }}>
 																<td className='feather-edit'></td>
 															</Link>
 														</tr>
@@ -305,7 +331,9 @@ function TablasPaciente() {
 															<td>Ecocardiograma</td>
 															<td>07/11/2021</td>
 															<td>07/11/2021</td>
-															<Link to={'/Admision'}>
+															<Link
+																to={'/Admision'}
+																style={{ pointerEvents: 'none' }}>
 																<td className='feather-edit'></td>
 															</Link>
 														</tr>
@@ -320,6 +348,60 @@ function TablasPaciente() {
 											color='primary'
 											className='col-lg-11'>
 											Crear nuevo exámen diagnóstico
+										</Button>
+									</Link>
+									<div class='row pt-5'>
+										<h4 class='mont-font fw-600 font-md mb-lg-3 mb-0'>
+											Consultas externas
+										</h4>
+									</div>
+									<div class='row'>
+										<div class='col-lg-12 mb-0 mt-0'>
+											<div class='form-gorup'>
+												<table class='table'>
+													<thead>
+														<tr>
+															<th>Código</th>
+															<th>Médico</th>
+															<th>Fecha Entrada</th>
+															<th>Fecha Salida</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>
+																CE-5462023{' '}
+																<p className='text-pinterest'>[ACTIVA]</p>
+															</td>
+															<td>María Teresa Calcuta</td>
+															<td>01/06/2023</td>
+															<td>01/06/2023</td>
+															<Link to={'/COEX'}>
+																<td className='feather-edit text-pinterest'></td>
+															</Link>
+														</tr>
+														<tr>
+															<td>CE-74502021</td>
+															<td>Kevin Alfonso Lara</td>
+															<td>02/12/2021</td>
+															<td>06/12/2021</td>
+															<Link
+																to={'/COEX'}
+																style={{ pointerEvents: 'none' }}>
+																<td className='feather-edit '></td>
+															</Link>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									<Link to={'/COEX'}>
+										<Button
+											variant='contained'
+											color='primary'
+											className='col-lg-11 mb-3'>
+											Crear nueva consulta externa
 										</Button>
 									</Link>
 								</div>

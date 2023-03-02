@@ -3,7 +3,14 @@ import React, { Fragment, useState, useEffect } from 'react';
 //import logo from '../../assets/img/logolargo.png';
 import HeaderAdmisiones from '../../components/Header/HeaderAdmisiones';
 // import {Accordion, AccordionSummary, AccordionDetails, Typography, MenuItem, Select, InputLabel } from '@material-ui/core';
-import { MenuItem, Select, InputLabel } from '@material-ui/core';
+import {
+	MenuItem,
+	Select,
+	InputLabel,
+	RadioGroup,
+	FormLabel,
+	FormControlLabel,
+} from '@material-ui/core';
 // import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import SimpleModal from '../../components/Modals/SimpleModal';
 import ModalDir from '../../components/Modals/ModalDir';
@@ -12,21 +19,31 @@ import Radio from '@material-ui/core/Radio';
 // import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from '@material-ui/core/FormControl';
 import ModalAseguradoras from '../../components/Modals/ModalAseguradoras';
+import ModalAutoFill from '../../components/Modals/ModalAutoFill';
 import InfoPacienteForm from '../../components/InfoPacienteForm/InfoPacienteForm';
+import Covid from '../../components/Vacunas/Covid';
+import { useLocation } from 'react-router';
+import ModalAdRapida from '../../components/Modals/ModalAdRapida';
 
 // import Autocomplete from '@mui/material/Autocomplete';
 // import TextField from '@mui/material/TextField';
 
-export default function Admisiones() {
+export default function Admisiones(props) {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
 
-	const [parentesco, setParentesco] = useState('Parentesco');
+	const location = useLocation();
+	const propsData = location.state;
+
+	const [value, setValue] = React.useState('');
+	const [covid, setCovid] = useState('');
+	const [covidContentVisible, setCovidContentVisible] = useState(false);
 	const [padreContentVisible, setPadreContentVisible] = useState(false);
 	const [madreContentVisible, setMadreContentVisible] = useState(false);
 	const [tutorContentVisible, setTutorContentVisible] = useState(false);
 
+	const [parentesco, setParentesco] = useState('Parentesco');
 	useEffect(() => {
 		parentesco === 'Padre'
 			? setPadreContentVisible(true)
@@ -41,6 +58,20 @@ export default function Admisiones() {
 
 	const handleOnChange = (e) => {
 		setParentesco(e.target.value);
+	};
+
+	useEffect(() => {
+		covid === 'Covid'
+			? setCovidContentVisible(true)
+			: setCovidContentVisible(false);
+	}, [covid]);
+
+	const handleOnChangeCovid = (e) => {
+		setCovid(e.target.value);
+	};
+
+	const handleChange = (event) => {
+		setValue(event.target.value);
 	};
 
 	return (
@@ -81,14 +112,19 @@ export default function Admisiones() {
 
 									<div class='col-xl-12 col-lg-12'>
 										<div class='page-title'>
-											<h4 class='mont-font fw-600 font-md mb-lg-5 mb-4'>
+											<h4 class='mont-font fw-600 font-md mb-lg-5 mb-1'>
 												Información del paciente
 											</h4>
+											<ModalAdRapida />
 											<form action='#'>
 												<div class='row'>
-													<div class='col-lg-6 mb-3'>
+													<div class='col-lg-6 mt-5 mb-3'>
 														<div class='form-gorup'>
-															<label class='mont-font fw-600 font-xssss'></label>
+															{propsData && (
+																<div>
+																	<label class='mont-font fw-600 font-xssss'>{`Nombre: ${propsData.component}`}</label>
+																</div>
+															)}
 															<input
 																required
 																type='text'
@@ -99,9 +135,13 @@ export default function Admisiones() {
 														</div>
 													</div>
 
-													<div class='col-lg-6 mb-3'>
+													<div class='col-lg-6 mt-5 mb-3'>
 														<div class='form-gorup'>
-															<label class='mont-font fw-600 font-xssss'></label>
+															{propsData && (
+																<div>
+																	<label class='mont-font fw-600 font-xssss'>{`2ndo Nombre: ${propsData.content}`}</label>
+																</div>
+															)}
 															<input
 																type='text'
 																placeholder='Segundo nombre'
@@ -114,7 +154,12 @@ export default function Admisiones() {
 												<div class='row'>
 													<div class='col-lg-6 mb-3'>
 														<div class='form-gorup'>
-															<label class='mont-font fw-600 font-xssss'></label>
+															{propsData && (
+																<div>
+																	<label class='mont-font fw-600 font-xssss'>{`Apellido: ${propsData.component1}`}</label>
+																</div>
+															)}
+
 															<input
 																type='text'
 																placeholder='Primer apellido *'
@@ -126,7 +171,11 @@ export default function Admisiones() {
 
 													<div class='col-lg-6 mb-3'>
 														<div class='form-gorup'>
-															<label class='mont-font fw-600 font-xssss'></label>
+															{propsData && (
+																<div>
+																	<label class='mont-font fw-600 font-xssss'>{`2ndo Apellido: ${propsData.content2}`}</label>
+																</div>
+															)}
 															<input
 																type='text'
 																placeholder='Segundo apellido *'
@@ -140,9 +189,13 @@ export default function Admisiones() {
 												<div class='row'>
 													<div class='col-lg-6 mb-3'>
 														<div class='form-gorup'>
-															<label class='mont-font fw-600 font-xssss'></label>
+															{propsData && (
+																<div>
+																	<label class='mont-font fw-600 font-xssss'>{`Fecha de nacimiento: ${propsData.content3}`}</label>
+																</div>
+															)}
 															<input
-																placeholder='Fecha de nancimiento *'
+																placeholder='Fecha de nacimiento *'
 																onFocus={(e) => (e.target.type = 'date')}
 																onBlur={(e) => (e.target.type = 'text')}
 																name='comment-name'
@@ -153,7 +206,11 @@ export default function Admisiones() {
 
 													<div class='col-lg-6 mb-3'>
 														<div class='form-gorup'>
-															<label class='mont-font fw-600 font-xssss'></label>
+															{propsData && (
+																<div>
+																	<label class='mont-font fw-600 font-xssss'>{`Nacionalidad: ${propsData.content4}`}</label>
+																</div>
+															)}
 															<input
 																type='text'
 																placeholder='Nacionalidad'
@@ -166,7 +223,11 @@ export default function Admisiones() {
 												<div class='row'>
 													<div class='col-lg-3 mb-3'>
 														<div class='form-gorup'>
-															<label class='mont-font fw-600 font-xssss'></label>
+															{propsData && (
+																<div>
+																	<label class='mont-font fw-600 font-xssss'>{`CUI: ${propsData.content5}`}</label>
+																</div>
+															)}
 															<input
 																type='text'
 																placeholder='CUI / DPI *'
@@ -178,7 +239,11 @@ export default function Admisiones() {
 
 													<div class='col-lg-3 mb-3'>
 														<div class='form-gorup'>
-															<label class='mont-font fw-600 font-xssss'></label>
+															{propsData && (
+																<div>
+																	<label class='mont-font fw-600 font-xssss'>{`Pasaporte: ${propsData.content6}`}</label>
+																</div>
+															)}
 															<input
 																type='text'
 																placeholder='Pasasporte'
@@ -190,7 +255,11 @@ export default function Admisiones() {
 
 													<div class='col-lg-6 mb-3'>
 														<div class='form-gorup'>
-															<label class='mont-font fw-600 font-xssss'></label>
+															{propsData && (
+																<div>
+																	<label class='mont-font fw-600 font-xssss'>{`Estado civil: ${propsData.content7}`}</label>
+																</div>
+															)}
 															<input
 																type='text'
 																placeholder='Estado civil'
@@ -202,7 +271,11 @@ export default function Admisiones() {
 
 													<div class='col-lg-3 mb-3'>
 														<div class='form-gorup'>
-															<label class='mont-font fw-600 font-xssss'></label>
+															{propsData && (
+																<div>
+																	<label class='mont-font fw-600 font-xssss'>{`Sexo: ${propsData.content8}`}</label>
+																</div>
+															)}
 															<input
 																type='text'
 																placeholder='Sexo'
@@ -213,7 +286,11 @@ export default function Admisiones() {
 													</div>
 													<div class='col-lg-3 mb-3'>
 														<div class='form-gorup'>
-															<label class='mont-font fw-600 font-xssss'></label>
+															{propsData && (
+																<div>
+																	<label class='mont-font fw-600 font-xssss'>{`Teléfono: ${propsData.content9}`}</label>
+																</div>
+															)}
 															<input
 																type='text'
 																placeholder='Teléfono *'
@@ -224,7 +301,11 @@ export default function Admisiones() {
 													</div>
 													<div class='col-lg-6 mb-3'>
 														<div class='form-gorup'>
-															<label class='mont-font fw-600 font-xssss'></label>
+															{propsData && (
+																<div>
+																	<label class='mont-font fw-600 font-xssss'>{`Correo electrónico: ${propsData.content10}`}</label>
+																</div>
+															)}
 															<input
 																type='text'
 																placeholder='Correo electrónico *'
@@ -238,6 +319,11 @@ export default function Admisiones() {
 													<div class='row'>
 														<div class='col-lg-9 mb-3'>
 															<div class='form-gorup'>
+																{propsData && (
+																	<div>
+																		<label class='mont-font fw-600 font-xssss'>{`Dirección Residencia: ${propsData.content11}`}</label>
+																	</div>
+																)}
 																<input
 																	type='text'
 																	placeholder='Dirección Residencia *'
@@ -246,7 +332,7 @@ export default function Admisiones() {
 															</div>
 														</div>
 														<div class='col-lg-3 mb-3'>
-															<div class='form-gorup pt-1'>
+															<div class='form-gorup pt-2'>
 																<ModalDir />
 															</div>
 														</div>
@@ -259,8 +345,19 @@ export default function Admisiones() {
 																Paciente con capacidades especiales
 															</label>
 														</div>
+														<div class='col-lg-12 mb-3'>
+															<div class='form-gorup pt-1'>
+																<ModalAutoFill />
+																<p className='ms-3 pt-2'>
+																	Autofill: Muestra los pacientes
+																	auto-registrados con la capacidad de corregir
+																	datos
+																</p>
+															</div>
+														</div>
 													</div>
 												</div>
+
 												<div class='row'>
 													<div class='col-lg-12 mb-5'>
 														<div class='form-gorup'>
@@ -401,6 +498,93 @@ export default function Admisiones() {
 																name='comment-name'
 																class='form-control'
 															/>
+														</div>
+													</div>
+												</div>
+
+												<div class='row'>
+													<div class='col-lg-12 mb-3 mt-3'>
+														<div class='form-gorup'>
+															<div class='linea'></div>
+														</div>
+													</div>
+												</div>
+												<h4 class='mont-font fw-600 font-md mb-2'>COVID</h4>
+
+												<div class='row'>
+													<div class='col-lg-12 mb-0 pt-1'>
+														<div class='form-gorup'>
+															<div class='row'>
+																<div class='col-lg-6 mb-0 pt-1'>
+																	<div class='form-check text-left mb-3'>
+																		<FormControl>
+																			<FormLabel id='demo-controlled-radio-buttons-group'>
+																				¿Ha dado positivo a COVID?
+																			</FormLabel>
+																			<RadioGroup
+																				aria-labelledby='demo-controlled-radio-buttons-group'
+																				name='controlled-radio-buttons-group'
+																				value={value}
+																				onChange={handleChange}>
+																				<FormControlLabel
+																					value='Covid'
+																					control={<Radio color='success' />}
+																					label='Sí'
+																				/>
+																				<FormControlLabel
+																					value=''
+																					control={<Radio color='warning' />}
+																					label='No'
+																				/>
+																			</RadioGroup>
+																		</FormControl>
+																	</div>
+																</div>
+																<div class='col-lg-6 mb-0 pt-1'>
+																	<div class='form-check text-left mb-3'>
+																		<FormControl>
+																			<FormLabel id='demo-controlled-radio-buttons-group'>
+																				¿Se ha vacunado contra COVID?
+																			</FormLabel>
+																			<RadioGroup
+																				aria-labelledby='demo-controlled-radio-buttons-group'
+																				name='controlled-radio-buttons-group'
+																				value={covid}
+																				onChange={handleOnChangeCovid}>
+																				<FormControlLabel
+																					value='Covid'
+																					control={<Radio color='warning' />}
+																					label='Sí'
+																				/>
+																				<FormControlLabel
+																					value=''
+																					control={<Radio color='warning' />}
+																					label='No'
+																				/>
+																			</RadioGroup>
+																		</FormControl>
+																	</div>
+																</div>
+															</div>
+															<div class='row'>
+																<div class='col-lg-6 mb-3 '>
+																	<div class='form-check text-left mb-3 '>
+																		<label class='me-3 form-check-label fw-600 font-xsss text-grey-600'>
+																			Fecha:
+																		</label>
+																		<input type='date'></input>
+																	</div>
+																</div>
+															</div>
+
+															{covidContentVisible && <Covid />}
+															{/* <label class="mont-font fw-600 font-xssss"></label>
+                                                    <select type="text" class="pl-7 mx-3 mont-font fw-600 font-xsss mb-1" name="uname" required >
+                                                        <option value="value1">Paciente</option>
+                                                        <option value="value2" selected >Padre</option>
+                                                        <option value="value3">Madre</option>
+
+                                                    </select> */}
 														</div>
 													</div>
 												</div>
@@ -640,6 +824,7 @@ export default function Admisiones() {
 																	Parentesco
 																</InputLabel>
 																<Select
+																	className='pt-3'
 																	value={parentesco}
 																	onChange={handleOnChange}
 																	labelId='demo-simple-select-label'
@@ -719,7 +904,7 @@ export default function Admisiones() {
 																		<th class='text-grey-700 fw-500 font-xsss'>
 																			Nombre
 																			<strong>
-																				<span>:</span> Juan Pérez
+																				<span>:</span> Juan Antonio Pérez García
 																			</strong>
 																		</th>
 																		<th class='text-grey-700 fw-500 font-xsss'>
@@ -751,9 +936,9 @@ export default function Admisiones() {
 																			</strong>
 																		</th>
 																		<th class='text-grey-700 fw-500 font-xsss'>
-																			Afilación IGSS
+																			Correo electrónico
 																			<strong>
-																				<span>:</span> Sí
+																				<span>:</span> noseque@gmail.com
 																			</strong>
 																		</th>
 																	</tr>
@@ -765,9 +950,9 @@ export default function Admisiones() {
 																			</strong>
 																		</th>
 																		<th class='text-grey-700 fw-500 font-xsss'>
-																			Estado civil
+																			NIT
 																			<strong>
-																				<span>:</span> Soltero
+																				<span>:</span> 15443528-5
 																			</strong>
 																		</th>
 																	</tr>
