@@ -5,7 +5,7 @@ import HeaderAdmision from '../../components/Header/HeaderAdmision';
 
 function TablasPaciente() {
 	useEffect(() => {
-		window.scrollTo(0, 1000);
+		window.scrollTo(0, 200);
 	}, []);
 	return (
 		<Fragment>

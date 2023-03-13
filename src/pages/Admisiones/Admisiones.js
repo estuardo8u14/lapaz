@@ -113,7 +113,7 @@ export default function Admisiones(props) {
 									<div class='col-xl-12 col-lg-12'>
 										<div class='page-title'>
 											<h4 class='mont-font fw-600 font-md mb-lg-5 mb-1'>
-												Información del paciente
+												Información del paciente (Completa)
 											</h4>
 											<ModalAdRapida />
 											<form action='#'>

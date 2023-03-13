@@ -248,6 +248,8 @@ export default function ModalAutoFill() {
 								</div>
 
 								<Link
+									target='_blank'
+									rel='noreferrer'
 									to='/Admisiones'
 									state={dashboardData}>
 									<Button

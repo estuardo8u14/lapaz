@@ -25,6 +25,7 @@ import OrdenesMedicasV from './pages/Enfermeria/OrdenesMedicasV';
 import Overview from './components/Appointments/Overview';
 import Coex from './pages/COEX/Coex';
 import OverviewSmall from './components/Appointments/OverviewSmall';
+import NewPatient from './pages/Admisiones/NewPatient';
 
 function App() {
 	return (
@@ -53,6 +54,10 @@ function App() {
 				<Route
 					path='/Admisiones'
 					element={<Admisiones />}
+				/>
+				<Route
+					path='/NuevoPaciente'
+					element={<NewPatient />}
 				/>
 				<Route
 					path='/Enfermeria'
