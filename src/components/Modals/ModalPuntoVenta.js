@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2, 4, 3),
   },
 }));
-export default function ModalAdRapida() {
+export default function ModalPuntoVenta() {
   const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
@@ -50,8 +50,8 @@ export default function ModalAdRapida() {
   };
   return (
     <div>
-      <Button variant="outlined" color="red" onClick={handleOpen}>
-        Ingreso RÁPIDO
+      <Button variant="contained" onClick={handleOpen}>
+        Pagar
       </Button>
       <Modal
         aria-labelledby="simple-modal-title"
@@ -66,36 +66,27 @@ export default function ModalAdRapida() {
             <CardActionArea>
               <CardContent>
                 <Typography gutterBottom variant="h4" component="div">
-                  Admisión Rápida:
+                  Punto de venta
                 </Typography>
                 <Typography gutterBottom variant="h6" component="div">
-                  Nombre del paciente:
+                  Revisar NIT correcto: 907598-5
                 </Typography>
                 <input
                   required
                   type="text"
-                  placeholder="Nombre *"
+                  placeholder="NIT (Dejar en blanco si es correcto*)"
                   name="comment-name"
                   class="form-control mb-2"
                 />
-
-                <input
-                  required
-                  type="text"
-                  placeholder="Teléfono *"
-                  name="comment-name"
-                  class="form-control mb-2"
-                />
-
-                <span class="text-right text-grey-700 font-xsss fw-700 order-total-ammount">
-                  <div className="">
-                    <ModalCodigoPaciente onClick={handleClose} />
-                  </div>
-                </span>
 
                 <Typography class="pt-2 fw-700" variant="h7" component="div">
-                  Recuerda: Regresar a rellenar la información completa del
-                  paciente
+                  Monto: Q80
+                  <Button variant="contained" className="ms-6">
+                    Tarjeta
+                  </Button>
+                  <Button variant="contained" className="ms-2">
+                    Efectivo
+                  </Button>
                 </Typography>
               </CardContent>
             </CardActionArea>
