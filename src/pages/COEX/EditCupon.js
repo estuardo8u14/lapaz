@@ -78,6 +78,21 @@ export default function EditCupon(props) {
 		setEditing(true);
 	}
 
+	const [isShownTC, setIsShownTC] = useState(false);
+	const handleClickTC = (e) => {
+		setIsShownTC(!isShownTC);
+	};
+
+	const [isShownDT, setIsShownDT] = useState(false);
+	const handleClickDT = (e) => {
+		setIsShownDT(!isShownDT);
+	};
+
+	const [isShownCaja, setIsShownCaja] = useState(false);
+	const handleClickCaja = (e) => {
+		setIsShownCaja(!isShownCaja);
+	};
+
 	return (
 		<Fragment>
 			<HeaderAdmision />
@@ -293,18 +308,104 @@ export default function EditCupon(props) {
 													<PickerDateTimeEdit />
 
 													<div class='row'>
-														<div class='col-lg-6 mb-1 pt-5'>
+														<div class='col-lg-12 mb-5 mt-3'>
 															<div class='form-gorup'>
-																<label class='mont-font fw-500 font-xssss'>
-																	Monto: <p className='fw-bold'>Q80</p>
-																</label>
+																<div class='linea'></div>
 															</div>
+														</div>
+													</div>
+
+													<label class='mont-font fw-600 font-xs pb-4'>
+														Medio de Pago:
+													</label>
+
+													<div className='row ms-5'>
+														<div className='col-lg-2 mb-2'>
+															<Button
+																onClick={handleClickDT}
+																variant='contained'>
+																Deposito
+															</Button>
+														</div>
+														<div className='col-lg-2 ms-3 mb-2'>
+															<Button
+																onClick={handleClickTC}
+																variant='contained'>
+																TC o TD
+															</Button>
+														</div>
+
+														<div className='col-lg-2 pe-3 mb-2'>
+															<Button
+																onClick={handleClickCaja}
+																variant='contained'>
+																Pago en caja
+															</Button>
 														</div>
 													</div>
 													<div class='row'>
 														<div class='col-lg-12 mb-5 mt-3'>
 															<div class='form-gorup'>
-																<div class='linea'></div>
+																<div class='linea3'></div>
+															</div>
+														</div>
+													</div>
+													{isShownTC && (
+														<>
+															<h2>Modulo de TC o TD</h2>
+														</>
+													)}
+													{isShownDT && (
+														<>
+															<h2>Modulo de deposito o transferencia</h2>
+														</>
+													)}
+													{isShownCaja && (
+														<>
+															<h2>Modulo de Caja</h2>
+														</>
+													)}
+
+													<div class='row'>
+														<div class='col-lg-12 mb-5 mt-3'>
+															<div class='form-gorup'>
+																<div class='linea3'></div>
+															</div>
+														</div>
+													</div>
+													<div className='col-lg-12'>
+														<label class='mont-font fw-600 font-xs pb-4'>
+															Facturación y validación:
+														</label>
+													</div>
+
+													<label class='mont-font fw-600 font-xsss pb-4'>
+														Pago confirmado o pendiente:
+													</label>
+
+													<table>
+														<tr>
+															<td>Factura 1</td>
+															<td>Cancelado</td>
+														</tr>
+														<tr>
+															<td>Factura 2</td>
+															<td>Cancelado</td>
+														</tr>
+														<tr>
+															<td>Factura 3</td>
+															<td>Cancelado</td>
+														</tr>
+														<tr>
+															<td>Factura 4</td>
+															<td class='fw-bold'>Pendiente</td>
+														</tr>
+													</table>
+
+													<div class='row'>
+														<div class='col-lg-12 mb-5 mt-3'>
+															<div class='form-gorup'>
+																<div class='linea3'></div>
 															</div>
 														</div>
 													</div>
@@ -324,14 +425,13 @@ export default function EditCupon(props) {
 													</div>
 
 													<div class='row'>
-														<label class='mont-font fw-500 font-xssss pt-5'>
-															Cargar archivos
-														</label>
 														<form action='#'>
 															<div class='row'>
-																<div class='col-lg-12 pt-1 mb-3'>
+																<div class='col-lg-12 pt-3 mb-3'>
 																	<div class='form-check text-left mb-0'>
-																		<input type='file'></input>
+																		<Button variant='contained'>
+																			Agendar y finalizar edición
+																		</Button>
 																	</div>
 																</div>
 

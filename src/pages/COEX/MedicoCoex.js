@@ -73,7 +73,7 @@ export default function MedicoCoex() {
 									<div class='col-xl-12 col-lg-12'>
 										<div class='page-title'>
 											<h4 class='mont-font fw-600 font-md pt-3 pb-3'>
-												COEX - Citas Confirmadas
+												COEX - Listado de pacientes
 											</h4>
 										</div>
 										<div>
@@ -81,15 +81,19 @@ export default function MedicoCoex() {
 												<tr>
 													<th>Código</th>
 													<th>Nombre</th>
+													<th>Apellido</th>
 													<th>Fecha y hora</th>
-													<th>Status</th>
+													<th>Hora</th>
+													<th>Seguro</th>
 													<th>Acciones</th>
 												</tr>
 												<tr>
 													<td>301947968</td>
-													<td>Juan Pérez</td>
-													<td>21/03/2023 10:00AM</td>
-													<td className='fw-bold'>Confirmada</td>
+													<td className='fw-bold'>Juan</td>
+													<td className='fw-bold'>Pérez</td>
+													<td>21/03/2023</td>
+													<td>10:00AM</td>
+													<td>SS</td>
 													<td className='izquierda'>
 														<div class='col-lg-12'>
 															<Link to='/Anamnesis'>
@@ -105,9 +109,11 @@ export default function MedicoCoex() {
 												</tr>
 												<tr>
 													<td>78465416</td>
-													<td>José Rodríguez</td>
-													<td>21/03/2023 10:30AM</td>
-													<td>No confirmada</td>
+													<td className='fw-bold'>José</td>
+													<td className='fw-bold'>Rodríguez</td>
+													<td>21/03/2023</td>
+													<td>10:30AM </td>
+													<td>El Roble</td>
 													<td className='izquierda'>
 														<div class='col-lg-12'>
 															<Link to='/Anamnesis'>
@@ -121,9 +127,65 @@ export default function MedicoCoex() {
 												</tr>
 												<tr>
 													<td>654654</td>
-													<td>Hugo Cuyuche</td>
-													<td>21/03/2023 15:00AM</td>
-													<td>No confirmada</td>
+													<td className='fw-bold'>Hugo</td>
+													<td className='fw-bold'>Cuyuche</td>
+													<td>25/03/2023</td>
+													<td>15:00AM</td>
+													<td>General</td>
+													<td className='izquierda'>
+														<div class='col-lg-12'>
+															<Link to='/Anamnesis'>
+																<Button variant='contained'>
+																	Atención COEX
+																</Button>
+															</Link>
+															<ModalEditCuponCoex />
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>78465416</td>
+													<td className='fw-bold'>Karen</td>
+													<td className='fw-bold'>Lara</td>
+													<td>29/03/2023</td>
+													<td>10:00AM </td>
+													<td>Universales</td>
+													<td className='izquierda'>
+														<div class='col-lg-12'>
+															<Link to='/Anamnesis'>
+																<Button variant='contained'>
+																	Atención COEX
+																</Button>
+															</Link>
+															<ModalEditCuponCoex />
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>78465416</td>
+													<td className='fw-bold'>Mauricio</td>
+													<td className='fw-bold'>Motta</td>
+													<td>30/03/2023</td>
+													<td>17:30AM </td>
+													<td>MAPFRE</td>
+													<td className='izquierda'>
+														<div class='col-lg-12'>
+															<Link to='/Anamnesis'>
+																<Button variant='contained'>
+																	Atención COEX
+																</Button>
+															</Link>
+															<ModalEditCuponCoex />
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>78465416</td>
+													<td className='fw-bold'>Giro</td>
+													<td className='fw-bold'>Roldan</td>
+													<td>21/03/2023</td>
+													<td>15:30AM </td>
+													<td>La ceiba</td>
 													<td className='izquierda'>
 														<div class='col-lg-12'>
 															<Link to='/Anamnesis'>

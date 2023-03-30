@@ -28,6 +28,7 @@ import Coex from './pages/COEX/Coex';
 import NewPatient from './pages/Admisiones/NewPatient';
 import MedicoCoex from './pages/COEX/MedicoCoex';
 import EditCupon from './pages/COEX/EditCupon';
+import Anamnesis2 from './pages/Medico/Anamnesis2';
 
 function App() {
 	return (
@@ -132,6 +133,10 @@ function App() {
 				<Route
 					path='/EditCupon'
 					element={<EditCupon />}
+				/>
+				<Route
+					path='/Atencion'
+					element={<Anamnesis2 />}
 				/>
 			</Routes>
 		</Router>

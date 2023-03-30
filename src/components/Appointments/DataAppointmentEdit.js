@@ -43,72 +43,41 @@ export default function DataAppointmentEdit() {
 	return (
 		<div class='col-xl-12'>
 			<div class='page-title'>
-				<h4 class='mont-font fw-600 font-md pt-3 pb-3'>
+				<h4 class='mont-font fw-600 font-md pt-3 pb-1'>
 					Valor Consulta o Copago
 				</h4>
 				<form action='#'>
 					<div class='row'>
-						<div class='col-lg-12 mt-4 mb-3'>
-							<h6 class='mont-font fw-600 font-md pt-3 pb-3'>Total a pagar:</h6>
-							<h6 class='mont-font fw-600 font-md pt-3 pb-3'>80</h6>
-							<label
+						<div class='col-lg-12 mb-1'>
+							<label class='mont-font fw-600 font-xs pt-3 pb-3'>
+								Total a pagar: Q80.00
+							</label>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='col-lg-12 mb-1'>
+							<h6 class='mont-font fw-600 font-xs pt-3 pb-3'>
+								Saldo a favor: Q0.00
+							</h6>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='col-lg-12 mt-2 mb-3'>
+							<h6 class='mont-font fw-600 font-xs pt-3 pb-3'>
+								Diferencial: Q0.00
+							</h6>
+						</div>
+					</div>
+					<div class='col-lg-6 mb-3'>
+						<div class='form-gorup pb-3'>
+							<label class='mont-font fw-600 font-xs pt-3'>Nit:</label>
+							<input
 								type='text'
-								placeholder='Propiedades'
 								name='comment-name'
 								class='form-control'
 							/>
 						</div>
-					</div>
-
-					<div class='row'>
-						<div class='col-lg-6 mb-3'>
-							<div class='form-gorup'>
-								<h6 class='mont-font fw-600 font-md pt-3 pb-3'>
-									Total a pagar:
-								</h6>
-								<input
-									type='text'
-									placeholder='Propiedades'
-									name='comment-name'
-									class='form-control'
-								/>
-							</div>
-						</div>
-
-						<div class='col-lg-6 mb-3'>
-							<div class='form-gorup'>
-								<input
-									type='text'
-									placeholder='Número de autorización'
-									name='comment-name'
-									class='form-control'
-								/>
-							</div>
-						</div>
-						<div class='col-lg-6 mb-3'>
-							<div class='form-gorup'>
-								<h6 class='mont-font fw-600 font-md pt-3 pb-3'>
-									{montoSSContentVisible && (
-										<>
-											<p>Monto: Q80</p>
-											<ModalCuponCoex />
-										</>
-									)}
-									{montoRContentVisible && (
-										<>
-											<p>Monto: Q120</p>
-											<ModalCuponCoex />
-										</>
-									)}
-									{montoGContentVisible && (
-										<>
-											<p>Monto: Q100</p>
-											<ModalCuponCoex />
-										</>
-									)}
-								</h6>
-							</div>
-						</div>
+						<ModalPuntoVenta />
 					</div>
 				</form>
 			</div>
