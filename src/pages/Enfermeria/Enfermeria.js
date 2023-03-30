@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react";
 //import Leftnav from "../../components/LeftNav/Leftnav";
 //import logo from '../../assets/img/logolargo.png';
 //import HeaderEnfermeria from "../../components/Header/HeaderEnfermeria";
@@ -6,12 +6,12 @@ import React, { Fragment } from 'react';
 // import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 //import Board from "@lourenci/react-kanban";
-import '@lourenci/react-kanban/dist/styles.css';
-import './Enfermeria.css';
+import "@asseinfo/react-kanban/dist/styles.css";
+import "./Enfermeria.css";
 // import HeaderAdmisiones from '../../components/Header/HeaderAdmisiones';
 //import KanbanOrdenes from '../../components/Kanban/KanbanOrdenes';
-import Board from '../../components/Kanban/Board/Board';
-import HeaderEnfermeria from '../../components/Header/HeaderEnfermeria';
+import Board from "../../components/Kanban/Board/Board";
+import HeaderEnfermeria from "../../components/Header/HeaderEnfermeria";
 
 // const board = {
 //     columns: [
@@ -87,38 +87,38 @@ import HeaderEnfermeria from '../../components/Header/HeaderEnfermeria';
 //   }
 
 export default function Enfermeria() {
-	return (
-		<Fragment>
-			<HeaderEnfermeria />
-			<div className='main-content right-chat-inactive bg-white'>
-				<div className='middle-sidebar-bottom'>
-					<div className='middle-sidebar-left pe-0'>
-						<div className='row'>
-							<div className='col-xl-12 cart-wrapper mb-4 mt-5'>
-								<div class='row'>
-									<div class='col-sm-12'>
-										<div class='card bg-greyblue border-0 p-4 mb-5'>
-											<p class='mb-0 mont-font font-xssss text-uppercase fw-600 text-grey-500'>
-												<i class='fa fa-exclamation-circle'></i> Información
-												General Ordenes Médicas
-											</p>
-										</div>
-									</div>
-									<div class='col-xl-12'>
-										<div class='page-title'>
-											<h4 class='mont-font fw-600 font-md mb-lg-2 mb-0'>
-												Ordenes médicas (General)
-											</h4>
-											{/* <UncontrolledBoard /> */}
-										</div>
-									</div>
-									<Board />
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</Fragment>
-	);
+  return (
+    <Fragment>
+      <HeaderEnfermeria />
+      <div className="main-content right-chat-inactive bg-white">
+        <div className="middle-sidebar-bottom">
+          <div className="middle-sidebar-left pe-0">
+            <div className="row">
+              <div className="col-xl-12 cart-wrapper mb-4 mt-5">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="card bg-greyblue border-0 p-4 mb-5">
+                      <p class="mb-0 mont-font font-xssss text-uppercase fw-600 text-grey-500">
+                        <i class="fa fa-exclamation-circle"></i> Información
+                        General Ordenes Médicas
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-xl-12">
+                    <div class="page-title">
+                      <h4 class="mont-font fw-600 font-md mb-lg-2 mb-0">
+                        Ordenes médicas (General)
+                      </h4>
+                      {/* <UncontrolledBoard /> */}
+                    </div>
+                  </div>
+                  <Board />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Fragment>
+  );
 }

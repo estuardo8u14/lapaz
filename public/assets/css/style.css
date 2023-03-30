@@ -116,6 +116,11 @@
 	height: 100%;
 }
 
+.MuiButton-outlined {
+	width: fit-content !important;
+	background-color: red !important;
+}
+
 .settings {
 	color: rgb(0, 0, 0);
 }
@@ -1936,6 +1941,7 @@ a {
 }
 a:hover {
 	color: #185dca;
+	border-radius: 50px;
 }
 
 a:not([href]):not([class]),
@@ -2438,6 +2444,10 @@ progress {
 .col-1 {
 	flex: 0 0 auto;
 	width: 8.3333333333%;
+}
+.col-2ymedio {
+	flex: 0 0 auto;
+	width: 12.3333333333%;
 }
 
 .col-2 {
@@ -9033,6 +9043,11 @@ fieldset:disabled .btn {
 .ms-6 {
 	margin-left: 6rem !important;
 }
+
+.ms-7 {
+	margin-left: 12rem !important;
+}
+
 .ms-auto {
 	margin-left: auto !important;
 }
@@ -9219,6 +9234,10 @@ fieldset:disabled .btn {
 
 .ps-5 {
 	padding-left: 3rem !important;
+}
+
+.ps-6 {
+	padding-left: 5rem !important;
 }
 
 .font-monospace {
@@ -14262,6 +14281,7 @@ body:not(.theme-full) .main-content .middle-sidebar-bottom.header-padding {
 }
 .header-wrapper .nav-menu li a:hover {
 	color: var(--theme-color);
+	border-radius: 50px;
 }
 @media only screen and (max-width: 992px) {
 	.header-wrapper .nav-menu li a {
@@ -17404,3 +17424,18 @@ select.sort {
 .react-player__shadow {
 	background: rgba(43, 51, 63, 0.7) !important;
 }
+
+.calendar {
+	width: 300px !important;
+}
+/* .try:focus {
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  background-color: salmon !important;
+} */
+
+.appointment-content {
+	width: 150px !important;
+}
+
+

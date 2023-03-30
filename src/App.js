@@ -22,10 +22,12 @@ import ExportPdfComponent from './pages/Paciente/ExportPdfComponent';
 import ResumenMedico from './pages/Medico/ResumenMedico';
 import AnamnesisVisual from './pages/Enfermeria/AnamnesisVisual';
 import OrdenesMedicasV from './pages/Enfermeria/OrdenesMedicasV';
-import Overview from './components/Appointments/Overview';
+
 import Coex from './pages/COEX/Coex';
-import OverviewSmall from './components/Appointments/OverviewSmall';
+
 import NewPatient from './pages/Admisiones/NewPatient';
+import MedicoCoex from './pages/COEX/MedicoCoex';
+import EditCupon from './pages/COEX/EditCupon';
 
 function App() {
 	return (
@@ -120,16 +122,16 @@ function App() {
 					element={<OrdenesMedicasV />}
 				/>
 				<Route
-					path='/Overview'
-					element={<Overview />}
-				/>
-				<Route
-					path='/OverviewSmall'
-					element={<OverviewSmall />}
-				/>
-				<Route
 					path='/COEX'
 					element={<Coex />}
+				/>
+				<Route
+					path='/MedicoCOEX'
+					element={<MedicoCoex />}
+				/>
+				<Route
+					path='/EditCupon'
+					element={<EditCupon />}
 				/>
 			</Routes>
 		</Router>
