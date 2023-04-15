@@ -1,5 +1,5 @@
 import { Button } from '@material-ui/core';
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 //import Leftnav from "../../components/LeftNav/Leftnav";
 //import logo from '../../assets/img/logolargo.png';
 // import HeaderAdmision from '../../components/Header/HeaderAdmision';
@@ -9,6 +9,12 @@ import { Link, useLocation } from 'react-router-dom';
 // import GridEntries from '../../components/GridEntries/GridEntries';
 import GridEntriesDx from '../../components/GridEntries/GridEntriesDx';
 import HeaderMedico from '../../components/Header/HeaderMedico';
+//import Dropdown from '../../components/MedicationControl/Dropdown';
+// import MedicationInput from '../../components/MedicationControl/MedicationSelect ';
+// import MedicationSelect from '../../components/MedicationControl/MedicationSelect ';
+// import SelectInput from '../../components/MedicationControl/SelectInput';
+import ReviewOfSystemsForm from '../../components/SystemReview/ReviewOfSystemsForm';
+import EditableTable from '../../components/Tables/EditableTable';
 
 export default function Diagnostico() {
 	useEffect(() => {
@@ -17,6 +23,83 @@ export default function Diagnostico() {
 
 	const location = useLocation();
 	const propsData = location.state;
+
+	const [dataTable, setDataTable] = useState([
+		{
+			id: 1,
+			name: 'Dolor de garganta, palpitaciones, dolor de estómago, dolor de cabeza y fiebre',
+		},
+	]);
+
+	const columns = [
+		{ label: 'Motivo de la consulta', field: 'name', editable: true },
+	];
+
+	const [dataTable1, setDataTable1] = useState([
+		{
+			id: 1,
+			name: 'Paciente Juan Alberto cuenta que hace aproximadamente 3 meses, comenzó a sentir malestares de tipo cólico en el estómago, a nivel del abdomen, de baja intensidad (4/10). Informa que dura varias horas. Manifiesta “siento ardor en las paredes de la barriga"',
+		},
+		{
+			id: 2,
+			name: 'Personal de guardia en la clínica en ese momento, le realizaron diversos exámenes de laboratorio y estudios como eco abdominal, tomografía de cráneo, rayos x del tórax, entre otros, con el fin de evaluar todos sus órganos.',
+		},
+	]);
+
+	const columns1 = [
+		{ label: 'Historial de la enfermedad', field: 'name', editable: true },
+	];
+
+	const [dataTable2, setDataTable2] = useState([
+		{
+			id: 1,
+			name: 'Se trata de paciente masculino quien cuenta con el diagnostico de traumatismo raquimedular',
+		},
+		{
+			id: 2,
+			name: 'Neurologico: Despierto alerta cooperador, ancamado, debilidad de extremidades toracicas a expensas de la derecha la cual no realiza presión.',
+		},
+	]);
+
+	const columns2 = [
+		{ label: 'Impresión Clínica', field: 'name', editable: true },
+	];
+
+	const [dataTable3, setDataTable3] = useState([
+		{
+			id: 1,
+			name: 'Administración de oxígeno',
+		},
+		{
+			id: 2,
+			name: 'Conectar monitor cardíaco',
+		},
+		{
+			id: 3,
+			name: 'Acetaminofen 100 MG/ML (10%) SOLUCIÓN ORAL',
+		},
+		{
+			id: 4,
+			name: 'AZITROMGINA 500 MG TABLETA',
+		},
+	]);
+
+	const columns3 = [
+		{ label: 'Ordenes médicas', field: 'name', editable: true },
+	];
+
+	const [dataTable4, setDataTable4] = useState([
+		{
+			id: 1,
+			name: 'Comentario uno ejemplo de comentarios número 1',
+		},
+		{
+			id: 2,
+			name: 'Comentario uno ejemplo de comentarios número 2',
+		},
+	]);
+
+	const columns4 = [{ label: 'Comentarios', field: 'name', editable: true }];
 
 	const Antecedentes = {
 		medicos: 'Ejemplo Medicos',
@@ -140,7 +223,7 @@ export default function Diagnostico() {
 															<th class='text-grey-700 fw-500 font-xsss'>
 																Email
 																<strong>
-																	<span>:</span> noseque@gmail.com
+																	<span>:</span> johnperez@gmail.com
 																</strong>
 															</th>
 														</tr>
@@ -174,7 +257,7 @@ export default function Diagnostico() {
 										</div>
 									</div>
 									<div class='clearfix'></div>
-									<h4>Resumen anamnesis</h4>
+									<h4>Evaluación y anamnesis</h4>
 									<div class='row'>
 										<div class='col-lg-12 mb-3 mt-3'>
 											<div class='form-gorup'>
@@ -210,10 +293,32 @@ export default function Diagnostico() {
 											</div>
 										</div>
 									</div>
+									<EditableTable
+										data={dataTable}
+										columns={columns}
+									/>
+									<div class='row'>
+										<div class='col-lg-12 mb-3 mt-3'>
+											<div class='form-gorup'>
+												<div class='linea'></div>
+											</div>
+										</div>
+									</div>
+									<EditableTable
+										data={dataTable1}
+										columns={columns1}
+									/>
+									<div class='row'>
+										<div class='col-lg-12 mb-3 mt-3'>
+											<div class='form-gorup'>
+												<div class='linea'></div>
+											</div>
+										</div>
+									</div>
 									<table className='tablita'>
 										<thead>
 											<tr>
-												<th>Antecedentes</th>
+												<th>Antecedentes Médicos</th>
 												<th>Quirúrgicos</th>
 												<th>Traumáticos</th>
 												<th>Alérgicos</th>
@@ -244,13 +349,7 @@ export default function Diagnostico() {
 											</tr>
 										</tbody>
 									</table>
-									<div class='row'>
-										<div class='col-lg-12 mb-3 mt-3'>
-											<div class='form-gorup'>
-												<div class='linea'></div>
-											</div>
-										</div>
-									</div>
+
 									<table className='tablita'>
 										<thead>
 											<tr>
@@ -297,13 +396,7 @@ export default function Diagnostico() {
 											</tr>
 										</tbody>
 									</table>
-									<div class='row'>
-										<div class='col-lg-12 mb-3 mt-3'>
-											<div class='form-gorup'>
-												<div class='linea'></div>
-											</div>
-										</div>
-									</div>
+
 									<table className='tablita'>
 										<thead>
 											<tr>
@@ -345,7 +438,12 @@ export default function Diagnostico() {
 											</div>
 										</div>
 									</div>
-									<table className='tablita'>
+									<div className='pt-5 pb-5'>
+										<h2>Revisión por sistemas</h2>
+										<ReviewOfSystemsForm />
+									</div>
+
+									{/* <table className='tablita'>
 										<thead>
 											<tr>
 												<th>Revisión por sistemas</th>
@@ -360,15 +458,9 @@ export default function Diagnostico() {
 												</td>
 											</tr>
 										</tbody>
-									</table>
-									<div class='row'>
-										<div class='col-lg-12 mb-3 mt-3'>
-											<div class='form-gorup'>
-												<div class='linea'></div>
-											</div>
-										</div>
-									</div>
-									<table className='tablita'>
+									</table> */}
+
+									{/* <table className='tablita'>
 										<thead>
 											<tr>
 												<th>Motivo de consulta</th>
@@ -383,15 +475,9 @@ export default function Diagnostico() {
 												</td>
 											</tr>
 										</tbody>
-									</table>
-									<div class='row'>
-										<div class='col-lg-12 mb-3 mt-3'>
-											<div class='form-gorup'>
-												<div class='linea'></div>
-											</div>
-										</div>
-									</div>
-									<table className='tablita'>
+									</table> */}
+
+									{/* <table className='tablita'>
 										<thead>
 											<tr>
 												<th>Historial Enfermedad</th>
@@ -413,7 +499,7 @@ export default function Diagnostico() {
 												</td>
 											</tr>
 										</tbody>
-									</table>
+									</table> */}
 									<div class='row'>
 										<div class='col-lg-12 mb-3 mt-3'>
 											<div class='form-gorup'>
@@ -421,7 +507,22 @@ export default function Diagnostico() {
 											</div>
 										</div>
 									</div>
-									<table className='tablita'>
+									<EditableTable
+										data={dataTable2}
+										columns={columns2}
+									/>
+									<div class='row'>
+										<div class='col-lg-12 mb-3 mt-3'>
+											<div class='form-gorup'>
+												<div class='linea'></div>
+											</div>
+										</div>
+									</div>
+									<EditableTable
+										data={dataTable4}
+										columns={columns4}
+									/>
+									{/* <table className='tablita'>
 										<thead>
 											<tr>
 												<th>Notas Médicas</th>
@@ -443,7 +544,7 @@ export default function Diagnostico() {
 												</td>
 											</tr>
 										</tbody>
-									</table>
+									</table> */}
 									<div class='row'>
 										<div class='col-lg-12 mb-3 mt-3'>
 											<div class='form-gorup'>
@@ -451,7 +552,11 @@ export default function Diagnostico() {
 											</div>
 										</div>
 									</div>
-									<table className='tablita'>
+									<EditableTable
+										data={dataTable3}
+										columns={columns3}
+									/>
+									{/* <table className='tablita'>
 										<thead>
 											<tr>
 												<th>Ordenes Médicas</th>
@@ -473,13 +578,13 @@ export default function Diagnostico() {
 												</td>
 											</tr>
 										</tbody>
-									</table>
+									</table> */}
 								</div>
 							</div>
 							<GridEntriesDx />
 						</div>
 						<div
-							className='pt-3 pb-5'
+							className='pt-5 pb-5'
 							style={{
 								display: 'flex',
 								justifyContent: 'center',
@@ -487,7 +592,7 @@ export default function Diagnostico() {
 								height: '3vh',
 							}}>
 							<Link
-								to='/Ordenes'
+								to='/Anamnesis'
 								state={Antecedentes}>
 								<Button variant='contained'>
 									<i className='feather-arrow-left-circle'></i>

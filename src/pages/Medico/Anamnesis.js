@@ -8,6 +8,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 //import GridEntries from '../../components/GridEntries/GridEntries';
 import HeaderMedico from '../../components/Header/HeaderMedico';
+import SignsEditableTable from '../../components/Tables/SignsEditableTable';
 
 export default function Anamnesis() {
 	useEffect(() => {
@@ -322,6 +323,9 @@ export default function Anamnesis() {
 											)}
 										</tbody>
 									</table>
+									<div className='pt-5 pb-5'>
+										<SignsEditableTable />
+									</div>
 
 									<div class='row'>
 										<div class='col-lg-12 mb-5 mt-3'>
@@ -521,7 +525,7 @@ export default function Anamnesis() {
 													</div>
 												</div>
 											</div>
-											<div class='row'>
+											{/* <div class='row'>
 												<div class='col-lg-12 mb-3'>
 													<div class='form-gorup'>
 														<input
@@ -531,7 +535,7 @@ export default function Anamnesis() {
 															class='form-control'></input>
 													</div>
 												</div>
-											</div>
+											</div> */}
 											<div class='row'>
 												<div className='col-lg-12 pt-3 pb-5'>
 													<div
@@ -547,7 +551,7 @@ export default function Anamnesis() {
 															</Button>
 														</Link>
 														<Link
-															to='/Motivo'
+															to='/Dx'
 															state={Antecedentes}>
 															<Button variant='contained'>
 																<i className='feather-arrow-right-circle'></i>

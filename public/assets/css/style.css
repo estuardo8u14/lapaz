@@ -135,11 +135,28 @@
 	align-content: center;
 }
 
+.table-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.orders-table {
+	border: 2px solid #ccc;
+	border-collapse: collapse;
+	margin: 20px;
+  }
+  .orders-table th,
+  .orders-table td {
+	padding: 10px;
+	text-align: left;
+  }
+
 .linea {
 	content: ' ';
 	display: inline-block;
 	height: 2px;
-	width: 60%;
+	width: 67%;
 	position: absolute;
 	top: auto;
 	left: auto;
@@ -3921,6 +3938,42 @@ progress {
 	appearance: none;
 	border-radius: 0.25rem;
 	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control-signos1 {
+	border-collapse: collapse;
+	width: 100%;
+	padding: 0.375rem 0.75rem;
+	font-size: 1rem;
+	font-weight: 100;
+	line-height: 1.5;
+	align-items: center;
+	color: #515184;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	appearance: none;
+	border-radius: 0.25rem;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-control-signos1 table {
+	width: 100%;
+	margin: 0 auto;
+	border-collapse: collapse;
+}
+.form-control-signos1 th {
+	padding: 5px !important;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 10px !important;
+}
+.form-control-signos1 td {
+	padding: 5px !important;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 10px !important;
 }
 
 .form-control-motivo {
@@ -17437,5 +17490,3 @@ select.sort {
 .appointment-content {
 	width: 150px !important;
 }
-
-

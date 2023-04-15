@@ -8,6 +8,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 //import GridEntries from '../../components/GridEntries/GridEntries';
 import HeaderMedico from '../../components/Header/HeaderMedico';
+import EditableTable from '../../components/Tables/EditableTable';
 
 export default function Anamnesis2() {
 	useEffect(() => {

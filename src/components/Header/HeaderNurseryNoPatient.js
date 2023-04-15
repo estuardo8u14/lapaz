@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/img/logomid.png';
+//import logoixchel from '../../assets/img/ixchel3.png';
+import './HeaderAdmision.css';
 import SearchBarSuper from '../SearchBar/SearchBarSuper';
 import fakeData1 from '../../assets/data/Data1.json';
 
-class HeaderAdmisiones extends Component {
+class HeaderNurseryNoPatient extends Component {
 	state = {
 		isOpen: false,
 		isActive: false,
@@ -22,12 +24,12 @@ class HeaderAdmisiones extends Component {
 
 		return (
 			<div className='nav-header bg-white shadow-xs border-0'>
-				<div className='nav-top'>
+				<div className='nav-top me-2'>
 					<Link to='/'>
-						{/* <img src={logo} alt="logomid" /> */}
 						<img
 							src={logo}
 							alt='logomid'
+							// className='logo'
 						/>
 					</Link>
 					<span
@@ -58,7 +60,33 @@ class HeaderAdmisiones extends Component {
 				<nav className={`navigation scroll-bar ${navClass}`}>
 					<div className='container ps-0 pe-0'>
 						<div className='nav-content'>
-							<div className='row'></div>
+							{/* <div className='row bg-black-gradient col-lg-13'>
+								<div className='heart'>
+									<div className='col-lg-10 mb-3 mt-3'>
+										<div className='card p-md-3 p-3 bg-black-gradient rounded-2 shadow-xss bg-pattern border-0 overflow-hidden'>
+											<div className='bg-pattern'></div>
+											<h2 className='fw-700 font-xs text-white mb-0 mt-0'>
+												Juan Pérez{' '}
+												<span className='fw-700 ls-0 text-black-500 font-xssss mt-0 d-block'>
+													Código del paciente: 301947968
+												</span>
+											</h2>
+											<p className='fw-700 text-white mb-0 mt-0'>
+												{' '}
+												<span className='fw-700 ls-0 text-black-500 font-xsssss mt-0 d-block'>
+													Código admisión: CL-3462023
+												</span>
+											</p>
+											<h2 className=" fw-700 text-white mb-0 mt-0"><p className="fw-700 ls-3 text-black-500 font-xsssss mt-0 d-block">Fecha actual: (Y-d-m) : {this.state.date}</p></h2>
+											<p className=' fw-700 text-white mb-0 mt-0'>
+												<p className='fw-700 ls-0 text-black-500 font-xsssss mt-0 d-block'>
+													Fecha actual: (Y-d-m)
+												</p>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div> */}
 							<div className='nav-wrap bg-white bg-transparent-card rounded-xxl shadow-xss pt-3 pb-1 mb-1 mt-1'>
 								<div className='row mb-3'>
 									<form
@@ -81,52 +109,55 @@ class HeaderAdmisiones extends Component {
 									<li className='logo d-none d-xl-block d-lg-block'></li>
 									<li>
 										<Link
-											to='/NuevoPaciente'
-											className='nav-content-bttn open-font'>
-											<i className='feather-plus btn-round-md bg-blue-gradiant me-3'></i>
-											<span>Nuevo Paciente</span>
-										</Link>
-									</li>
-									{/* <li><Link to="/Admision" className="nav-content-bttn open-font"><i className="feather-users btn-round-md bg-blue-gradiant me-3"></i><span>Admisión</span></Link></li> */}
-									{/* <li><Link to="/AdmisionAtencion" className="nav-content-bttn open-font"><i className="feather-users btn-round-md bg-blue-gradiant me-3"></i><span>Admisión A</span></Link></li> */}
-									<li>
-										<Link
 											to='/NurseOrders'
 											className='nav-content-bttn open-font'>
-											<i className='feather-paperclip btn-round-md bg-blue-gradiant me-3'></i>
-											<span>Ordenes Médicas</span>
+											<i className='feather-home btn-round-md bg-blue-gradiant me-3'></i>
+											<span>Mis Ordenes</span>
 										</Link>
 									</li>
+
 									{/* <li>
 										<Link
-											to='/COEX'
+											to='/Tablas'
 											className='nav-content-bttn open-font'>
-											<i className='feather-clipboard btn-round-md bg-blue-gradiant me-3'></i>
-											<span>COEX</span>
+											<i className='feather-user btn-round-md bg-blue-gradiant me-3'></i>
+											<span>Paciente</span>
 										</Link>
 									</li> */}
-									{/* <li><Link to="/Medico" className="nav-content-bttn open-font"><i className="feather-file-text btn-round-md bg-blue-gradiant me-3"></i><span>Notas de Evolución</span></Link></li>
+
+									{/* <li>
+										<Link
+											to='/Admision'
+											className='nav-content-bttn open-font'>
+											<i className='feather-users btn-round-md bg-blue-gradiant me-3'></i>
+											<span>Admisión Nueva</span>
+										</Link>
+									</li> */}
+									{/* <li>
+										<Link
+											to='/Anamnesis'
+											className='nav-content-bttn open-font'>
+											<i className='feather-file-text btn-round-md bg-blue-gradiant me-3'></i>
+											<span>Anamnesis </span>
+										</Link>
+									</li> */}
+
+									{/* <li>
+										<Link
+											to='/MedicoCoex'
+											className='nav-content-bttn open-font'>
+											<i className='feather-paperclip btn-round-md bg-blue-gradiant me-3'></i>
+											<span>Médico COEX</span>
+										</Link>
+									</li> */}
+
+									{/* <li><Link to="/AdmisionAtencion" className="nav-content-bttn open-font"><i className="feather-users btn-round-md bg-blue-gradiant me-3"></i><span>Admisión A</span></Link></li> */}
+									{/* <li><Link to="/Enfermeria" className="nav-content-bttn open-font"><i className="feather-paperclip btn-round-md bg-blue-gradiant me-3"></i><span>Ordenes Médicas</span></Link></li>
+                                    <li><Link to="/Medico" className="nav-content-bttn open-font"><i className="feather-file-text btn-round-md bg-blue-gradiant me-3"></i><span>Notas de Evolución</span></Link></li>
                                     <li><Link to="/" className="nav-content-bttn open-font"><i className="feather-git-branch btn-round-md bg-blue-gradiant me-3"></i><span>Laboratorio</span></Link></li>
                                     <li><Link to="/" className="nav-content-bttn open-font"><i className="feather-eye btn-round-md bg-blue-gradiant me-3"></i><span>Diagnosticos</span></Link></li>
                                     <li><Link to="/" className="nav-content-bttn open-font"><i className="feather-alert-octagon btn-round-md bg-blue-gradiant me-3"></i><span>SOP</span></Link></li>
                                     <li><Link to="/" className="nav-content-bttn open-font"><i className="feather-plus btn-round-md bg-blue-gradiant me-3"></i><span>Encamamiento</span></Link></li> */}
-								</ul>
-							</div>
-
-							<div className='nav-wrap bg-white bg-transparent-card rounded-xxl shadow-xss pt-3 pb-1'>
-								<div className='nav-caption fw-600 font-xssss text-grey-500'>
-									<span></span> Cuenta
-								</div>
-								<ul className='mb-3'>
-									<li className='logo d-none d-xl-block d-lg-block'></li>
-									<li>
-										<Link
-											to='/'
-											className='nav-content-bttn open-font h-auto pt-2 pb-2'>
-											<i className='font-sm feather-settings me-3 text-grey-500'></i>
-											<span>Ajustes</span>
-										</Link>
-									</li>
 								</ul>
 							</div>
 						</div>
@@ -135,14 +166,25 @@ class HeaderAdmisiones extends Component {
 
 				<div className={`app-header-search ${searchClass}`}>
 					<form className='search-form'>
-						<SearchBarSuper
-							className='w-100'
-							data={fakeData1}
-						/>
-						{/* <div className="form-group mb-0 icon-input">
-							<i className="feather-search font-sm text-grey-400"></i>
-							<input type="text" placeholder="Escribe para buscar en todas partes ..." className="bg-grey border-0 lh-32 pt-2 pb-2 ps-5 pe-3 font-xssss fw-500 rounded-xl w750 theme-dark-bg" />
-						</div> */}
+						<div className='form-group searchbox mb-0 border-0 p-1'>
+							<input
+								type='text'
+								className='form-control border-0'
+								placeholder='Buscar...'
+							/>
+							<i className='input-icon'>
+								<ion-icon
+									name='search-outline'
+									role='img'
+									className='md hydrated'
+									aria-label='search outline'></ion-icon>
+							</i>
+							<span className='ms-1 mt-1 d-inline-block close searchbox-close'>
+								<i
+									className='ti-close font-xs'
+									onClick={this.toggleActive}></i>
+							</span>
+						</div>
 					</form>
 				</div>
 			</div>
@@ -150,4 +192,4 @@ class HeaderAdmisiones extends Component {
 	}
 }
 
-export default HeaderAdmisiones;
+export default HeaderNurseryNoPatient;

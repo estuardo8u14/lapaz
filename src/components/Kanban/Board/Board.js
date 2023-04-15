@@ -168,13 +168,14 @@ function Board() {
 
 	return (
 		<div className='container-fluid pt-3'>
-			<div className='row'>
+			{/* <div className='row'>
 				<div className='col-lg-12'>
 					<NewTask addNewTask={onAddingNewTask} />
 				</div>
-			</div>
+			</div> */}
 			<hr />
 			<div className='row'>
+				<h4 class='mont-font fw-600 font-md mt-1 mb-4'>Ordenes del paciente</h4>
 				<div className='col-lg-12'>
 					<BoardContext.Provider value={ContextData}>
 						<BoardLanes stages={stages}></BoardLanes>

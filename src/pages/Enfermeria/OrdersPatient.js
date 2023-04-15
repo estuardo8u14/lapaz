@@ -95,7 +95,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 //     );
 //   }
 
-export default function Enfermeria() {
+export default function OrdersPatient() {
 	return (
 		<Fragment>
 			<HeaderNurseryPatient />
@@ -109,7 +109,7 @@ export default function Enfermeria() {
 										<div class='card bg-greyblue border-0 p-4 mb-5'>
 											<p class='mb-0 mont-font font-xssss text-uppercase fw-600 text-grey-500'>
 												<i class='fa fa-exclamation-circle'></i> Información
-												General Ordenes Médicas
+												General Ordenes Médicas Paciente: Juan Pérez
 											</p>
 										</div>
 									</div>
@@ -209,52 +209,8 @@ export default function Enfermeria() {
 											</div>
 										</div>
 									</div>
-									<div class='row'>
-										<div class='col-lg-12 mb-5 mt-2'>
-											<div class='form-gorup'>
-												<div class='linea'></div>
-											</div>
-										</div>
-									</div>
-
-									<h4 class='mont-font fw-700 font-md mb-5'>
-										Hoja de signos vitales
-									</h4>
-									{/* agregar peso y talla / glucometro pbc y balance / medidas */}
-									<SignsEditableTable />
-									<div class='row'>
-										<div class='col-lg-12 mb-5 mt-5'>
-											<div class='form-gorup'>
-												<div class='linea'></div>
-											</div>
-										</div>
-									</div>
-									<Belongings />
-									<div class='row'>
-										<div class='col-lg-12 mb-5 mt-5'>
-											<div class='form-gorup'>
-												<div class='linea'></div>
-											</div>
-										</div>
-									</div>
+									<Board />
 								</div>
-								<PdfForm />
-								{/* <Document
-									file='\public\assets\data\CRoja.pdf'
-									renderMode='canvas'
-									options={{
-										cMapUrl: 'cmaps/',
-										cMapPacked: true,
-										disableAutoFetch: false,
-									}}>
-									<Page pageNumber={1} />
-								</Document> */}
-								{/* <iframe
-									className='pt-5'
-									title='This is a unique title'
-									src='../../assets/data/CRoja.pdf'
-									width='100%'
-									height='600'></iframe> */}
 							</div>
 						</div>
 					</div>

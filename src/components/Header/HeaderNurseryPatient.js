@@ -6,7 +6,7 @@ import './HeaderAdmision.css';
 import SearchBarSuper from '../SearchBar/SearchBarSuper';
 import fakeData1 from '../../assets/data/Data1.json';
 
-class HeaderEnfermeria extends Component {
+class HeaderNurseryPatient extends Component {
 	state = {
 		isOpen: false,
 		isActive: false,
@@ -107,23 +107,31 @@ class HeaderEnfermeria extends Component {
 								</div>
 								<ul className='mb-1 top-content'>
 									<li className='logo d-none d-xl-block d-lg-block'></li>
-									<li>
+									{/* <li>
 										<Link
 											to='/Enfermeria'
 											className='nav-content-bttn open-font'>
 											<i className='feather-home btn-round-md bg-blue-gradiant me-3'></i>
 											<span>Enfermeria</span>
 										</Link>
+									</li> */}
+									<li>
+										<Link
+											to='/NurseOrders'
+											className='nav-content-bttn open-font'>
+											<i className='feather-home btn-round-md bg-blue-gradiant me-3'></i>
+											<span>Mis Ordenes</span>
+										</Link>
 									</li>
 
-									<li>
+									{/* <li>
 										<Link
 											to='/Tablas'
 											className='nav-content-bttn open-font'>
 											<i className='feather-user btn-round-md bg-blue-gradiant me-3'></i>
 											<span>Paciente</span>
 										</Link>
-									</li>
+									</li> */}
 
 									{/* <li>
 										<Link
@@ -135,19 +143,28 @@ class HeaderEnfermeria extends Component {
 									</li> */}
 									<li>
 										<Link
-											to='/Anamnesis'
+											to='/Enfermeria'
 											className='nav-content-bttn open-font'>
 											<i className='feather-file-text btn-round-md bg-blue-gradiant me-3'></i>
-											<span>Anamnesis </span>
+											<span>Recepción y Signos</span>
 										</Link>
 									</li>
 
 									<li>
 										<Link
-											to='/MedicoCoex'
+											to='/ScalesNursery'
 											className='nav-content-bttn open-font'>
 											<i className='feather-paperclip btn-round-md bg-blue-gradiant me-3'></i>
-											<span>Médico COEX</span>
+											<span>Evaluaciones</span>
+										</Link>
+									</li>
+
+									<li>
+										<Link
+											to='/OrdersPatient'
+											className='nav-content-bttn open-font'>
+											<i className='feather-file btn-round-md bg-blue-gradiant me-3'></i>
+											<span>Ordenes Paciente</span>
 										</Link>
 									</li>
 
@@ -192,4 +209,4 @@ class HeaderEnfermeria extends Component {
 	}
 }
 
-export default HeaderEnfermeria;
+export default HeaderNurseryPatient;

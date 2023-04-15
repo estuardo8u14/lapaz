@@ -357,7 +357,14 @@ export default function EditCupon(props) {
 													)}
 													{isShownDT && (
 														<>
-															<h2>Modulo de deposito o transferencia</h2>
+															<h2 className='pb-3 font-md'>
+																Modulo de deposito o transferencia
+															</h2>
+															<label for='file-input'>Elegir archivo: </label>
+															<input
+																type='file'
+																id='file-input'
+																name='myFile'></input>
 														</>
 													)}
 													{isShownCaja && (

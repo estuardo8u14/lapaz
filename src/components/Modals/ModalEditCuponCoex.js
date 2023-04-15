@@ -101,12 +101,6 @@ export default function ModalEditCuponCoex() {
 											<label class='mont-font fw-600 font-xssss'>
 												Fecha y hora: 15/03/2023
 											</label>
-											<input
-												type='date'
-												placeholder='Editar'
-												name='comment-name'
-												class='form-control'
-											/>
 										</div>
 									</div>
 									<div class='col-lg-6 mb-5'>Tipo de Seguro: SS</div>
@@ -143,7 +137,7 @@ export default function ModalEditCuponCoex() {
 									</div>
 								</div>
 
-								<div class='row'>
+								{/* <div class='row'>
 									<label class='mont-font fw-500 font-xssss pt-5'>
 										Cargar archivos
 									</label>
@@ -158,6 +152,12 @@ export default function ModalEditCuponCoex() {
 											<div class='clearfix'></div>
 										</div>
 									</form>
+								</div> */}
+
+								<div class='col pt-5'>
+									<Link to={'/EditCupon'}>
+										<Button variant='contained'>EDITAR</Button>
+									</Link>
 								</div>
 							</CardContent>
 						</CardActionArea>

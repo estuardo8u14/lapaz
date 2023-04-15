@@ -1,18 +1,25 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import './MedicoCoex.css';
 import HeaderAdmisiones from '../../components/Header/HeaderAdmisiones';
-import { Button } from 'semantic-ui-react';
+import { Button, Select } from 'semantic-ui-react';
 import ModalCuponCoex from '../../components/Modals/ModalCuponCoex';
 import { Link } from 'react-router-dom';
 import ModalEditCuponCoex from '../../components/Modals/ModalEditCuponCoex';
 
 import TablaCuponesCoex from './TablaCuponesCoex';
 import CalendarMedico from '../../components/Appointments/CalendarMedico';
+import { FormControl, InputLabel, MenuItem } from '@material-ui/core';
 
 export default function MedicoCoex() {
 	useEffect(() => {
 		window.scrollTo(0, 520);
 	}, []);
+
+	const [selectedOption, setSelectedOption] = useState('');
+
+	const handleSelectChange = (event) => {
+		setSelectedOption(event.target.value);
+	};
 
 	const handleOnChange = (e) => {
 		e.preventDefault();
@@ -200,9 +207,13 @@ export default function MedicoCoex() {
 											</table>
 										</div>
 									</div>
-									<h4 class='mont-font fw-600 font-md pt-5'>
+									<h4 class='mont-font fw-600 font-md pt-5 pb-3'>
 										COEX - Calendario
 									</h4>
+									<label class='mont-font fw-600 font-xssss'>
+										Selecciona un rango de fechas:
+									</label>
+
 									<div className='pt-3 ps-6 col-lg-12'>
 										<CalendarMedico />
 										<div className='col-lg-8'>
@@ -215,7 +226,33 @@ export default function MedicoCoex() {
 											</Button>
 										</div>
 									</div>
+									<div class='row'>
+										<div class='col-lg-12 mb-5 mt-3'>
+											<div class='form-gorup'>
+												<div class='linea'></div>
+											</div>
+										</div>
+									</div>
 									<div className='row'>
+										{calendarContentVisible && (
+											<div>
+												<label
+													className='pt-5 pe-2'
+													htmlFor='my-select'>
+													Selecciona una opción {''}
+												</label>
+												<select
+													id='my-select'
+													value={selectedOption}
+													onChange={handleSelectChange}>
+													<option value=''>Selecciona una opción</option>
+													<option value='Coex'>Consulta externa</option>
+													<option value='Labs'>Laboratorios</option>
+													<option value='Imagenes'>Imagenes Dx</option>
+												</select>
+												<p>Selección: {selectedOption}</p>
+											</div>
+										)}
 										{calendarContentVisible && <TablaCuponesCoex />}
 										{calendarContentVisible && (
 											<div className='col-lg-8'>

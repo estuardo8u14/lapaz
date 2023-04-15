@@ -1,5 +1,5 @@
 import { Button } from '@material-ui/core';
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 //import Leftnav from "../../components/LeftNav/Leftnav";
 //import logo from '../../assets/img/logolargo.png';
 // import HeaderAdmision from '../../components/Header/HeaderAdmision';
@@ -8,6 +8,7 @@ import React, { Fragment, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import GridEntries2 from '../../components/GridEntries/GridEntries2';
 import HeaderMedico from '../../components/Header/HeaderMedico';
+import EditableTable from '../../components/Tables/EditableTable';
 
 export default function HistEnf() {
 	useEffect(() => {
@@ -15,6 +16,16 @@ export default function HistEnf() {
 	}, []);
 	const location = useLocation();
 	const propsData = location.state;
+	const [dataTable, setDataTable] = useState([
+		{
+			id: 1,
+			name: 'Dolor de garganta, palpitaciones, dolor de estómago, dolor de cabeza y fiebre',
+		},
+	]);
+
+	const columns = [
+		{ label: 'Motivo de la consulta', field: 'name', editable: true },
+	];
 
 	const Antecedentes = {
 		medicos: 'Ejemplo Medicos',
@@ -357,7 +368,11 @@ export default function HistEnf() {
 											</div>
 										</div>
 									</div>
-									<table className='tablita'>
+									<EditableTable
+										data={dataTable}
+										columns={columns}
+									/>
+									{/* <table className='tablita'>
 										<thead>
 											<tr>
 												<th>Motivo de consulta</th>
@@ -372,7 +387,7 @@ export default function HistEnf() {
 												</td>
 											</tr>
 										</tbody>
-									</table>
+									</table> */}
 								</div>
 							</div>
 							<GridEntries2 />

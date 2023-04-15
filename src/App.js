@@ -29,6 +29,9 @@ import NewPatient from './pages/Admisiones/NewPatient';
 import MedicoCoex from './pages/COEX/MedicoCoex';
 import EditCupon from './pages/COEX/EditCupon';
 import Anamnesis2 from './pages/Medico/Anamnesis2';
+import NurseOrders from './pages/Enfermeria/NurseOrders';
+import ScalesNursery from './pages/Enfermeria/ScalesNursery';
+import OrdersPatient from './pages/Enfermeria/OrdersPatient';
 
 function App() {
 	return (
@@ -137,6 +140,18 @@ function App() {
 				<Route
 					path='/Atencion'
 					element={<Anamnesis2 />}
+				/>
+				<Route
+					path='/NurseOrders'
+					element={<NurseOrders />}
+				/>
+				<Route
+					path='/ScalesNursery'
+					element={<ScalesNursery />}
+				/>
+				<Route
+					path='/OrdersPatient'
+					element={<OrdersPatient />}
 				/>
 			</Routes>
 		</Router>

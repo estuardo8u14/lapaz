@@ -1,5 +1,5 @@
 import { Button } from '@material-ui/core';
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 //import Leftnav from "../../components/LeftNav/Leftnav";
 //import logo from '../../assets/img/logolargo.png';
 // import HeaderAdmision from '../../components/Header/HeaderAdmision';
@@ -9,6 +9,7 @@ import { Link, useLocation } from 'react-router-dom';
 // import GridEntries from '../../components/GridEntries/GridEntries';
 import GridEntriesOrdenes from '../../components/GridEntries/GridEntriesOrdenes';
 import HeaderMedico from '../../components/Header/HeaderMedico';
+import EditableTable from '../../components/Tables/EditableTable';
 
 export default function OrdenesMedicas() {
 	useEffect(() => {
@@ -16,6 +17,45 @@ export default function OrdenesMedicas() {
 	}, []);
 	const location = useLocation();
 	const propsData = location.state;
+
+	const [dataTable, setDataTable] = useState([
+		{
+			id: 1,
+			name: 'Dolor de garganta, palpitaciones, dolor de estómago, dolor de cabeza y fiebre',
+		},
+	]);
+
+	const columns = [
+		{ label: 'Motivo de la consulta', field: 'name', editable: true },
+	];
+
+	const [dataTable1, setDataTable1] = useState([
+		{
+			id: 1,
+			name: 'Paciente Juan Alberto cuenta que hace aproximadamente 3 meses, comenzó a sentir malestares de tipo cólico en el estómago, a nivel del abdomen, de baja intensidad (4/10). Informa que dura varias horas. Manifiesta “siento ardor en las paredes de la barriga"',
+		},
+		{
+			id: 2,
+			name: 'Personal de guardia en la clínica en ese momento, le realizaron diversos exámenes de laboratorio y estudios como eco abdominal, tomografía de cráneo, rayos x del tórax, entre otros, con el fin de evaluar todos sus órganos.',
+		},
+	]);
+
+	const columns1 = [
+		{ label: 'Historial de la enfermedad', field: 'name', editable: true },
+	];
+
+	const [dataTable2, setDataTable2] = useState([
+		{
+			id: 1,
+			name: 'Se trata de paciente masculino quien cuenta con el diagnostico de traumatismo raquimedular',
+		},
+		{
+			id: 2,
+			name: 'Neurologico: Despierto alerta cooperador, ancamado, debilidad de extremidades toracicas a expensas de la derecha la cual no realiza presión.',
+		},
+	]);
+
+	const columns2 = [{ label: 'Notas médicas', field: 'name', editable: true }];
 
 	const Antecedentes = {
 		medicos: 'Ejemplo Medicos',
@@ -365,7 +405,11 @@ export default function OrdenesMedicas() {
 											</div>
 										</div>
 									</div>
-									<table className='tablita'>
+									<EditableTable
+										data={dataTable}
+										columns={columns}
+									/>
+									{/* <table className='tablita'>
 										<thead>
 											<tr>
 												<th>Motivo de consulta</th>
@@ -380,7 +424,7 @@ export default function OrdenesMedicas() {
 												</td>
 											</tr>
 										</tbody>
-									</table>
+									</table> */}
 									<div class='row'>
 										<div class='col-lg-12 mb-3 mt-3'>
 											<div class='form-gorup'>
@@ -388,7 +432,11 @@ export default function OrdenesMedicas() {
 											</div>
 										</div>
 									</div>
-									<table className='tablita'>
+									<EditableTable
+										data={dataTable1}
+										columns={columns1}
+									/>
+									{/* <table className='tablita'>
 										<thead>
 											<tr>
 												<th>Historial Enfermedad</th>
@@ -410,7 +458,7 @@ export default function OrdenesMedicas() {
 												</td>
 											</tr>
 										</tbody>
-									</table>
+									</table> */}
 									<div class='row'>
 										<div class='col-lg-12 mb-3 mt-3'>
 											<div class='form-gorup'>
@@ -418,7 +466,11 @@ export default function OrdenesMedicas() {
 											</div>
 										</div>
 									</div>
-									<table className='tablita'>
+									<EditableTable
+										data={dataTable2}
+										columns={columns2}
+									/>
+									{/* <table className='tablita'>
 										<thead>
 											<tr>
 												<th>Notas Médicas</th>
@@ -440,7 +492,7 @@ export default function OrdenesMedicas() {
 												</td>
 											</tr>
 										</tbody>
-									</table>
+									</table> */}
 								</div>
 							</div>
 							<GridEntriesOrdenes />
