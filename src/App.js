@@ -32,123 +32,163 @@ import Anamnesis2 from './pages/Medico/Anamnesis2';
 import NurseOrders from './pages/Enfermeria/NurseOrders';
 import ScalesNursery from './pages/Enfermeria/ScalesNursery';
 import OrdersPatient from './pages/Enfermeria/OrdersPatient';
+import NewAdmission from './pages/Admisiones/NewAdmission';
+import OrdenesChat from './components/PopoverMenu/OrdenesChat';
+import PatientVitals from './pages/Enfermeria/PatientVitals';
 
 function App() {
 	return (
 		<Router>
 			<Routes>
+				{/* root / login */}
 				<Route
 					path='/'
 					element={<Login />}
 				/>
-				<Route
-					path='/Admision'
-					element={<Admision />}
-				/>
-				<Route
-					path='/AdmisionAtencion'
-					element={<AdmisionAtencion />}
-				/>
-				<Route
-					path='/Inicio'
-					element={<Home />}
-				/>
+				{/* Pagina despues de login con supersearh y tabla resumen con acciones sobre paciente */}
 				<Route
 					path='/Home'
 					element={<Home2 />}
 				/>
+				{/* Completamente Nuevo paciente  */}
 				<Route
 					path='/Admisiones'
 					element={<Admisiones />}
 				/>
-				<Route
-					path='/NuevoPaciente'
-					element={<NewPatient />}
-				/>
-				<Route
-					path='/Enfermeria'
-					element={<Enfermeria />}
-				/>
-				<Route
-					path='/Signos'
-					element={<Signos />}
-				/>
-				<Route
-					path='/Anamnesis'
-					element={<Anamnesis />}
-				/>
-				<Route
-					path='/Motivo'
-					element={<Motivo />}
-				/>
-				<Route
-					path='/HistEnf'
-					element={<HistEnf />}
-				/>
-				<Route
-					path='/Notas'
-					element={<NotasMedicas />}
-				/>
-				<Route
-					path='/Ordenes'
-					element={<OrdenesMedicas />}
-				/>
-				<Route
-					path='/Dx'
-					element={<Diagnostico />}
-				/>
-				<Route
-					path='/Perfil'
-					element={<Perfil />}
-				/>
-				<Route
-					path='/Tablas'
-					element={<TablasPaciente />}
-				/>
+				{/* Edit de paciente */}
 				<Route
 					path='/Edit'
 					element={<AdmisionesEditar />}
 				/>
+				{/* Admision Emergencia */}
 				<Route
-					path='/ResumenMedico'
-					element={<ResumenMedico />}
+					path='/NewAdmission'
+					element={<NewAdmission />}
 				/>
+				{/* Revision de admisiones pasadas */}
 				<Route
-					path='/PdfConsultaMedica'
-					element={<ExportPdfComponent />}
+					path='/Tablas'
+					element={<TablasPaciente />}
 				/>
-				<Route
-					path='/AnamnesisV'
-					element={<AnamnesisVisual />}
-				/>
-				<Route
-					path='/OrdenesMedicasV'
-					element={<OrdenesMedicasV />}
-				/>
+				{/* Coex generar cita para paciente individual */}
 				<Route
 					path='/COEX'
 					element={<Coex />}
 				/>
+				{/* Atencion de medico coex */}
 				<Route
 					path='/MedicoCOEX'
 					element={<MedicoCoex />}
 				/>
+				{/* Editar cupon */}
 				<Route
 					path='/EditCupon'
 					element={<EditCupon />}
 				/>
+				{/* Genracion de ordenes para emergencia */}
+				<Route
+					path='/OrdenesChat'
+					element={<OrdenesChat />}
+				/>
+				{/* Gestion de Ordenes medicas para enfermera individual */}
+				<Route
+					path='/OrdenesMedicasV'
+					element={<OrdenesMedicasV />}
+				/>
+				{/* Hoja de signos de paciente individual */}
+				<Route
+					path='/PatientVitals'
+					element={<PatientVitals />}
+				/>
+				{/* Atencion de consulta coex y plantilla para cualquier admision */}
+				<Route
+					path='/Anamnesis'
+					element={<Anamnesis />}
+				/>
+
+				{/*  */}
+				<Route
+					path='/Admision'
+					element={<Admision />}
+				/>
+				{/*  */}
+				<Route
+					path='/AdmisionAtencion'
+					element={<AdmisionAtencion />}
+				/>
+				{/*  */}
+				<Route
+					path='/Inicio'
+					element={<Home />}
+				/>
+
+				{/*  */}
+				<Route
+					path='/Enfermeria'
+					element={<Enfermeria />}
+				/>
+
+				{/*  */}
+				<Route
+					path='/Motivo'
+					element={<Motivo />}
+				/>
+				{/*  */}
+				<Route
+					path='/HistEnf'
+					element={<HistEnf />}
+				/>
+				{/*  */}
+				<Route
+					path='/Notas'
+					element={<NotasMedicas />}
+				/>
+				{/*  */}
+				<Route
+					path='/Ordenes'
+					element={<OrdenesMedicas />}
+				/>
+				{/*  */}
+				<Route
+					path='/Dx'
+					element={<Diagnostico />}
+				/>
+				{/*  */}
+				<Route
+					path='/Perfil'
+					element={<Perfil />}
+				/>
+				{/*  */}
+				<Route
+					path='/ResumenMedico'
+					element={<ResumenMedico />}
+				/>
+				{/*  */}
+				<Route
+					path='/PdfConsultaMedica'
+					element={<ExportPdfComponent />}
+				/>
+				{/*  */}
+				<Route
+					path='/AnamnesisV'
+					element={<AnamnesisVisual />}
+				/>
+				{/*  */}
 				<Route
 					path='/Atencion'
 					element={<Anamnesis2 />}
 				/>
+				{/*  */}
 				<Route
 					path='/NurseOrders'
 					element={<NurseOrders />}
 				/>
+				{/*  */}
 				<Route
 					path='/ScalesNursery'
 					element={<ScalesNursery />}
 				/>
+				{/*  */}
 				<Route
 					path='/OrdersPatient'
 					element={<OrdersPatient />}

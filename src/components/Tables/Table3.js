@@ -2,13 +2,16 @@ import './Table1.css';
 import fakeData from '../../assets/data/Data.json';
 import * as React from 'react';
 import { useTable } from 'react-table';
-//import { Button } from "@material-ui/core";
-//import { Link } from 'react-router-dom';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import PopoverMenu from '../PopoverMenu/PopoverMenu';
+import Modal from 'react-bootstrap/Modal';
 
 export default function Table1() {
+	const [searchTerm, setSearchTerm] = React.useState('');
+	const [showModal, setShowModal] = React.useState(false);
+	const [searchResults, setSearchResults] = React.useState([]);
+
 	const renderTooltip = (props) => (
 		<Tooltip
 			id='button-tooltip'
@@ -17,7 +20,9 @@ export default function Table1() {
 			del paciente: 3019749690101<br></br> Seguro: Salud Siempre
 		</Tooltip>
 	);
+
 	const data = React.useMemo(() => fakeData, []);
+
 	const columns = React.useMemo(
 		() => [
 			{
@@ -41,7 +46,7 @@ export default function Table1() {
 				accessor: 'gender',
 			},
 			{
-				Header: 'Contacto',
+				Header: 'Estudios',
 				accessor: 'university',
 			},
 		],
@@ -50,8 +55,33 @@ export default function Table1() {
 
 	const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
 		useTable({ columns, data });
+
+	const handleSearchInputChange = (event) => {
+		setSearchTerm(event.target.value);
+	};
+
+	const handleSearch = () => {
+		const results = fakeData.filter((item) => {
+			return item.first_name.toLowerCase().includes(searchTerm.toLowerCase());
+		});
+		setSearchResults(results);
+		setShowModal(true);
+	};
+
 	return (
 		<div className='containerr'>
+			<div className='search-container'>
+				<input
+					type='text'
+					placeholder='Search by name'
+					value={searchTerm}
+					onChange={handleSearchInputChange}
+					onKeyPress={(event) => {
+						if (event.key === 'Enter') handleSearch();
+					}}
+				/>
+				<button onClick={handleSearch}>Search</button>
+			</div>
 			<table {...getTableProps()}>
 				<thead>
 					{headerGroups.map((headerGroup) => (
@@ -81,11 +111,6 @@ export default function Table1() {
 									<td>
 										<PopoverMenu />
 									</td>
-									{/* <td><OverlayTrigger
-                  placement="right"
-                  delay={{ show: 200, hide: 400 }}
-                  overlay={renderTooltip}
-                ><Link to="/Admisiones" className="nav-content-bttn open-font"><Button variant="contained"><i className="feather-more-horizontal"></i></Button></Link></OverlayTrigger></td> */}
 								</tr>
 							</OverlayTrigger>
 						);

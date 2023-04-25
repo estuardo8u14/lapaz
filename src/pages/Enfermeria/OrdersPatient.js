@@ -20,6 +20,7 @@ import SignsEditableTable from '../../components/Tables/SignsEditableTable';
 import Belongings from '../../components/Tables/Belongings';
 import AuthProcedure from '../../components/Enfermeria/AuthProcedure';
 import HeaderNurseryPatient from '../../components/Header/HeaderNurseryPatient';
+import HeaderAdmisiones from '../../components/Header/HeaderAdmisiones';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 // const board = {
@@ -98,7 +99,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 export default function OrdersPatient() {
 	return (
 		<Fragment>
-			<HeaderNurseryPatient />
+			<HeaderAdmisiones />
 			<div className='main-content right-chat-inactive bg-white'>
 				<div className='middle-sidebar-bottom'>
 					<div className='middle-sidebar-left pe-0'>

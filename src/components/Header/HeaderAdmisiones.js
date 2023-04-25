@@ -3,6 +3,8 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/img/logomid.png';
 import SearchBarSuper from '../SearchBar/SearchBarSuper';
 import fakeData1 from '../../assets/data/Data1.json';
+import { Button } from '@material-ui/core';
+import PopoverMenuAdmitted from '../PopoverMenu/PopoverMenuAdmitted';
 
 class HeaderAdmisiones extends Component {
 	state = {
@@ -68,35 +70,51 @@ class HeaderAdmisiones extends Component {
 											<i className='feather-search font-sm text-grey-400'></i>
 											<input
 												type='text'
-												placeholder='Buscar en servicios...'
+												placeholder='Buscar en pacientes...'
 												className='bg-grey border-0 lh-32 pt-2 pb-2 ps-5 pe-3 font-xssss fw-500 rounded-xl w200 theme-dark-bg'
 											/>
 										</div>
 									</form>
 								</div>
-								<div className='nav-caption fw-600 font-xssss text-grey-500'>
-									<span>Página </span>Principal Admisiones
+								<div className='nav-caption fw-900 font-xssss text-black-900'>
+									<span>Emergencia </span>
 								</div>
 								<ul className='mb-1 top-content'>
 									<li className='logo d-none d-xl-block d-lg-block'></li>
+									{/* <li>
+										<Link
+											to='/NurseOrders'
+											className='nav-content-bttn open-font'>
+											<i className='feather-users btn-round-md bg-blue-gradiant me-3'></i>
+											<span>Emergencia</span>
+										</Link>
+									</li> */}
 									<li>
 										<Link
-											to='/NuevoPaciente'
+											to='/Admisiones'
 											className='nav-content-bttn open-font'>
 											<i className='feather-plus btn-round-md bg-blue-gradiant me-3'></i>
 											<span>Nuevo Paciente</span>
 										</Link>
 									</li>
+									<li>
+										<Link
+											to='/ScalesNursery'
+											className='nav-content-bttn open-font'>
+											<i className='feather-file btn-round-md bg-blue-gradiant me-3'></i>
+											<span>Escalas Enfermería</span>
+										</Link>
+									</li>
 									{/* <li><Link to="/Admision" className="nav-content-bttn open-font"><i className="feather-users btn-round-md bg-blue-gradiant me-3"></i><span>Admisión</span></Link></li> */}
 									{/* <li><Link to="/AdmisionAtencion" className="nav-content-bttn open-font"><i className="feather-users btn-round-md bg-blue-gradiant me-3"></i><span>Admisión A</span></Link></li> */}
-									<li>
+									{/* <li>
 										<Link
 											to='/NurseOrders'
 											className='nav-content-bttn open-font'>
 											<i className='feather-paperclip btn-round-md bg-blue-gradiant me-3'></i>
 											<span>Ordenes Médicas</span>
 										</Link>
-									</li>
+									</li> */}
 									{/* <li>
 										<Link
 											to='/COEX'
@@ -110,6 +128,77 @@ class HeaderAdmisiones extends Component {
                                     <li><Link to="/" className="nav-content-bttn open-font"><i className="feather-eye btn-round-md bg-blue-gradiant me-3"></i><span>Diagnosticos</span></Link></li>
                                     <li><Link to="/" className="nav-content-bttn open-font"><i className="feather-alert-octagon btn-round-md bg-blue-gradiant me-3"></i><span>SOP</span></Link></li>
                                     <li><Link to="/" className="nav-content-bttn open-font"><i className="feather-plus btn-round-md bg-blue-gradiant me-3"></i><span>Encamamiento</span></Link></li> */}
+								</ul>
+							</div>
+							<div className='nav-wrap bg-white bg-transparent-card rounded-xxl shadow-xss pt-3 pb-1'>
+								<div className='nav-caption fw-900 font-xssss text-black-900'>
+									<span>Emergencia</span>
+								</div>
+								<ul className='mb-3'>
+									<li className='logo d-none d-xl-block d-lg-block'></li>
+									<li>
+										<Button className='nav-content-bttn open-font h-auto pt-2 pb-2'>
+											<span>[1]</span>
+											<i className='font-sm feather-user me-3 text-grey-500 ms-4 me-2'></i>
+											<span>Juan Perez</span>
+											<PopoverMenuAdmitted />
+										</Button>
+									</li>
+									<li>
+										<Button className='nav-content-bttn open-font h-auto pt-2 pb-2'>
+											<span>[2]</span>
+											<i className='font-sm feather-user me-3 text-grey-500 ms-4 me-2'></i>
+											<span>Maria Pira</span>
+											<PopoverMenuAdmitted />
+										</Button>
+									</li>
+									<li>
+										<Button className='nav-content-bttn open-font h-auto pt-2 pb-2'>
+											<span>[3]</span>
+											<i className='font-sm feather-user me-3 text-grey-500 ms-4 me-2'></i>
+											<span>Javier Tuk</span>
+											<PopoverMenuAdmitted />
+										</Button>
+									</li>
+									<li>
+										<Button className='nav-content-bttn open-font h-auto pt-2 pb-2'>
+											<span>[5]</span>
+											<i className='font-sm feather-user me-3 text-grey-500 ms-4 me-2'></i>
+											<span>Luis Lara</span>
+											<PopoverMenuAdmitted />
+										</Button>
+									</li>
+									<li>
+										<Button className='nav-content-bttn open-font h-auto pt-2 pb-2'>
+											<span>[4]</span>
+											<i className='font-sm feather-user me-3 text-grey-500 ms-4 me-2'></i>
+											<span>Javier Niel</span>
+											<PopoverMenuAdmitted />
+										</Button>
+									</li>
+								</ul>
+							</div>
+							<div className='nav-wrap bg-white bg-transparent-card rounded-xxl shadow-xss pt-3 pb-1'>
+								<div className='nav-caption fw-900 font-xssss text-black-900'>
+									<span>Pediatría</span>
+								</div>
+								<ul className='mb-3'>
+									<li className='logo d-none d-xl-block d-lg-block'></li>
+
+									<li>
+										<Button className='nav-content-bttn open-font h-auto pt-2 pb-2'>
+											<i className='font-sm feather-users me-3 text-grey-500 ms-4 me-2'></i>
+											<span>José Sanz</span>
+											<PopoverMenuAdmitted />
+										</Button>
+									</li>
+									<li>
+										<Button className='nav-content-bttn open-font h-auto pt-2 pb-2'>
+											<i className='font-sm feather-users me-3 text-grey-500 ms-4 me-2'></i>
+											<span>Luisa Lara</span>
+											<PopoverMenuAdmitted />
+										</Button>
+									</li>
 								</ul>
 							</div>
 

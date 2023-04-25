@@ -11,19 +11,19 @@ const validationSchema = Yup.object().shape({
 	title: Yup.string().required('Titulo requerido'),
 	description: Yup.string().required('Descripción requerida'),
 	startDate: Yup.date().nullable().required('Fecha de inicio requerida'),
-	//endDate: Yup.date().nullable().required("End Date is required"),
-	endDate: Yup.date()
-		.when(
-			'startDate',
-			(startDate, schema) =>
-				startDate &&
-				schema.min(
-					startDate,
-					'Fecha de terminación debe ser después de la fecha de inicio.',
-				),
-		)
-		.nullable()
-		.required('Fecha de terminación requerida'),
+	endDate: Yup.string().required('Comentario requiredo'),
+	// endDate: Yup.date()
+	// 	.when(
+	// 		'startDate',
+	// 		(startDate, schema) =>
+	// 			startDate &&
+	// 			schema.min(
+	// 				startDate,
+	// 				'Fecha de terminación debe ser después de la fecha de inicio.',
+	// 			),
+	// 	)
+	// 	.nullable()
+	// 	.required('Cmentario requerido'),
 });
 
 function TaskForm(props) {
@@ -105,17 +105,17 @@ function TaskForm(props) {
 										/>
 									</FormGroup>
 									<FormGroup>
-										<FormLabel>Fecha límite</FormLabel>
-										<DatePicker
-											selected={formik.values.endDate}
+										<FormLabel>Comentario</FormLabel>
+										<Field
+											type='text'
+											id='endDate'
 											name='endDate'
-											onBlur={formik.handleBlur}
-											onChange={(date) => formik.setFieldValue('endDate', date)}
 											className={`form-control ${
 												formik.touched.endDate && formik.errors.endDate
 													? 'is-invalid'
 													: ''
 											}`}
+											as='textarea'
 										/>
 										<ErrorMessage
 											component='div'

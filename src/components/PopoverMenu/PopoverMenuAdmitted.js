@@ -15,17 +15,23 @@ import PublicOpinionIcon from '@rsuite/icons/PublicOpinion';
 import UserInfoIcon from '@rsuite/icons/UserInfo';
 import BranchIcon from '@rsuite/icons/Branch';
 import MoreIcon from '@rsuite/icons/More';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 import ReviewIcon from '@rsuite/icons/Review';
 //import EditIcon from '@rsuite/icons/Edit';
 
 import { Link } from 'react-router-dom';
 
-const MyPopover = React.forwardRef(({ onSelect, ...rest }, ref) => (
+const MioPopover = React.forwardRef(({ onSelect, ...rest }, ref) => (
 	<Popover
 		ref={ref}
 		{...rest}
 		full>
 		<Dropdown.Menu onSelect={onSelect}>
+			{/* <OverlayTrigger
+				placement='bottom'
+				delay={{ show: 250, hide: 400 }}
+				overlay={renderTooltip}></OverlayTrigger> */}
 			<Link to={'/Edit'}>
 				<Dropdown.Item
 					eventKey={1}
@@ -33,20 +39,47 @@ const MyPopover = React.forwardRef(({ onSelect, ...rest }, ref) => (
 					Perfil
 				</Dropdown.Item>
 			</Link>
-			<Link to={'/NewAdmission'}>
+			{/* <Link to={'/NewAdmission'}>
 				<Dropdown.Item
 					eventKey={2}
 					icon={<PlusIcon />}>
-					Admisión Emergencia
-				</Dropdown.Item>
-			</Link>
-			{/* <Link to={'/Enfermeria'}>
-				<Dropdown.Item
-					eventKey={3}
-					icon={<PublicOpinionIcon />}>
-					Enfermeria
+					Admisión
 				</Dropdown.Item>
 			</Link> */}
+			<Link to={'/OrdenesChat'}>
+				<Dropdown.Item
+					eventKey={2}
+					icon={<PublicOpinionIcon />}>
+					Ordenes médicas
+				</Dropdown.Item>
+			</Link>
+			<Link to={'/OrdersPatient'}>
+				<Dropdown.Item
+					eventKey={3}
+					icon={<DetailIcon />}>
+					Gestion de ordenes
+				</Dropdown.Item>
+			</Link>
+			<Link to={'/PatientVitals'}>
+				<Dropdown.Item
+					eventKey={4}
+					icon={<DetailIcon />}>
+					Signos vitales
+				</Dropdown.Item>
+			</Link>
+			{/* <Dropdown.Item
+				eventKey={5}
+				icon={<PageIcon />}>
+				Laboratorio
+			</Dropdown.Item> */}
+			<Link to={'/Anamnesis'}>
+				<Dropdown.Item
+					eventKey={5}
+					icon={<DetailIcon />}>
+					Diagnosticos
+				</Dropdown.Item>
+			</Link>
+
 			<Link to={'/Tablas'}>
 				<Dropdown.Item
 					eventKey={6}
@@ -54,21 +87,7 @@ const MyPopover = React.forwardRef(({ onSelect, ...rest }, ref) => (
 					Revisar admisiones
 				</Dropdown.Item>{' '}
 			</Link>
-			{/* <Dropdown.Item
-				eventKey={5}
-				icon={<PageIcon />}>
-				Laboratorio
-			</Dropdown.Item>
-			<Dropdown.Item
-				eventKey={6}
-				icon={<DetailIcon />}>
-				Diagnosticos
-			</Dropdown.Item>
-			<Dropdown.Item
-				eventKey={6}
-				icon={<ReviewIcon />}>
-				SOP
-			</Dropdown.Item> */}
+
 			<Link to={'/Coex'}>
 				<Dropdown.Item
 					eventKey={4}
@@ -80,14 +99,22 @@ const MyPopover = React.forwardRef(({ onSelect, ...rest }, ref) => (
 	</Popover>
 ));
 
-export default function PopoverMenu() {
+const renderTooltip = (props) => (
+	<Tooltip
+		id='my-tooltip'
+		{...props}>
+		This is my tooltip content!
+	</Tooltip>
+);
+
+export default function PopoverMenuAdmitted() {
 	return (
 		<div style={{ padding: 10 }}>
 			<Whisper
 				placement='rightStart'
 				controlId='control-id-with-dropdown'
 				trigger='click'
-				speaker={<MyPopover />}>
+				speaker={<MioPopover />}>
 				<IconButton
 					icon={<MoreIcon />}
 					appearance='primary'

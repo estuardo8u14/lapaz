@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import ModalPuntoVenta from './ModalPuntoVenta';
+import ModalReservaCoex from './ModalReservaCoex';
 
 function rand() {
 	return Math.round(Math.random() * 20) - 10;
@@ -47,10 +48,11 @@ export default function ModalCuponCoex() {
 	return (
 		<div>
 			<Button
+				className='mt-4'
 				variant='contained'
 				color='warning'
 				onClick={handleOpen}>
-				Crear Cupón COEX
+				Crear Cita y Generar Cupón COEX
 			</Button>
 			<Modal
 				aria-labelledby='simple-modal-title'
@@ -166,11 +168,7 @@ export default function ModalCuponCoex() {
 											<div class='clearfix'></div>
 										</div>
 									</form>
-									<Button
-										onClick={handleClose}
-										variant='contained'>
-										Crear
-									</Button>
+									<ModalReservaCoex />
 								</div>
 							</CardContent>
 						</CardActionArea>

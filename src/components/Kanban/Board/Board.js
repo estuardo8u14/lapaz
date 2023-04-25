@@ -18,7 +18,7 @@ const taskData = [
 	},
 	{
 		id: 2,
-		title: 'Orden Maria Gonzáles',
+		title: 'Orden Juan Pérez',
 		description: 'Laxis, I Ampolla IV cada doce horas.',
 		stage: 1,
 		startDate: new Date(2023, 2, 25),
@@ -26,7 +26,7 @@ const taskData = [
 	},
 	{
 		id: 3,
-		title: 'Orden Julio Madriz',
+		title: 'Orden Juan Pérez',
 		description: 'Riesgo de déficit de líquidos',
 		stage: 2,
 		startDate: new Date(2023, 1, 1),
@@ -34,16 +34,16 @@ const taskData = [
 	},
 	{
 		id: 4,
-		title: 'Orden Miguel Asturias',
+		title: 'Orden Juan Pérez',
 		description:
 			'Valorar reflejos del paciente, diuresis y frecuencia respiratoria',
-		stage: 3,
+		stage: 2,
 		startDate: new Date(2023, 0, 5),
 		endDate: new Date(2023, 1, 15),
 	},
 	{
 		id: 5,
-		title: 'Orden Javier Givarra',
+		title: 'Orden Juan Pérez',
 		description: 'Administración de oxígeno',
 		stage: 3,
 		startDate: new Date(2023, 2, 5),
@@ -51,12 +51,53 @@ const taskData = [
 	},
 	{
 		id: 6,
-		title: 'Orden Diego Ruíz',
+		title: 'Orden Juan Pérez',
 		description: 'Conectar monitor cardíaco',
-		stage: 3,
+		stage: 1,
 		startDate: new Date(2023, 2, 5),
 		endDate: new Date(2023, 3, 12),
 	},
+	// {
+	// 	id: 2,
+	// 	title: 'Orden Maria Gonzáles',
+	// 	description: 'Laxis, I Ampolla IV cada doce horas.',
+	// 	stage: 1,
+	// 	startDate: new Date(2023, 2, 25),
+	// 	endDate: new Date(2023, 3, 25),
+	// },
+	// {
+	// 	id: 3,
+	// 	title: 'Orden Julio Madriz',
+	// 	description: 'Riesgo de déficit de líquidos',
+	// 	stage: 2,
+	// 	startDate: new Date(2023, 1, 1),
+	// 	endDate: new Date(2023, 1, 25),
+	// },
+	// {
+	// 	id: 4,
+	// 	title: 'Orden Miguel Asturias',
+	// 	description:
+	// 		'Valorar reflejos del paciente, diuresis y frecuencia respiratoria',
+	// 	stage: 3,
+	// 	startDate: new Date(2023, 0, 5),
+	// 	endDate: new Date(2023, 1, 15),
+	// },
+	// {
+	// 	id: 5,
+	// 	title: 'Orden Javier Givarra',
+	// 	description: 'Administración de oxígeno',
+	// 	stage: 3,
+	// 	startDate: new Date(2023, 2, 5),
+	// 	endDate: new Date(2023, 3, 12),
+	// },
+	// {
+	// 	id: 6,
+	// 	title: 'Orden Diego Ruíz',
+	// 	description: 'Conectar monitor cardíaco',
+	// 	stage: 3,
+	// 	startDate: new Date(2023, 2, 5),
+	// 	endDate: new Date(2023, 3, 12),
+	// },
 ];
 
 export const BoardContext = createContext({});
@@ -175,7 +216,9 @@ function Board() {
 			</div> */}
 			<hr />
 			<div className='row'>
-				<h4 class='mont-font fw-600 font-md mt-1 mb-4'>Ordenes del paciente</h4>
+				<h4 class='mont-font fw-600 font-md mt-1 mb-4'>
+					Enfermera: María Ramírez{' '}
+				</h4>
 				<div className='col-lg-12'>
 					<BoardContext.Provider value={ContextData}>
 						<BoardLanes stages={stages}></BoardLanes>

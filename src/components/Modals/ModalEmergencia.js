@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import {
@@ -8,14 +8,8 @@ import {
 	CardContent,
 	CardMedia,
 	CardActionArea,
-	Dialog,
-	DialogTitle,
-	DialogContent,
+	ButtonBase,
 } from '@material-ui/core';
-// import { Link } from "react-router-dom";
-import ModalCodigoPaciente from './ModalCodigoPaciente';
-import { Link } from 'react-router-dom';
-import CreditCardForm from './CreditCardForm';
 
 function rand() {
 	return Math.round(Math.random() * 20) - 10;
@@ -43,8 +37,7 @@ const useStyles = makeStyles((theme) => ({
 		padding: theme.spacing(2, 4, 3),
 	},
 }));
-
-export default function ModalPuntoVenta() {
+export default function ModalEmergencia() {
 	const classes = useStyles();
 	const [modalStyle] = React.useState(getModalStyle);
 	const [open, setOpen] = React.useState(false);
@@ -54,22 +47,12 @@ export default function ModalPuntoVenta() {
 	const handleClose = () => {
 		setOpen(false);
 	};
-	const [abrir, setAbrir] = useState(false);
-
-	const handleAbrir = () => {
-		setAbrir(true);
-	};
-
-	const handleCerrar = () => {
-		setAbrir(false);
-	};
-
 	return (
 		<div>
 			<Button
-				variant='contained'
+				color='red'
 				onClick={handleOpen}>
-				Pagar enlínea
+				Editar
 			</Button>
 			<Modal
 				aria-labelledby='simple-modal-title'
@@ -87,50 +70,54 @@ export default function ModalPuntoVenta() {
 									gutterBottom
 									variant='h4'
 									component='div'>
-									Punto de venta
+									Orden:
 								</Typography>
-								<Typography
+								{/* <Typography
 									gutterBottom
 									variant='h6'
 									component='div'>
-									Revisar NIT correcto: 907598-5
-								</Typography>
+									Nombre del paciente:
+								</Typography> */}
 								<input
 									required
 									type='text'
-									placeholder='NIT (Dejar en blanco si es correcto*)'
+									placeholder='Orden'
 									name='comment-name'
 									class='form-control mb-2'
 								/>
 
-								<Typography
-									class='pt-2 fw-700'
-									variant='h7'
-									component='div'>
-									Monto: Q80
-								</Typography>
+								<input
+									required
+									type='text'
+									placeholder='Tipo'
+									name='comment-name'
+									class='form-control mb-2'
+								/>
+								<input
+									required
+									type='text'
+									placeholder='Doctor'
+									name='comment-name'
+									class='form-control mb-2'
+								/>
 
-								<Button
-									className='mt-3'
-									variant='contained'
-									color='primary'
-									onClick={handleAbrir}>
-									Pago con tarjeta
-								</Button>
-								<Dialog
-									open={abrir}
-									onClose={handleCerrar}>
-									<DialogTitle>Registrar tarjeta de crédito</DialogTitle>
-									<DialogContent>
-										<CreditCardForm />
-									</DialogContent>
-								</Dialog>
+								<input
+									required
+									type='text'
+									placeholder='Estado'
+									name='comment-name'
+									class='form-control mb-2'
+								/>
 
-								<Button
-									variant='contained'
-									className='ms-2 mt-3'>
-									Efectivo
-								</Button>
+								<span class='text-right text-grey-700 font-xsss fw-700 order-total-ammount'>
+									<div className=''>
+										<Button
+											variant='contained'
+											onClick={handleClose}>
+											Aceptar
+										</Button>
+									</div>
+								</span>
 							</CardContent>
 						</CardActionArea>
 					</Card>

@@ -24,6 +24,9 @@ import InfoPacienteForm from '../../components/InfoPacienteForm/InfoPacienteForm
 import Covid from '../../components/Vacunas/Covid';
 import { useLocation } from 'react-router';
 import ModalAdRapida from '../../components/Modals/ModalAdRapida';
+import AddressTable from '../../components/Tables/AddressTable';
+import InsuranceTable from '../../components/Tables/InsuranceTable';
+import { Link } from 'react-router-dom';
 
 // import Autocomplete from '@mui/material/Autocomplete';
 // import TextField from '@mui/material/TextField';
@@ -112,13 +115,13 @@ export default function Admisiones(props) {
 
 									<div class='col-xl-12 col-lg-12'>
 										<div class='page-title'>
-											<h4 class='mont-font fw-600 font-md mb-lg-5 mb-1'>
-												Información del paciente (Completa)
-											</h4>
 											<ModalAdRapida />
+											<h4 class='mont-font fw-600 font-md mb-lg-5 mt-5'>
+												Nuevo paciente
+											</h4>
 											<form action='#'>
 												<div class='row'>
-													<div class='col-lg-6 mt-5 mb-3'>
+													<div class='col-lg-6 mt-1 mb-3'>
 														<div class='form-gorup'>
 															{propsData && (
 																<div>
@@ -135,7 +138,7 @@ export default function Admisiones(props) {
 														</div>
 													</div>
 
-													<div class='col-lg-6 mt-5 mb-3'>
+													<div class='col-lg-6 mt-1 mb-3'>
 														<div class='form-gorup'>
 															{propsData && (
 																<div>
@@ -187,88 +190,6 @@ export default function Admisiones(props) {
 												</div>
 
 												<div class='row'>
-													<div class='col-lg-6 mb-3'>
-														<div class='form-gorup'>
-															{propsData && (
-																<div>
-																	<label class='mont-font fw-600 font-xssss'>{`Fecha de nacimiento: ${propsData.content3}`}</label>
-																</div>
-															)}
-															<input
-																placeholder='Fecha de nacimiento *'
-																onFocus={(e) => (e.target.type = 'date')}
-																onBlur={(e) => (e.target.type = 'text')}
-																name='comment-name'
-																class='form-control'
-															/>
-														</div>
-													</div>
-
-													<div class='col-lg-6 mb-3'>
-														<div class='form-gorup'>
-															{propsData && (
-																<div>
-																	<label class='mont-font fw-600 font-xssss'>{`Nacionalidad: ${propsData.content4}`}</label>
-																</div>
-															)}
-															<input
-																type='text'
-																placeholder='Nacionalidad'
-																name='comment-name'
-																class='form-control'
-															/>
-														</div>
-													</div>
-												</div>
-												<div class='row'>
-													<div class='col-lg-3 mb-3'>
-														<div class='form-gorup'>
-															{propsData && (
-																<div>
-																	<label class='mont-font fw-600 font-xssss'>{`CUI: ${propsData.content5}`}</label>
-																</div>
-															)}
-															<input
-																type='text'
-																placeholder='CUI / DPI *'
-																name='comment-name'
-																class='form-control'
-															/>
-														</div>
-													</div>
-
-													<div class='col-lg-3 mb-3'>
-														<div class='form-gorup'>
-															{propsData && (
-																<div>
-																	<label class='mont-font fw-600 font-xssss'>{`Pasaporte: ${propsData.content6}`}</label>
-																</div>
-															)}
-															<input
-																type='text'
-																placeholder='Pasasporte'
-																name='comment-name'
-																class='form-control'
-															/>
-														</div>
-													</div>
-
-													<div class='col-lg-6 mb-3'>
-														<div class='form-gorup'>
-															{propsData && (
-																<div>
-																	<label class='mont-font fw-600 font-xssss'>{`Estado civil: ${propsData.content7}`}</label>
-																</div>
-															)}
-															<input
-																type='text'
-																placeholder='Estado civil'
-																name='comment-name'
-																class='form-control'
-															/>
-														</div>
-													</div>
-
 													<div class='col-lg-3 mb-3'>
 														<div class='form-gorup'>
 															{propsData && (
@@ -288,6 +209,133 @@ export default function Admisiones(props) {
 														<div class='form-gorup'>
 															{propsData && (
 																<div>
+																	<label class='mont-font fw-600 font-xssss'>{`Estado civil: ${propsData.content7}`}</label>
+																</div>
+															)}
+															<input
+																type='text'
+																placeholder='Estado civil'
+																name='comment-name'
+																class='form-control'
+															/>
+														</div>
+													</div>
+													<div class='col-lg-6 mb-3'>
+														<div class='form-gorup'>
+															{propsData && (
+																<div>
+																	<label class='mont-font fw-600 font-xssss'>{`Fecha de nacimiento: ${propsData.content3}`}</label>
+																</div>
+															)}
+															<input
+																placeholder='Fecha de nacimiento *'
+																onFocus={(e) => (e.target.type = 'date')}
+																onBlur={(e) => (e.target.type = 'text')}
+																name='comment-name'
+																class='form-control'
+															/>
+														</div>
+													</div>
+
+													{/* <div class='col-lg-6 mb-3'>
+														<div class='form-gorup'>
+															{propsData && (
+																<div>
+																	<label class='mont-font fw-600 font-xssss'>{`Nacionalidad: ${propsData.content4}`}</label>
+																</div>
+															)}
+															<input
+																type='text'
+																placeholder='Nacionalidad'
+																name='comment-name'
+																class='form-control'
+															/>
+														</div>
+													</div> */}
+												</div>
+												<div class='row'>
+													<div class='col-lg-6 mb-3'>
+														<div class='form-gorup'>
+															{propsData && (
+																<div>
+																	<label class='mont-font fw-600 font-xssss'>{`CUI: ${propsData.content5}`}</label>
+																</div>
+															)}
+															<input
+																type='text'
+																placeholder='CUI / DPI *'
+																name='comment-name'
+																class='form-control'
+															/>
+														</div>
+													</div>
+
+													<div class='col-lg-6 mb-3'>
+														<div class='form-gorup'>
+															{propsData && (
+																<div>
+																	<label class='mont-font fw-600 font-xssss'>{`Pasaporte: ${propsData.content6}`}</label>
+																</div>
+															)}
+															<input
+																type='text'
+																placeholder='Pasasporte'
+																name='comment-name'
+																class='form-control'
+															/>
+														</div>
+													</div>
+													<div class='row'>
+														<div class='col-lg-12 mb-5 mt-5'>
+															<div class='form-gorup'>
+																<div class='linea'></div>
+															</div>
+														</div>
+													</div>
+
+													<div class='row'>
+														<div class='row'>
+															<h4 class='mont-font fw-600 font-md mb-lg-3'>
+																Contacto
+															</h4>
+														</div>
+													</div>
+
+													{/* <div class='col-lg-6 mb-3'>
+														<div class='form-gorup'>
+															{propsData && (
+																<div>
+																	<label class='mont-font fw-600 font-xssss'>{`Estado civil: ${propsData.content7}`}</label>
+																</div>
+															)}
+															<input
+																type='text'
+																placeholder='Estado civil'
+																name='comment-name'
+																class='form-control'
+															/>
+														</div>
+													</div> */}
+
+													{/* <div class='col-lg-3 mb-3'>
+														<div class='form-gorup'>
+															{propsData && (
+																<div>
+																	<label class='mont-font fw-600 font-xssss'>{`Sexo: ${propsData.content8}`}</label>
+																</div>
+															)}
+															<input
+																type='text'
+																placeholder='Sexo'
+																name='comment-name'
+																class='form-control'
+															/>
+														</div>
+													</div> */}
+													{/* <div class='col-lg-3 mb-3'>
+														<div class='form-gorup'>
+															{propsData && (
+																<div>
 																	<label class='mont-font fw-600 font-xssss'>{`Teléfono: ${propsData.content9}`}</label>
 																</div>
 															)}
@@ -298,8 +346,8 @@ export default function Admisiones(props) {
 																class='form-control'
 															/>
 														</div>
-													</div>
-													<div class='col-lg-6 mb-3'>
+													</div> */}
+													<div class='col-lg-6 mb-3 mt-2'>
 														<div class='form-gorup'>
 															{propsData && (
 																<div>
@@ -314,31 +362,47 @@ export default function Admisiones(props) {
 															/>
 														</div>
 													</div>
+													<div class='col-lg-6 mb-3 mt-2'>
+														<div class='form-gorup'>
+															{propsData && (
+																<div>
+																	<label class='mont-font fw-600 font-xssss'>{`Teléfono: ${propsData.content9}`}</label>
+																</div>
+															)}
+															<input
+																type='text'
+																placeholder='Teléfono *'
+																name='comment-name'
+																class='form-control'
+															/>
+														</div>
+													</div>
 												</div>
 												<div class='row'>
 													<div class='row'>
 														<div class='col-lg-9 mb-3'>
 															<div class='form-gorup'>
-																{propsData && (
+																{/* {propsData && (
 																	<div>
 																		<label class='mont-font fw-600 font-xssss'>{`Dirección Residencia: ${propsData.content11}`}</label>
 																	</div>
-																)}
-																<input
+																)} */}
+																{/* <input
 																	type='text'
 																	placeholder='Dirección Residencia *'
 																	name='comment-name'
-																	class='form-control'></input>
+																	class='form-control'></input> */}
 															</div>
 														</div>
-														<div class='col-lg-3 mb-3'>
+														{/* <div class='col-lg-3 mb-3'>
 															<div class='form-gorup pt-2'>
 																<ModalDir />
 															</div>
-														</div>
+														</div> */}
 													</div>
+													<AddressTable />
 
-													<div class='col-lg-12 mb-3 pt-1'>
+													{/* <div class='col-lg-12 mb-3 pt-1'>
 														<div class='form-check text-left mb-3'>
 															<Radio color='warning' />
 															<label class='pt-1 form-check-label fw-600 font-xsss text-grey-700'>
@@ -355,7 +419,7 @@ export default function Admisiones(props) {
 																</p>
 															</div>
 														</div>
-													</div>
+													</div> */}
 												</div>
 
 												<div class='row'>
@@ -367,6 +431,45 @@ export default function Admisiones(props) {
 												</div>
 
 												<div class='row'>
+													<h4 class='mont-font fw-600 font-md mb-lg-3 mb-2'>
+														Datos de facturación
+													</h4>
+													<div class='col-lg-4 mb-3'>
+														<div class='form-gorup'>
+															<label class='mont-font fw-600 font-xssss'></label>
+															<input
+																type='text'
+																placeholder='NIT *'
+																name='comment-name'
+																class='form-control'
+															/>
+														</div>
+													</div>
+													<div class='col-lg-4 mb-3'>
+														<div class='form-gorup'>
+															<label class='mont-font fw-600 font-xssss'></label>
+															<input
+																type='text'
+																placeholder='Nombre'
+																name='comment-name'
+																class='form-control'
+															/>
+														</div>
+													</div>
+													<div class='col-lg-4 mb-3'>
+														<div class='form-gorup'>
+															<label class='mont-font fw-600 font-xssss'></label>
+															<input
+																type='text'
+																placeholder='Dirección'
+																name='comment-name'
+																class='form-control'
+															/>
+														</div>
+													</div>
+												</div>
+
+												{/* <div class='row'>
 													<div class='row'>
 														<h4 class='mont-font fw-600 font-md mb-lg-3 mb-2'>
 															Profesión u oficio
@@ -413,7 +516,7 @@ export default function Admisiones(props) {
 															</div>
 														</div>
 													</div>
-												</div>
+												</div> */}
 
 												<div class='row'>
 													<div class='col-lg-12 mb-3 mt-3'>
@@ -426,8 +529,9 @@ export default function Admisiones(props) {
 													<h4 class='mont-font fw-600 font-md mb-lg-3 mb-2'>
 														Seguros y otras afilaciones
 													</h4>
+													<InsuranceTable />
 
-													<div class='col-lg-4 mb-3'>
+													{/* <div class='col-lg-4 mb-3'>
 														<div class='form-gorup'>
 															<label class='mont-font fw-600 font-xssss'></label>
 															<input
@@ -453,7 +557,7 @@ export default function Admisiones(props) {
 														<div class='form-gorup'>
 															<ModalAseguradoras></ModalAseguradoras>
 														</div>
-													</div>
+													</div> */}
 												</div>
 
 												<div class='row'>
@@ -463,7 +567,7 @@ export default function Admisiones(props) {
 														</div>
 													</div>
 												</div>
-												<div class='row'>
+												{/* <div class='row'>
 													<h4 class='mont-font fw-600 font-md mb-lg-3 mb-2'>
 														Datos de facturación
 													</h4>
@@ -500,6 +604,47 @@ export default function Admisiones(props) {
 															/>
 														</div>
 													</div>
+												</div> */}
+
+												<h4 class='mont-font fw-600 font-md mb-2'>Consulta</h4>
+												<div class='row'>
+													<div class='col-lg-6 mt-1 mb-3'>
+														<div class='form-gorup'>
+															<input
+																required
+																type='text'
+																placeholder='Motivo de consulta [Dx (CIE-10)]'
+																name='comment-name'
+																class='form-control'
+															/>
+														</div>
+													</div>
+
+													<div class='col-lg-6 mt-1 mb-3'>
+														<div class='form-gorup'>
+															<input
+																required
+																type='text'
+																placeholder='Médico Referente'
+																name='comment-name'
+																class='form-control'
+															/>
+														</div>
+													</div>
+												</div>
+
+												<div class='row'>
+													<div class='col-lg-12 mt-1 mb-3'>
+														<div class='form-gorup'>
+															<input
+																required
+																type='text'
+																placeholder='Observaciones'
+																name='comment-name'
+																class='form-control'
+															/>
+														</div>
+													</div>
 												</div>
 
 												<div class='row'>
@@ -509,75 +654,32 @@ export default function Admisiones(props) {
 														</div>
 													</div>
 												</div>
-												<h4 class='mont-font fw-600 font-md mb-2'>COVID</h4>
 
-												<div class='row'>
-													<div class='col-lg-12 mb-0 pt-1'>
+												<h4 class='mont-font fw-600 font-md mb-2'>
+													Responsable de la cuenta
+												</h4>
+												<div class='col'>
+													<div class='col-lg-12 mb-3'>
 														<div class='form-gorup'>
-															<div class='row'>
-																<div class='col-lg-6 mb-0 pt-1'>
-																	<div class='form-check text-left mb-3'>
-																		<FormControl>
-																			<FormLabel id='demo-controlled-radio-buttons-group'>
-																				¿Ha dado positivo a COVID?
-																			</FormLabel>
-																			<RadioGroup
-																				aria-labelledby='demo-controlled-radio-buttons-group'
-																				name='controlled-radio-buttons-group'
-																				value={value}
-																				onChange={handleChange}>
-																				<FormControlLabel
-																					value='Covid'
-																					control={<Radio color='success' />}
-																					label='Sí'
-																				/>
-																				<FormControlLabel
-																					value=''
-																					control={<Radio color='warning' />}
-																					label='No'
-																				/>
-																			</RadioGroup>
-																		</FormControl>
-																	</div>
-																</div>
-																<div class='col-lg-6 mb-0 pt-1'>
-																	<div class='form-check text-left mb-3'>
-																		<FormControl>
-																			<FormLabel id='demo-controlled-radio-buttons-group'>
-																				¿Se ha vacunado contra COVID?
-																			</FormLabel>
-																			<RadioGroup
-																				aria-labelledby='demo-controlled-radio-buttons-group'
-																				name='controlled-radio-buttons-group'
-																				value={covid}
-																				onChange={handleOnChangeCovid}>
-																				<FormControlLabel
-																					value='Covid'
-																					control={<Radio color='warning' />}
-																					label='Sí'
-																				/>
-																				<FormControlLabel
-																					value=''
-																					control={<Radio color='warning' />}
-																					label='No'
-																				/>
-																			</RadioGroup>
-																		</FormControl>
-																	</div>
-																</div>
-															</div>
-															<div class='row'>
-																<div class='col-lg-6 mb-3 '>
-																	<div class='form-check text-left mb-3 '>
-																		<label class='me-3 form-check-label fw-600 font-xsss text-grey-600'>
-																			Fecha:
-																		</label>
-																		<input type='date'></input>
-																	</div>
-																</div>
-															</div>
-
-															{covidContentVisible && <Covid />}
+															<FormControl className='col-lg-2'>
+																<InputLabel id='demo-simple-select-label'>
+																	Parentesco
+																</InputLabel>
+																<Select
+																	className='pt-3'
+																	value={parentesco}
+																	onChange={handleOnChange}
+																	labelId='demo-simple-select-label'
+																	id='demo-simple-select'>
+																	<MenuItem value='value0'>N/A</MenuItem>
+																	<MenuItem value='Padre'>Padre</MenuItem>
+																	<MenuItem value='Madre'>Madre</MenuItem>
+																	<MenuItem value='Tutor'>Tutor</MenuItem>
+																</Select>
+															</FormControl>
+															{padreContentVisible && <InfoPacienteForm />}
+															{madreContentVisible && <InfoPacienteForm />}
+															{tutorContentVisible && <InfoPacienteForm />}
 															{/* <label class="mont-font fw-600 font-xssss"></label>
                                                     <select type="text" class="pl-7 mx-3 mont-font fw-600 font-xsss mb-1" name="uname" required >
                                                         <option value="value1">Paciente</option>
@@ -813,31 +915,77 @@ export default function Admisiones(props) {
                                               </form>
                                           </div> */}
 
-												<h4 class='mont-font fw-600 font-md mb-2'>
-													Responsable de la cuenta
+												<h4 class='mont-font fw-600 font-md mt-2 mb-2'>
+													COVID
 												</h4>
-												<div class='col'>
-													<div class='col-lg-12 mb-3'>
+
+												<div class='row'>
+													<div class='col-lg-12 mb-0 pt-1'>
 														<div class='form-gorup'>
-															<FormControl className='col-lg-2'>
-																<InputLabel id='demo-simple-select-label'>
-																	Parentesco
-																</InputLabel>
-																<Select
-																	className='pt-3'
-																	value={parentesco}
-																	onChange={handleOnChange}
-																	labelId='demo-simple-select-label'
-																	id='demo-simple-select'>
-																	<MenuItem value='value0'>N/A</MenuItem>
-																	<MenuItem value='Padre'>Padre</MenuItem>
-																	<MenuItem value='Madre'>Madre</MenuItem>
-																	<MenuItem value='Tutor'>Tutor</MenuItem>
-																</Select>
-															</FormControl>
-															{padreContentVisible && <InfoPacienteForm />}
-															{madreContentVisible && <InfoPacienteForm />}
-															{tutorContentVisible && <InfoPacienteForm />}
+															<div class='row'>
+																<div class='col-lg-6 mb-0 pt-1'>
+																	<div class='form-check text-left mb-3'>
+																		<FormControl>
+																			<FormLabel id='demo-controlled-radio-buttons-group'>
+																				¿Ha dado positivo a COVID?
+																			</FormLabel>
+																			<RadioGroup
+																				aria-labelledby='demo-controlled-radio-buttons-group'
+																				name='controlled-radio-buttons-group'
+																				value={value}
+																				onChange={handleChange}>
+																				<FormControlLabel
+																					value='Covid'
+																					control={<Radio color='success' />}
+																					label='Sí'
+																				/>
+																				<FormControlLabel
+																					value=''
+																					control={<Radio color='warning' />}
+																					label='No'
+																				/>
+																			</RadioGroup>
+																		</FormControl>
+																	</div>
+																</div>
+																<div class='col-lg-6 mb-0 pt-1'>
+																	<div class='form-check text-left mb-3'>
+																		<FormControl>
+																			<FormLabel id='demo-controlled-radio-buttons-group'>
+																				¿Se ha vacunado contra COVID?
+																			</FormLabel>
+																			<RadioGroup
+																				aria-labelledby='demo-controlled-radio-buttons-group'
+																				name='controlled-radio-buttons-group'
+																				value={covid}
+																				onChange={handleOnChangeCovid}>
+																				<FormControlLabel
+																					value='Covid'
+																					control={<Radio color='warning' />}
+																					label='Sí'
+																				/>
+																				<FormControlLabel
+																					value=''
+																					control={<Radio color='warning' />}
+																					label='No'
+																				/>
+																			</RadioGroup>
+																		</FormControl>
+																	</div>
+																</div>
+															</div>
+															<div class='row'>
+																<div class='col-lg-6 mb-3 '>
+																	<div class='form-check text-left mb-3 '>
+																		<label class='me-3 form-check-label fw-600 font-xsss text-grey-600'>
+																			Fecha:
+																		</label>
+																		<input type='date'></input>
+																	</div>
+																</div>
+															</div>
+
+															{covidContentVisible && <Covid />}
 															{/* <label class="mont-font fw-600 font-xssss"></label>
                                                     <select type="text" class="pl-7 mx-3 mont-font fw-600 font-xsss mb-1" name="uname" required >
                                                         <option value="value1">Paciente</option>
@@ -848,7 +996,6 @@ export default function Admisiones(props) {
 														</div>
 													</div>
 												</div>
-
 												<div class='row'>
 													<div class='col-lg-12 mb-3 mt-3'>
 														<div class='form-gorup'>
@@ -898,13 +1045,23 @@ export default function Admisiones(props) {
 																	<tr>
 																		<th class='border-0'>Detalles</th>
 																	</tr>
+																	<tr>
+																		<Link to='/PdfConsultaMedica'>
+																			<th className=''>
+																				<i className='feather-file-text'>
+																					{' '}
+																					Imprimir
+																				</i>
+																			</th>
+																		</Link>
+																	</tr>
 																</thead>
 																<tbody>
 																	<tr>
 																		<th class='text-grey-700 fw-500 font-xsss'>
 																			Nombre
 																			<strong>
-																				<span>:</span> Juan Antonio Pérez García
+																				<span>:</span> Juan Alberto Pérez García
 																			</strong>
 																		</th>
 																		<th class='text-grey-700 fw-500 font-xsss'>
@@ -922,23 +1079,23 @@ export default function Admisiones(props) {
 																			</strong>
 																		</th>
 																		<th class='text-grey-700 fw-500 font-xsss'>
-																			Fecha de nacimiento
+																			Edad
 																			<strong>
-																				<span>:</span> 14/08/2000
+																				<span>:</span> 25 años
 																			</strong>
 																		</th>
 																	</tr>
 																	<tr>
 																		<th class='text-grey-700 fw-500 font-xsss'>
-																			Ciudad
+																			Dirección
 																			<strong>
-																				<span>:</span> Guatemala
+																				<span>:</span>Blvd A. 3-12 Guatemala
 																			</strong>
 																		</th>
 																		<th class='text-grey-700 fw-500 font-xsss'>
-																			Correo electrónico
+																			Email
 																			<strong>
-																				<span>:</span> noseque@gmail.com
+																				<span>:</span> Juanperez@gmail.com
 																			</strong>
 																		</th>
 																	</tr>
@@ -956,14 +1113,28 @@ export default function Admisiones(props) {
 																			</strong>
 																		</th>
 																	</tr>
+																	<tr>
+																		<th class='text-grey-700 fw-500 font-xsss'>
+																			Responsable
+																			<strong>
+																				<span>:</span> N/A
+																			</strong>
+																		</th>
+																		<th class='text-grey-700 fw-500 font-xsss'>
+																			Información Covid
+																			<strong>
+																				<span>:</span> Vacuna (3 dosis)
+																			</strong>
+																		</th>
+																	</tr>
 																</tbody>
 																<tfoot>
 																	<tr class='order-total'>
-																		<th></th>
+																		<Link to='/Edit'>
+																			<th className='pt-1'>Editar</th>
+																		</Link>
 																		<td class='text-right text-grey-700 font-xsss fw-700'>
-																			<span class='order-total-ammount'>
-																				<SimpleModal />
-																			</span>
+																			<span class='order-total-ammount'></span>
 																		</td>
 																	</tr>
 																</tfoot>

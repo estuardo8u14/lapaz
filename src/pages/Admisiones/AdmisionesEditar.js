@@ -13,6 +13,7 @@ import Radio from '@material-ui/core/Radio';
 import FormControl from '@material-ui/core/FormControl';
 import ModalAseguradoras from '../../components/Modals/ModalAseguradoras';
 import InfoPacienteForm from '../../components/InfoPacienteForm/InfoPacienteForm';
+import HeaderAdmision from '../../components/Header/HeaderAdmision';
 
 // import Autocomplete from '@mui/material/Autocomplete';
 // import TextField from '@mui/material/TextField';
@@ -45,7 +46,7 @@ export default function AdmisionesEditar() {
 
 	return (
 		<Fragment>
-			<HeaderAdmisiones />
+			<HeaderAdmision />
 			<div className='main-content right-chat-inactive bg-white'>
 				<div className='middle-sidebar-bottom'>
 					<div className='middle-sidebar-left pe-0'>

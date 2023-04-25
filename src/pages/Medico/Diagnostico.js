@@ -15,10 +15,11 @@ import HeaderMedico from '../../components/Header/HeaderMedico';
 // import SelectInput from '../../components/MedicationControl/SelectInput';
 import ReviewOfSystemsForm from '../../components/SystemReview/ReviewOfSystemsForm';
 import EditableTable from '../../components/Tables/EditableTable';
+import HeaderAdmisiones from '../../components/Header/HeaderAdmisiones';
 
 export default function Diagnostico() {
 	useEffect(() => {
-		window.scrollTo(0, 1500);
+		window.scrollTo(0, 400);
 	}, []);
 
 	const location = useLocation();
@@ -137,7 +138,7 @@ export default function Diagnostico() {
 
 	return (
 		<Fragment>
-			<HeaderMedico />
+			<HeaderAdmisiones />
 			<div className='main-content right-chat-inactive bg-white'>
 				<div className='middle-sidebar-bottom'>
 					<div className='middle-sidebar-left pe-0'>

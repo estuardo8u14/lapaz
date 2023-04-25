@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import {
@@ -8,14 +8,9 @@ import {
 	CardContent,
 	CardMedia,
 	CardActionArea,
-	Dialog,
-	DialogTitle,
-	DialogContent,
 } from '@material-ui/core';
-// import { Link } from "react-router-dom";
-import ModalCodigoPaciente from './ModalCodigoPaciente';
 import { Link } from 'react-router-dom';
-import CreditCardForm from './CreditCardForm';
+// import { Link } from "react-router-dom";
 
 function rand() {
 	return Math.round(Math.random() * 20) - 10;
@@ -43,8 +38,7 @@ const useStyles = makeStyles((theme) => ({
 		padding: theme.spacing(2, 4, 3),
 	},
 }));
-
-export default function ModalPuntoVenta() {
+export default function ModalReservaCoex() {
 	const classes = useStyles();
 	const [modalStyle] = React.useState(getModalStyle);
 	const [open, setOpen] = React.useState(false);
@@ -54,22 +48,14 @@ export default function ModalPuntoVenta() {
 	const handleClose = () => {
 		setOpen(false);
 	};
-	const [abrir, setAbrir] = useState(false);
-
-	const handleAbrir = () => {
-		setAbrir(true);
-	};
-
-	const handleCerrar = () => {
-		setAbrir(false);
-	};
-
 	return (
 		<div>
 			<Button
 				variant='contained'
+				color='primary'
+				className='col-lg-12'
 				onClick={handleOpen}>
-				Pagar enlínea
+				Finalizar
 			</Button>
 			<Modal
 				aria-labelledby='simple-modal-title'
@@ -82,55 +68,34 @@ export default function ModalPuntoVenta() {
 					<Card
 						sx={{ maxWidth: 300, display: 'flex', justifyContent: 'center' }}>
 						<CardActionArea>
+							<CardMedia
+								component='img'
+								height='auto'
+								image='/assets/videos/exito3_2foto.png'
+								alt='exito'
+							/>
 							<CardContent>
 								<Typography
-									gutterBottom
-									variant='h4'
-									component='div'>
-									Punto de venta
-								</Typography>
-								<Typography
-									gutterBottom
 									variant='h6'
-									component='div'>
-									Revisar NIT correcto: 907598-5
+									align='center'
+									color='text.secondary'>
+									Éxito
 								</Typography>
-								<input
-									required
-									type='text'
-									placeholder='NIT (Dejar en blanco si es correcto*)'
-									name='comment-name'
-									class='form-control mb-2'
-								/>
-
 								<Typography
-									class='pt-2 fw-700'
-									variant='h7'
+									gutterBottom
+									variant='h5'
+									align='center'
 									component='div'>
-									Monto: Q80
+									Reserva de cita COEX creada para el paciente: Juan Pérez
+									(COEX-3462023)
 								</Typography>
-
-								<Button
-									className='mt-3'
-									variant='contained'
-									color='primary'
-									onClick={handleAbrir}>
-									Pago con tarjeta
-								</Button>
-								<Dialog
-									open={abrir}
-									onClose={handleCerrar}>
-									<DialogTitle>Registrar tarjeta de crédito</DialogTitle>
-									<DialogContent>
-										<CreditCardForm />
-									</DialogContent>
-								</Dialog>
-
-								<Button
-									variant='contained'
-									className='ms-2 mt-3'>
-									Efectivo
-								</Button>
+								<Link to='/Tablas'>
+									<Button
+										className=''
+										variant='contained'>
+										terminar
+									</Button>
+								</Link>
 							</CardContent>
 						</CardActionArea>
 					</Card>

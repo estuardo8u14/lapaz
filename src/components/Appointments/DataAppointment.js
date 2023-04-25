@@ -43,7 +43,7 @@ export default function DataAppointment() {
 	return (
 		<div class='col-xl-12'>
 			<div class='page-title'>
-				<h4 class='mont-font fw-600 font-md pt-3 pb-3'>
+				<h4 class='mont-font fw-600 font-md mt-5 pb-3'>
 					Información del paciente
 				</h4>
 				<form action='#'>
@@ -51,9 +51,7 @@ export default function DataAppointment() {
 						<div class='col-lg-12 mt-4 mb-3'>
 							<div class='form-gorup'>
 								<FormControl className='col-lg-12'>
-									<InputLabel id='demo-simple-select-label'>
-										Tipo de cita{' '}
-									</InputLabel>
+									<InputLabel id='demo-simple-select-label'>Seguro </InputLabel>
 									<Select
 										value={tipocita}
 										onChange={handleOnChange}

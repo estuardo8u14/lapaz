@@ -5,6 +5,16 @@ import Popover from 'rsuite/Popover';
 import Whisper from 'rsuite/Whisper';
 import IconButton from 'rsuite/IconButton';
 
+import {
+	Button,
+	ButtonGroup,
+	TextField,
+	List,
+	ListItem,
+	ListItemText,
+} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
 // Icons
 import PageIcon from '@rsuite/icons/Page';
 //import FolderFillIcon from "@rsuite/icons/FolderFill";
@@ -20,74 +30,66 @@ import ReviewIcon from '@rsuite/icons/Review';
 
 import { Link } from 'react-router-dom';
 
-const MyPopover = React.forwardRef(({ onSelect, ...rest }, ref) => (
+const ChatPopover = React.forwardRef(({ onSelect, ...rest }, ref) => (
 	<Popover
 		ref={ref}
 		{...rest}
 		full>
 		<Dropdown.Menu onSelect={onSelect}>
-			<Link to={'/Edit'}>
-				<Dropdown.Item
-					eventKey={1}
-					icon={<UserInfoIcon />}>
-					Perfil
-				</Dropdown.Item>
-			</Link>
-			<Link to={'/NewAdmission'}>
+			<Dropdown.Item
+				eventKey={1}
+				icon={<UserInfoIcon />}>
+				Orden
+			</Dropdown.Item>
+
+			{/* <Link to={'/NewAdmission'}>
 				<Dropdown.Item
 					eventKey={2}
 					icon={<PlusIcon />}>
-					Admisión Emergencia
-				</Dropdown.Item>
-			</Link>
-			{/* <Link to={'/Enfermeria'}>
-				<Dropdown.Item
-					eventKey={3}
-					icon={<PublicOpinionIcon />}>
-					Enfermeria
+					Admisión
 				</Dropdown.Item>
 			</Link> */}
-			<Link to={'/Tablas'}>
-				<Dropdown.Item
-					eventKey={6}
-					icon={<ReviewIcon />}>
-					Revisar admisiones
-				</Dropdown.Item>{' '}
-			</Link>
-			{/* <Dropdown.Item
+
+			<Dropdown.Item
+				eventKey={2}
+				icon={<PublicOpinionIcon />}>
+				Evolución
+			</Dropdown.Item>
+			<Dropdown.Item
+				eventKey={3}
+				icon={<DetailIcon />}>
+				Medicamento
+			</Dropdown.Item>
+
+			<Dropdown.Item
 				eventKey={5}
 				icon={<PageIcon />}>
-				Laboratorio
+				Imagenes Dx
 			</Dropdown.Item>
-			<Dropdown.Item
-				eventKey={6}
-				icon={<DetailIcon />}>
-				Diagnosticos
-			</Dropdown.Item>
-			<Dropdown.Item
+
+			{/* <Dropdown.Item
 				eventKey={6}
 				icon={<ReviewIcon />}>
 				SOP
 			</Dropdown.Item> */}
-			<Link to={'/Coex'}>
-				<Dropdown.Item
-					eventKey={4}
-					icon={<BranchIcon />}>
-					Cita en clínica
-				</Dropdown.Item>
-			</Link>
+
+			<Dropdown.Item
+				eventKey={4}
+				icon={<BranchIcon />}>
+				Laboratorio
+			</Dropdown.Item>
 		</Dropdown.Menu>
 	</Popover>
 ));
 
-export default function PopoverMenu() {
+export default function PopoverMenuChat() {
 	return (
 		<div style={{ padding: 10 }}>
 			<Whisper
-				placement='rightStart'
+				placement='leftStart'
 				controlId='control-id-with-dropdown'
 				trigger='click'
-				speaker={<MyPopover />}>
+				speaker={<ChatPopover />}>
 				<IconButton
 					icon={<MoreIcon />}
 					appearance='primary'

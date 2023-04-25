@@ -23,7 +23,6 @@ export default function InfoPacienteForm(props) {
 					</h4>
 					<form action='#'>
 						<div class='row'>
-							<ModalAdRapida />
 							<div class='col-lg-6 mt-4 mb-3'>
 								<div class='form-gorup'>
 									{propsData && (
@@ -244,7 +243,7 @@ export default function InfoPacienteForm(props) {
 								</div>
 							</div>
 
-							<div class='col-lg-12 mb-3 pt-1'>
+							{/* <div class='col-lg-12 mb-3 pt-1'>
 								<div class='form-check text-left mb-3'>
 									<Radio color='warning' />
 									<label class='pt-1 form-check-label fw-600 font-xsss text-grey-700'>
@@ -260,7 +259,7 @@ export default function InfoPacienteForm(props) {
 										</p>
 									</div>
 								</div>
-							</div>
+							</div> */}
 						</div>
 					</form>
 				</div>

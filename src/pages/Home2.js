@@ -6,7 +6,9 @@ import SearchBarSuper from '../components/SearchBar/SearchBarSuper';
 import fakeData1 from '../assets/data/Data1.json';
 //import fakeData2 from "../assets/data/Data.json";
 import { Typography } from '@material-ui/core';
-// import Table2 from "../components/Tables/Table2";
+import Table2 from '../components/Tables/Table2';
+import Table1 from '../components/Tables/Table1';
+import Table3 from '../components/Tables/Table3';
 // import { Link } from 'react-router-dom';
 // import { Button } from '@material-ui/core';
 //import Dropdown from 'react-dropdown';
@@ -55,8 +57,8 @@ export default function Home2() {
 				placeholder='Ingresa una busqueda aquí...'
 				data={fakeData1}
 			/>
-			{/* <Table2/>
-        <Link to="/" className="nav-content-bttn open-font h-auto pt-2 pb-2"><Button><i className='feather-user-plus btn-round-md bg-blue-gradiant me-3'></i>Buscar Pacientes</Button></Link> */}
+			<Table1 />
+			{/* <Link to="/" className="nav-content-bttn open-font h-auto pt-2 pb-2"><Button><i className='feather-user-plus btn-round-md bg-blue-gradiant me-3'></i>Buscar Pacientes</Button></Link> */}
 		</div>
 	);
 }
