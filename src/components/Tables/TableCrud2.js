@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Table, Button, Form, FormGroup, Label, Input } from "reactstrap";
+import BusinessIcon from "@material-ui/icons/Business";
 
 const initialData = [
   {
@@ -12,7 +13,7 @@ const initialData = [
   {
     code: "002",
     user: "jane",
-    rol: "medico",
+    rol: "médico",
     name: "Jane Doe",
     state: "inactive",
   },
@@ -39,10 +40,10 @@ const initialData = [
   },
 ];
 
-const rols = ["admin", "paciente", "clinicaext", "medico", "enfermera"];
+const rols = ["admin", "paciente", "clinicaext", "médico", "enfermera"];
 const states = ["active", "inactive"];
 
-const TableCrud = () => {
+const TableCrud2 = () => {
   const [data, setData] = useState(initialData);
   const [editableRowIndex, setEditableRowIndex] = useState(-1);
 
@@ -117,15 +118,15 @@ const TableCrud = () => {
     }
   };
   return (
-    <div>
+    <div className="mt-5">
       <Table>
         <thead>
           <tr>
-            <th>Code</th>
-            <th>User</th>
+            <th>Código</th>
+            <th>Usuario</th>
             <th>Rol</th>
-            <th>Name</th>
-            <th>State</th>
+            <th>Nombre</th>
+            <th>Estado</th>
             <th></th>
           </tr>
         </thead>
@@ -144,25 +145,40 @@ const TableCrud = () => {
                       color="primary"
                       onClick={() => handleSave(index, row)}
                     >
-                      Save
+                      Guardar
                     </Button>{" "}
                     <Button
                       color="secondary"
                       onClick={() => setEditableRowIndex(-1)}
                     >
-                      Cancel
+                      Cancelar
                     </Button>{" "}
                   </>
                 ) : (
                   <>
-                    <Button color="primary" onClick={() => handleEdit(index)}>
-                      Edit
-                    </Button>{" "}
+                    <i
+                      className="feather-edit mt-1"
+                      onClick={() => handleEdit(index)}
+                    ></i>{" "}
                     <Button color="danger" onClick={() => handleDelete(index)}>
-                      Delete
+                      <i
+                        className="feather-trash-2"
+                        onClick={() => handleEdit(index)}
+                      ></i>
                     </Button>{" "}
-                    <Button color="info">Password</Button>{" "}
-                    <Button color="warning">Institution</Button>{" "}
+                    <Button color="info">
+                      <i
+                        className="feather-lock"
+                        onClick={() => handleEdit(index)}
+                      ></i>{" "}
+                    </Button>{" "}
+                    <Button color="warning">
+                      {" "}
+                      <i
+                        className="feather-globe"
+                        onClick={() => handleEdit(index)}
+                      ></i>{" "}
+                    </Button>{" "}
                   </>
                 )}
               </td>
@@ -177,4 +193,4 @@ const TableCrud = () => {
   );
 };
 
-export default TableCrud;
+export default TableCrud2;
