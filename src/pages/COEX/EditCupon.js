@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react';
 //import Leftnav from "../../components/LeftNav/Leftnav";
 //import logo from '../../assets/img/logolargo.png';
 import HeaderAdmision from '../../components/Header/HeaderAdmision';
-import { Button, Card, CardContent, CardActionArea } from '@material-ui/core';
+
 // import {Accordion, AccordionSummary, AccordionDetails, Typography, MenuItem, Select, InputLabel } from '@material-ui/core';
 import {
 	MenuItem,
@@ -11,6 +11,15 @@ import {
 	RadioGroup,
 	FormLabel,
 	FormControlLabel,
+	Button,
+	Typography,
+	Card,
+	CardContent,
+	CardMedia,
+	CardActionArea,
+	Dialog,
+	DialogTitle,
+	DialogContent,
 } from '@material-ui/core';
 // import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import SimpleModal from '../../components/Modals/SimpleModal';
@@ -19,7 +28,7 @@ import Radio from '@material-ui/core/Radio';
 // import RadioGroup from "@material-ui/core/RadioGroup";
 // import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from '@material-ui/core/FormControl';
-import ModalAseguradoras from '../../components/Modals/ModalAseguradoras';
+import CreditCardForm from '../../components/Modals/CreditCardForm';
 import ModalAutoFill from '../../components/Modals/ModalAutoFill';
 import InfoPacienteForm from '../../components/InfoPacienteForm/InfoPacienteForm';
 import Covid from '../../components/Vacunas/Covid';
@@ -81,6 +90,7 @@ export default function EditCupon(props) {
 	const [isShownTC, setIsShownTC] = useState(false);
 	const handleClickTC = (e) => {
 		setIsShownTC(!isShownTC);
+		handleAbrir();
 	};
 
 	const [isShownDT, setIsShownDT] = useState(false);
@@ -91,6 +101,23 @@ export default function EditCupon(props) {
 	const [isShownCaja, setIsShownCaja] = useState(false);
 	const handleClickCaja = (e) => {
 		setIsShownCaja(!isShownCaja);
+	};
+
+	const [open, setOpen] = React.useState(false);
+	const handleOpen = () => {
+		setOpen(true);
+	};
+	const handleClose = () => {
+		setOpen(false);
+	};
+	const [abrir, setAbrir] = useState(false);
+
+	const handleAbrir = () => {
+		setAbrir(true);
+	};
+
+	const handleCerrar = () => {
+		setAbrir(false);
 	};
 
 	return (
@@ -343,16 +370,19 @@ export default function EditCupon(props) {
 															</Button>
 														</div>
 													</div>
-													<div class='row'>
-														<div class='col-lg-12 mb-5 mt-3'>
-															<div class='form-gorup'>
-																<div class='linea3'></div>
-															</div>
-														</div>
-													</div>
+
 													{isShownTC && (
 														<>
-															<h2>Modulo de TC o TD</h2>
+															<Dialog
+																open={abrir}
+																onClose={handleCerrar}>
+																<DialogTitle>
+																	Registrar tarjeta de crédito
+																</DialogTitle>
+																<DialogContent>
+																	<CreditCardForm />
+																</DialogContent>
+															</Dialog>
 														</>
 													)}
 													{isShownDT && (

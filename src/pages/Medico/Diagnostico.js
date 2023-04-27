@@ -16,10 +16,12 @@ import HeaderMedico from '../../components/Header/HeaderMedico';
 import ReviewOfSystemsForm from '../../components/SystemReview/ReviewOfSystemsForm';
 import EditableTable from '../../components/Tables/EditableTable';
 import HeaderAdmisiones from '../../components/Header/HeaderAdmisiones';
+import GridEntriesMeds from '../../components/GridEntries/GridEntriesMeds';
+import MedicationSearch from '../../components/MedicationControl/MedicationSearch';
 
 export default function Diagnostico() {
 	useEffect(() => {
-		window.scrollTo(0, 400);
+		window.scrollTo(0, 50);
 	}, []);
 
 	const location = useLocation();
@@ -34,6 +36,17 @@ export default function Diagnostico() {
 
 	const columns = [
 		{ label: 'Motivo de la consulta', field: 'name', editable: true },
+	];
+
+	const [dataTableFecha, setDataTableFecha] = useState([
+		{
+			id: 1,
+			name: 'Paciente Juan Alberto cuenta que hace aproximadamente 3 meses, comenzó a sentir malestares de tipo cólico en el estómago, a nivel del abdomen, de baja intensidad (4/10). Informa que dura varias horas. Manifiesta “siento ardor en las paredes de la barriga"',
+		},
+	]);
+
+	const columnsFecha = [
+		{ label: 'Primer Síntoma o Signo', field: 'name', editable: true },
 	];
 
 	const [dataTable1, setDataTable1] = useState([
@@ -175,50 +188,52 @@ export default function Diagnostico() {
 												<table class='table order-table bg-lightgrey order-table-2 mb-0'>
 													<thead>
 														<tr>
-															<th class='border-0'>Detalles</th>
+															<th class='border-0 mb-2'>
+																Detalles de consulta
+															</th>
 														</tr>
-														<tr>
+														{/* <tr>
 															<Link to='/PdfConsultaMedica'>
 																<th className=''>
 																	<i className='feather-file-text'> Imprimir</i>
 																</th>
 															</Link>
-														</tr>
+														</tr> */}
 													</thead>
 													<tbody>
 														<tr>
 															<th class='text-grey-700 fw-500 font-xsss'>
-																Nombre
+																Nombre de Paciente
 																<strong>
 																	<span>:</span> Juan Alberto Pérez García
 																</strong>
 															</th>
 															<th class='text-grey-700 fw-500 font-xsss'>
-																Última visita
+																No. Historia Clínica
 																<strong>
-																	<span>:</span> 14/08/2021
+																	<span>:</span> 0013-2023-39
 																</strong>
 															</th>
 														</tr>
 														<tr>
 															<th class='text-grey-700 fw-500 font-xsss'>
-																DPI
+																Clínica
 																<strong>
-																	<span>:</span> 3019748690101
+																	<span>:</span> María Gómez
 																</strong>
 															</th>
 															<th class='text-grey-700 fw-500 font-xsss'>
-																Fecha de nacimiento
+																Nombre de Médico
 																<strong>
-																	<span>:</span> 14/08/2000
+																	<span>:</span> María Gómez
 																</strong>
 															</th>
 														</tr>
 														<tr>
 															<th class='text-grey-700 fw-500 font-xsss'>
-																Ciudad
+																Servicio de Ingreso
 																<strong>
-																	<span>:</span> Guatemala
+																	<span>:</span> COEX
 																</strong>
 															</th>
 															<th class='text-grey-700 fw-500 font-xsss'>
@@ -258,64 +273,7 @@ export default function Diagnostico() {
 										</div>
 									</div>
 									<div class='clearfix'></div>
-									<h4>Evaluación y anamnesis</h4>
-									<div class='row'>
-										<div class='col-lg-12 mb-3 mt-3'>
-											<div class='form-gorup'>
-												<div class='linea'></div>
-											</div>
-										</div>
-									</div>
-
-									<table>
-										<thead>
-											<tr>
-												<th>SIGNOS VITALES</th>
-												<th>FRECUENCIA CARDIACA</th>
-												<th>FRECUENCIA RESPIRATORIA </th>
-												<th>TENSIÓN ARTERIAL</th>
-												<th>SPO2 94%</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>TEMPERATURA 36.8°C</td>
-												<td>97 LPM</td>
-												<td>18 RPM</td>
-												<td>97 LPM</td>
-												<td>DXTX 100 MG/DL</td>
-											</tr>
-										</tbody>
-									</table>
-									<div class='row'>
-										<div class='col-lg-12 mb-3 mt-3'>
-											<div class='form-gorup'>
-												<div class='linea'></div>
-											</div>
-										</div>
-									</div>
-									<EditableTable
-										data={dataTable}
-										columns={columns}
-									/>
-									<div class='row'>
-										<div class='col-lg-12 mb-3 mt-3'>
-											<div class='form-gorup'>
-												<div class='linea'></div>
-											</div>
-										</div>
-									</div>
-									<EditableTable
-										data={dataTable1}
-										columns={columns1}
-									/>
-									<div class='row'>
-										<div class='col-lg-12 mb-3 mt-3'>
-											<div class='form-gorup'>
-												<div class='linea'></div>
-											</div>
-										</div>
-									</div>
+									<h4>Resumen Anamnesis</h4>
 									<table className='tablita'>
 										<thead>
 											<tr>
@@ -432,6 +390,140 @@ export default function Diagnostico() {
 											</tr>
 										</tbody>
 									</table>
+									{/* <div class='row'>
+										<div class='col-lg-12 mb-3 mt-3'>
+											<div class='form-gorup'>
+												<div class='linea'></div>
+											</div>
+										</div>
+									</div>
+
+									<table>
+										<thead>
+											<tr>
+												<th>SIGNOS VITALES</th>
+												<th>FRECUENCIA CARDIACA</th>
+												<th>FRECUENCIA RESPIRATORIA </th>
+												<th>TENSIÓN ARTERIAL</th>
+												<th>SPO2 94%</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>TEMPERATURA 36.8°C</td>
+												<td>97 LPM</td>
+												<td>18 RPM</td>
+												<td>97 LPM</td>
+												<td>DXTX 100 MG/DL</td>
+											</tr>
+										</tbody>
+									</table> */}
+									<h4 className='mt-5'>Evaluación</h4>
+									<div class='row'>
+										<div class='col-lg-12 mb-5 mt-3'>
+											<div class='form-gorup'>
+												<div class='linea'></div>
+											</div>
+										</div>
+									</div>
+									<div className='row'>
+										<EditableTable
+											data={dataTableFecha}
+											columns={columnsFecha}
+										/>
+										<input
+											placeholder='Fecha de Primer Síntoma o Signo'
+											onFocus={(e) => (e.target.type = 'date')}
+											onBlur={(e) => (e.target.type = 'text')}
+											name='comment-name'
+											className='form-control'
+											style={{ width: '150px' }}
+										/>
+									</div>
+
+									<div class='row'>
+										<div class='col-lg-12 mb-5 mt-3'>
+											<div class='form-gorup'>
+												<div class='linea'></div>
+											</div>
+										</div>
+									</div>
+
+									<EditableTable
+										data={dataTable}
+										columns={columns}
+									/>
+
+									<div class='row'>
+										<div class='col-lg-4 ms-6 me-4 mb-3'>
+											<div class='form-gorup'>
+												<label class='mont-font fw-600 font-xssss'></label>
+												<input
+													placeholder='Tipo Control'
+													type='text'
+													name='comment-name'
+													class='form-control'
+												/>
+											</div>
+										</div>
+
+										<div class='col-lg-2 me-4 mb-3'>
+											<div class='form-gorup'>
+												<label class='mont-font fw-600 font-xssss'></label>
+												<input
+													type='text'
+													placeholder='Tipo Consulta'
+													name='comment-name'
+													class='form-control'
+												/>
+											</div>
+										</div>
+
+										<div class='col-lg-2 me-4 mb-3'>
+											<div class='form-gorup'>
+												<label class='mont-font fw-600 font-xssss'></label>
+												<input
+													type='text'
+													placeholder='Primera'
+													name='comment-name'
+													class='form-control'
+												/>
+											</div>
+										</div>
+
+										<div class='col-lg-2 mb-3'>
+											<div class='form-gorup'>
+												<label class='mont-font fw-600 font-xssss'></label>
+												<input
+													type='text'
+													placeholder='Tipo de Referencia'
+													name='comment-name'
+													class='form-control'
+												/>
+											</div>
+										</div>
+									</div>
+
+									<div class='row'>
+										<div class='col-lg-12 mb-5 mt-3'>
+											<div class='form-gorup'>
+												<div class='linea'></div>
+											</div>
+										</div>
+									</div>
+
+									{/* <EditableTable
+										data={dataTable1}
+										columns={columns1}
+									/>
+									<div class='row'>
+										<div class='col-lg-12 mb-3 mt-3'>
+											<div class='form-gorup'>
+												<div class='linea'></div>
+											</div>
+										</div>
+									</div>
+
 									<div class='row'>
 										<div class='col-lg-12 mb-3 mt-3'>
 											<div class='form-gorup'>
@@ -442,7 +534,7 @@ export default function Diagnostico() {
 									<div className='pt-5 pb-5'>
 										<h2>Revisión por sistemas</h2>
 										<ReviewOfSystemsForm />
-									</div>
+									</div> */}
 
 									{/* <table className='tablita'>
 										<thead>
@@ -501,7 +593,7 @@ export default function Diagnostico() {
 											</tr>
 										</tbody>
 									</table> */}
-									<div class='row'>
+									{/* <div class='row'>
 										<div class='col-lg-12 mb-3 mt-3'>
 											<div class='form-gorup'>
 												<div class='linea'></div>
@@ -522,7 +614,7 @@ export default function Diagnostico() {
 									<EditableTable
 										data={dataTable4}
 										columns={columns4}
-									/>
+									/> */}
 									{/* <table className='tablita'>
 										<thead>
 											<tr>
@@ -546,7 +638,7 @@ export default function Diagnostico() {
 											</tr>
 										</tbody>
 									</table> */}
-									<div class='row'>
+									{/* <div class='row'>
 										<div class='col-lg-12 mb-3 mt-3'>
 											<div class='form-gorup'>
 												<div class='linea'></div>
@@ -556,7 +648,7 @@ export default function Diagnostico() {
 									<EditableTable
 										data={dataTable3}
 										columns={columns3}
-									/>
+									/> */}
 									{/* <table className='tablita'>
 										<thead>
 											<tr>
@@ -583,9 +675,28 @@ export default function Diagnostico() {
 								</div>
 							</div>
 							<GridEntriesDx />
+							<div class='row'>
+								<div class='col-lg-12 mb-5 mt-3'>
+									<div class='form-gorup'>
+										<div class='linea'></div>
+									</div>
+								</div>
+							</div>
+
+							<GridEntriesMeds />
 						</div>
+						<div class='row'>
+							<div class='col-lg-12 mb-5 mt-3'>
+								<div class='form-gorup'>
+									<div class='linea'></div>
+								</div>
+							</div>
+						</div>
+						<h3>Medicamentos ejemplo</h3>
+						<MedicationSearch />
+
 						<div
-							className='pt-5 pb-5'
+							className='pt-6 pb-5'
 							style={{
 								display: 'flex',
 								justifyContent: 'center',
@@ -603,7 +714,7 @@ export default function Diagnostico() {
 								to='/ResumenMedico'
 								state={Antecedentes}>
 								<Button variant='contained'>
-									<i className='feather-arrow-right-circle'> Resumen</i>
+									<i className='feather-arrow-right-circle'>Finalizar</i>
 								</Button>
 							</Link>
 						</div>

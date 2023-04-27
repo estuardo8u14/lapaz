@@ -9100,6 +9100,9 @@ fieldset:disabled .btn {
 .ms-7 {
 	margin-left: 12rem !important;
 }
+.ms-8 {
+	margin-left: 18rem !important;
+}
 
 .ms-auto {
 	margin-left: auto !important;
@@ -9211,6 +9214,9 @@ fieldset:disabled .btn {
 
 .pt-5 {
 	padding-top: 3rem !important;
+}
+.pt-6 {
+	padding-top: 4rem !important;
 }
 
 .pe-0 {
@@ -9546,6 +9552,11 @@ fieldset:disabled .btn {
 .pe-auto {
 	pointer-events: auto !important;
 }
+
+.centered-placeholder::placeholder {
+	/* use vendor prefixes as needed */
+	text-align: center;
+  }
 
 .rounded {
 	border-radius: 0.25rem !important;

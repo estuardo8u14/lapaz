@@ -46,7 +46,11 @@ export default function ModalEditCuponCoex() {
 
 	return (
 		<div>
-			<Button onClick={handleOpen}>Ver Cupón</Button>
+			<Button
+				className='ms-4'
+				onClick={handleOpen}>
+				Ver Cupón
+			</Button>
 			<Modal
 				aria-labelledby='simple-modal-title'
 				aria-describedby='simple-modal-description'

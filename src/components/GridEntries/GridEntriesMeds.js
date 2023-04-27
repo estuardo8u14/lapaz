@@ -2,7 +2,7 @@ import { Button } from '@material-ui/core';
 import React, { useState, useEffect } from 'react';
 import MedicationSelect from '../MedicationControl/MedicationSelect ';
 
-export default function GridEntriesDx() {
+export default function GridEntriesMeds() {
 	const [inputFields, setInputFields] = useState([{ name: '' }]);
 	const addFields = (e) => {
 		let newfield = { name: '' };
@@ -38,26 +38,8 @@ export default function GridEntriesDx() {
 	return (
 		<>
 			<div class='row'>
-				<h4 class='mont-font fw-600 font-md mb-3 mb-0'>Registro Diagnóstico</h4>
+				<h4 class='mont-font fw-600 font-md mb-3 mb-0'>Registros Tx</h4>
 			</div>
-			{/* <div>
-				<label
-					className='pe-2'
-					htmlFor='my-select'>
-					Selecciona una opción {''}
-				</label>
-				<select
-					id='my-select'
-					value={selectedOption}
-					onChange={handleSelectChange}>
-					<option value=''>Selecciona una opción</option>
-					<option value='General'>Recetas</option>
-					<option value='Recetas'>Recetas</option> 
-					<option value='Labs'>Laboratorios</option>
-					<option value='Imagenes'>Imagenes Dx</option>
-				</select>
-				<p>Selección: {selectedOption}</p>
-			</div> */}
 
 			<div class='col-xl-12 mt-0'>
 				<div class='page-title'>
@@ -76,7 +58,7 @@ export default function GridEntriesDx() {
 													value={input.name}
 													onKeyDown={handleKeypress}
 													onChange={(event) => handleFormChange(index, event)}
-													placeholder='Registro diagnóstico...'
+													placeholder='Registro de tratamiento...'
 													class='form-control-motivo'
 												/>
 											</div>
@@ -110,7 +92,6 @@ export default function GridEntriesDx() {
 								</div>
 							</div>
 						</div>
-						{/* <MedicationSelect /> */}
 					</form>
 				</div>
 			</div>

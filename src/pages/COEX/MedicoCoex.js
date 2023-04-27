@@ -9,6 +9,7 @@ import ModalEditCuponCoex from '../../components/Modals/ModalEditCuponCoex';
 import TablaCuponesCoex from './TablaCuponesCoex';
 import CalendarMedico from '../../components/Appointments/CalendarMedico';
 import { FormControl, InputLabel, MenuItem } from '@material-ui/core';
+import PopoverCupon from '../../components/PopoverMenu/PopoverCupon';
 
 export default function MedicoCoex() {
 	useEffect(() => {
@@ -36,6 +37,8 @@ export default function MedicoCoex() {
 			? setCalendarContentVisible(true)
 			: setCalendarContentVisible(false);
 	}, [buttonmostrar]);
+
+	const isDisabled1 = true; // set this variable to true if the  row to be disabled
 
 	return (
 		<Fragment>
@@ -79,128 +82,137 @@ export default function MedicoCoex() {
 
 									<div class='col-xl-12 col-lg-12'>
 										<div class='page-title'>
-											<h4 class='mont-font fw-600 font-md pt-3 pb-3'>
-												COEX - Listado de pacientes
+											<h4 class='mont-font fw-600 font-md pt-3 pb-0'>
+												Zona 12.
+											</h4>
+											<h4 class='mont-font fw-600 font-md pt-0 pb-3'>
+												Clínica: Dra. María Gomez - Listado de consultas
 											</h4>
 										</div>
 										<div>
 											<table className='tablacoex'>
 												<tr>
+													<th>Fecha</th>
+													<th>Hora</th>
 													<th>Código</th>
 													<th>Nombre</th>
 													<th>Apellido</th>
-													<th>Fecha y hora</th>
-													<th>Hora</th>
 													<th>Seguro</th>
 													<th>Acciones</th>
 												</tr>
-												<tr>
+												<tr
+													style={{
+														backgroundColor: isDisabled1
+															? 'transparent'
+															: 'transparent',
+													}}>
+													<td>21/03/2023</td>
+													<td>10:00AM</td>
 													<td>301947968</td>
 													<td className='fw-bold'>Juan</td>
 													<td className='fw-bold'>Pérez</td>
-													<td>21/03/2023</td>
-													<td>10:00AM</td>
+
 													<td>SS</td>
 													<td className='izquierda'>
 														<div class='col-lg-12'>
-															<Link to='/Anamnesis'>
-																<Button
-																	variant='contained'
-																	color='warning'>
-																	Atención COEX
-																</Button>
-															</Link>
-															<ModalEditCuponCoex />
+															<PopoverCupon />
 														</div>
 													</td>
 												</tr>
-												<tr>
-													<td>78465416</td>
-													<td className='fw-bold'>José</td>
-													<td className='fw-bold'>Rodríguez</td>
+												<tr
+													style={{
+														backgroundColor: isDisabled1
+															? 'lightcoral'
+															: 'transparent',
+													}}>
 													<td>21/03/2023</td>
 													<td>10:30AM </td>
+													<td>78465416</td>
+													<td className='fw-bold'>
+														<a>José</a>
+													</td>
+													<td className='fw-bold'>Rodríguez</td>
+
 													<td>El Roble</td>
 													<td className='izquierda'>
 														<div class='col-lg-12'>
-															<Link to='/Anamnesis'>
-																<Button variant='contained'>
-																	Atención COEX
-																</Button>
-															</Link>
-															<ModalEditCuponCoex />
+															<PopoverCupon />
 														</div>
 													</td>
 												</tr>
-												<tr>
+												<tr
+													style={{
+														backgroundColor: isDisabled1
+															? 'transparent'
+															: 'transparent',
+													}}>
+													<td>25/03/2023</td>
+													<td>15:00AM</td>
 													<td>654654</td>
 													<td className='fw-bold'>Hugo</td>
 													<td className='fw-bold'>Cuyuche</td>
-													<td>25/03/2023</td>
-													<td>15:00AM</td>
+
 													<td>General</td>
 													<td className='izquierda'>
 														<div class='col-lg-12'>
-															<Link to='/Anamnesis'>
-																<Button variant='contained'>
-																	Atención COEX
-																</Button>
-															</Link>
-															<ModalEditCuponCoex />
+															<PopoverCupon />
 														</div>
 													</td>
 												</tr>
-												<tr>
+												<tr
+													style={{
+														backgroundColor: isDisabled1
+															? 'lightcoral'
+															: 'transparent',
+													}}>
+													<td>29/03/2023</td>
+													<td>10:00AM </td>
 													<td>78465416</td>
 													<td className='fw-bold'>Karen</td>
 													<td className='fw-bold'>Lara</td>
-													<td>29/03/2023</td>
-													<td>10:00AM </td>
+
 													<td>Universales</td>
 													<td className='izquierda'>
 														<div class='col-lg-12'>
-															<Link to='/Anamnesis'>
-																<Button variant='contained'>
-																	Atención COEX
-																</Button>
-															</Link>
-															<ModalEditCuponCoex />
+															<PopoverCupon />
 														</div>
 													</td>
 												</tr>
-												<tr>
+												<tr
+													style={{
+														backgroundColor: isDisabled1
+															? 'transparent'
+															: 'transparent',
+													}}>
+													<td>30/03/2023</td>
+													<td>17:30AM </td>
 													<td>78465416</td>
 													<td className='fw-bold'>Mauricio</td>
 													<td className='fw-bold'>Motta</td>
-													<td>30/03/2023</td>
-													<td>17:30AM </td>
+
 													<td>MAPFRE</td>
 													<td className='izquierda'>
 														<div class='col-lg-12'>
-															<Link to='/Anamnesis'>
-																<Button variant='contained'>
-																	Atención COEX
-																</Button>
-															</Link>
-															<ModalEditCuponCoex />
+															<PopoverCupon />
 														</div>
 													</td>
 												</tr>
-												<tr>
+												<tr
+													style={{
+														backgroundColor: isDisabled1
+															? 'transparent'
+															: 'transparent',
+													}}>
+													<td>21/03/2023</td>
+													<td>15:30AM </td>
 													<td>78465416</td>
 													<td className='fw-bold'>Giro</td>
 													<td className='fw-bold'>Roldan</td>
-													<td>21/03/2023</td>
-													<td>15:30AM </td>
+
 													<td>La ceiba</td>
 													<td className='izquierda'>
 														<div class='col-lg-12'>
-															<Link to='/Anamnesis'>
-																<Button variant='contained'>
-																	Atención COEX
-																</Button>
-															</Link>
-															<ModalEditCuponCoex />
+															<PopoverCupon />
 														</div>
 													</td>
 												</tr>

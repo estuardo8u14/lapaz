@@ -22,8 +22,7 @@ export default function Anamnesis() {
 		quirurgicos: 'Ejemplo Quirúrgicos',
 		trauma: 'Ejemplo Traumáticos',
 		alergicos: 'Ejemplo Alérgicos',
-		gineco:
-			'Notas de ginecobstétricos elaborada por el médico con una descripción detallada.',
+		gineco: 'Notas de ginecobstétricos elaborada por el médico detalladamente.',
 		fecha: '14/02/1998',
 		g: '2.5',
 		p: '57',
@@ -217,7 +216,7 @@ export default function Anamnesis() {
 									</div>
 									<div class='clearfix'></div>
 
-									<table>
+									{/* <table>
 										<thead>
 											<tr>
 												<th>SIGNOS VITALES</th>
@@ -324,7 +323,7 @@ export default function Anamnesis() {
 												),
 											)}
 										</tbody>
-									</table>
+									</table> */}
 
 									<div class='row'>
 										<div class='col-lg-12 mb-5 mt-3'>
@@ -390,6 +389,7 @@ export default function Anamnesis() {
 													</div>
 												</div>
 											</div>
+
 											<div class='row'>
 												<div class='col-lg-12 mb-5 mt-3'>
 													<div class='form-gorup'>
@@ -398,6 +398,57 @@ export default function Anamnesis() {
 												</div>
 											</div>
 
+											<div class='row'>
+												<div class='col-lg-12 mb-3'>
+													<div class='form-gorup'>
+														<input
+															type='text'
+															placeholder='Familiares'
+															name='comment-name'
+															class='form-control'></input>
+													</div>
+												</div>
+											</div>
+											<div class='row'>
+												<div class='col-lg-12 mb-3'>
+													<div class='form-gorup'>
+														<input
+															type='text'
+															placeholder='Hábitos'
+															name='comment-name'
+															class='form-control'></input>
+													</div>
+												</div>
+											</div>
+											<div class='row'>
+												<div class='col-lg-12 mb-3'>
+													<div class='form-gorup'>
+														<input
+															type='text'
+															placeholder='Que medicamentos toma'
+															name='comment-name'
+															class='form-control'></input>
+													</div>
+												</div>
+											</div>
+											<div class='row'>
+												<div class='col-lg-12 mb-3'>
+													<div class='form-gorup'>
+														<input
+															type='text'
+															placeholder='Otros'
+															name='comment-name'
+															class='form-control'></input>
+													</div>
+												</div>
+											</div>
+											<div class='row'>
+												<div class='col-lg-12 mb-5 mt-3'>
+													<div class='form-gorup'>
+														<div class='linea'></div>
+													</div>
+												</div>
+											</div>
 											<div class='row'>
 												<div class='col-lg-12 mb-3'>
 													<div class='form-gorup'>
@@ -472,58 +523,7 @@ export default function Anamnesis() {
 													</div>
 												</div>
 											</div>
-											<div class='row'>
-												<div class='col-lg-12 mb-5 mt-3'>
-													<div class='form-gorup'>
-														<div class='linea'></div>
-													</div>
-												</div>
-											</div>
 
-											<div class='row'>
-												<div class='col-lg-12 mb-3'>
-													<div class='form-gorup'>
-														<input
-															type='text'
-															placeholder='Familiares'
-															name='comment-name'
-															class='form-control'></input>
-													</div>
-												</div>
-											</div>
-											<div class='row'>
-												<div class='col-lg-12 mb-3'>
-													<div class='form-gorup'>
-														<input
-															type='text'
-															placeholder='Hábitos'
-															name='comment-name'
-															class='form-control'></input>
-													</div>
-												</div>
-											</div>
-											<div class='row'>
-												<div class='col-lg-12 mb-3'>
-													<div class='form-gorup'>
-														<input
-															type='text'
-															placeholder='Que medicamentos toma'
-															name='comment-name'
-															class='form-control'></input>
-													</div>
-												</div>
-											</div>
-											<div class='row'>
-												<div class='col-lg-12 mb-3'>
-													<div class='form-gorup'>
-														<input
-															type='text'
-															placeholder='Otros'
-															name='comment-name'
-															class='form-control'></input>
-													</div>
-												</div>
-											</div>
 											{/* <div class='row'>
 												<div class='col-lg-12 mb-3'>
 													<div class='form-gorup'>
